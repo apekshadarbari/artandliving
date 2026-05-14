@@ -61,6 +61,19 @@ nav.scrolled {
   backdrop-filter: blur(12px);
 }
 
+nav.nav-light {
+  background: rgba(253, 250, 248, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(229, 124, 95, 0.12);
+}
+
+nav.nav-light .nav-logo img { content: url('../assets/branding/01_Logo full/apeksha-darbari_logo-full_colour.svg'); }
+nav.nav-light .nav-links a { color: var(--midnight); }
+nav.nav-light .nav-links a:hover { color: var(--clay); }
+nav.nav-light .nav-cta { color: var(--midnight) !important; border-color: rgba(53,57,76,0.4) !important; }
+nav.nav-light .nav-cta:hover { background: rgba(53,57,76,0.08) !important; border-color: var(--midnight) !important; }
+nav.nav-light .hamburger span { background: var(--midnight); }
+
 .nav-logo img {
   height: 72px;
   width: auto;
