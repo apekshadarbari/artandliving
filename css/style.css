@@ -50,19 +50,22 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 3rem;
-  background: rgba(253, 250, 248, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(229, 124, 95, 0.15);
-  transition: padding 0.3s ease;
+  background: transparent;
+  border-bottom: none;
+  transition: padding 0.3s ease, background 0.3s ease;
 }
 
-nav.scrolled { padding: 1rem 3rem; }
+nav.scrolled {
+  padding: 1rem 3rem;
+  background: rgba(53, 57, 76, 0.88);
+  backdrop-filter: blur(12px);
+}
 
 .nav-logo {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 400;
-  color: var(--midnight);
+  color: var(--slate);
   letter-spacing: 0.02em;
 }
 
@@ -79,7 +82,7 @@ nav.scrolled { padding: 1rem 3rem; }
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--midnight);
+  color: var(--slate);
   position: relative;
   transition: color 0.2s;
 }
