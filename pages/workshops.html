@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workshops · Apeksha Darbari | Art & Living</title>
+  <meta name="description" content="Refill Your Cup — therapeutic arts workshops for women. Online sessions where nothing is required except showing up. Book a preview session for $95 CAD." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    .workshop-hero-text {
+      max-width: 680px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-top: 1.5rem;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: var(--max-width);
+      margin: 3rem auto 0;
+    }
+    .testimonial-card {
+      background: var(--white);
+      padding: 2rem;
+      border-top: 2px solid var(--clay);
+    }
+    .testimonial-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--midnight);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+    .testimonial-name {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .what-to-expect {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .session-steps { list-style: none; margin-top: 2rem; }
+    .session-step {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
+      align-items: flex-start;
+    }
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--clay);
+      line-height: 1;
+      min-width: 2rem;
+      font-weight: 300;
+    }
+    .step-content h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--midnight);
+      margin-bottom: 0.4rem;
+      font-weight: 400;
+    }
+    .step-content p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .upcoming-sessions {
+      max-width: var(--max-width);
+      margin: 3rem auto 0;
+    }
+    .session-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--slate-dark);
+      gap: 2rem;
+    }
+    .session-date {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--midnight);
+      min-width: 200px;
+    }
+    .session-name { font-size: 0.9rem; color: var(--text-muted); flex: 1; }
+    .session-price { font-size: 0.9rem; color: var(--midnight); font-weight: 400; min-width: 100px; text-align: right; }
+    @media (max-width: 768px) {
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .what-to-expect { grid-template-columns: 1fr; gap: 2rem; }
+      .session-row { flex-direction: column; align-items: flex-start; }
+      .session-price { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Apeksha Darbari <span>|</span> Art & Living</a>
+    <ul class="nav-links">
+      <li><a href="../pages/shop.html">Art Shop</a></li>
+      <li><a href="../pages/workshops.html">Workshops</a></li>
+      <li><a href="../pages/about.html">The Artist</a></li>
+      <li><a href="../pages/poetry.html">Rhymes & Ramblings</a></li>
+      <li><a href="../pages/contact.html">Say Hi</a></li>
+      <li><a href="#book" class="nav-cta">Book a session</a></li>
+    </ul>
+    <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="section-eyebrow">Therapeutic Arts Workshops</span>
+      <h1 class="section-title" style="font-size: clamp(2.5rem, 5vw, 4.5rem);">
+        Refill <em>Your Cup</em>
+      </h1>
+      <p class="workshop-hero-text">
+        A room — online, for an hour or an afternoon — where you get to exist as you are.
+        Where your hands make something with no brief and no grade and no right answer.
+        Where the only instruction is to follow what you already know.
+      </p>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section style="background: var(--slate); padding: var(--section-pad);">
+    <div style="max-width: var(--max-width); margin: 0 auto;">
+      <span class="section-eyebrow">What women say</span>
+      <h2 class="section-title">From the <em>room</em></h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card fade-up">
+        <p class="testimonial-quote">"I haven't cried like that in months. Not sad crying — the other kind."</p>
+        <p class="testimonial-name">Taster session attendee, May 2026</p>
+      </div>
+      <div class="testimonial-card fade-up">
+        <p class="testimonial-quote">"I kept waiting for someone to tell me I was doing it wrong. No one did. That was the whole point."</p>
+        <p class="testimonial-name">Taster session attendee, May 2026</p>
+      </div>
+      <div class="testimonial-card fade-up">
+        <p class="testimonial-quote">"I forgot what it felt like to just make something. I think I needed to remember."</p>
+        <p class="testimonial-name">Taster session attendee, May 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section style="background: var(--white); padding: var(--section-pad);">
+    <div class="what-to-expect">
+      <div class="fade-up">
+        <span class="section-eyebrow">What to expect</span>
+        <h2 class="section-title">A session that feels<br>like <em>permission</em></h2>
+        <p class="section-body">
+          No art experience needed. No right way to show up. Whatever materials you have 
+          at home are the right materials. You make alongside me, camera on or off, 
+          sharing only what you want to share.
+        </p>
+        <br>
+        <p class="section-body">
+          The space is small and intentional — never more than 11–12 women online. 
+          You will be witnessed. You will not be fixed.
+        </p>
+      </div>
+      <div class="fade-up">
+        <ul class="session-steps">
+          <li class="session-step">
+            <span class="step-num">01</span>
+            <div class="step-content">
+              <h4>Landing meditation</h4>
+              <p>A short guided moment to leave the day behind and arrive in your body. Not elaborate — just enough to shift gears.</p>
+            </div>
+          </li>
+          <li class="session-step">
+            <span class="step-num">02</span>
+            <div class="step-content">
+              <h4>The warm-up</h4>
+              <p>A gentle reframe to ease into making mode. A little of what the science says about creativity and the nervous system.</p>
+            </div>
+          </li>
+          <li class="session-step">
+            <span class="step-num">03</span>
+            <div class="step-content">
+              <h4>The making</h4>
+              <p>One gentle prompt. Whatever materials you have. Apeksha makes alongside you. No watching, no evaluating. Just presence.</p>
+            </div>
+          </li>
+          <li class="session-step">
+            <span class="step-num">04</span>
+            <div class="step-content">
+              <h4>Sharing circle</h4>
+              <p>Not "what did you make" but "what did you notice." Nothing required. Nobody called on.</p>
+            </div>
+          </li>
+          <li class="session-step">
+            <span class="step-num">05</span>
+            <div class="step-content">
+              <h4>Soft close</h4>
+              <p>An invitation, never a push. You leave when you're ready.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING SESSIONS -->
+  <section id="book" style="background: var(--teal-light); padding: var(--section-pad);">
+    <div style="max-width: var(--max-width); margin: 0 auto;">
+      <span class="section-eyebrow">Upcoming sessions</span>
+      <h2 class="section-title">Reserve <em>your spot</em></h2>
+      <p class="section-body">
+        Preview sessions are the entry point. 70% of what you pay comes with you 
+        if you decide to join the full program — what you've already invested doesn't disappear.
+      </p>
+    </div>
+    <div class="upcoming-sessions">
+      <div class="session-row fade-up">
+        <div class="session-date">Sat, June 7 · 10am PT</div>
+        <div class="session-name">Refill Your Cup — Preview Session · Online via Zoom</div>
+        <div class="session-price">$95 CAD</div>
+        <a href="../pages/contact.html" class="btn-primary" style="white-space: nowrap;">Book now</a>
+      </div>
+      <div class="session-row fade-up">
+        <div class="session-date">Thu, June 12 · 7pm PT</div>
+        <div class="session-name">Refill Your Cup — Preview Session · Online via Zoom</div>
+        <div class="session-price">$95 CAD</div>
+        <a href="../pages/contact.html" class="btn-primary" style="white-space: nowrap;">Book now</a>
+      </div>
+      <div class="session-row fade-up">
+        <div class="session-date">Sat, July 11</div>
+        <div class="session-name">Refill Your Cup — 6-Week Program begins · Online via Zoom</div>
+        <div class="session-price">$360–420 CAD</div>
+        <a href="../pages/contact.html" class="btn-secondary" style="white-space: nowrap;">Express interest</a>
+      </div>
+      <div class="session-row fade-up">
+        <div class="session-date">Sat, Aug 8</div>
+        <div class="session-name">Refill Your Cup — 6-Week Program begins · Online via Zoom</div>
+        <div class="session-price">$360–420 CAD</div>
+        <a href="../pages/contact.html" class="btn-secondary" style="white-space: nowrap;">Express interest</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section style="background: var(--midnight); padding: var(--section-pad);">
+    <div style="max-width: var(--max-width); margin: 0 auto;">
+      <span class="section-eyebrow" style="color: var(--clay);">Investment</span>
+      <h2 class="section-title" style="color: var(--slate); margin-bottom: 3rem;">What it costs<br>to <em>refill your cup</em></h2>
+      <div class="workshops-grid">
+        <div class="workshop-card" style="background: rgba(255,255,255,0.04); border-color: rgba(242,224,215,0.15);">
+          <span class="workshop-tag">Entry point</span>
+          <h3 class="workshop-title" style="color: var(--slate);">Preview Session</h3>
+          <p class="workshop-desc" style="color: rgba(242,224,215,0.6);">
+            A single 75-minute session. The full experience — meditation, making, sharing circle.
+            70% of this investment comes with you to the program.
+          </p>
+          <div class="workshop-meta">
+            <div class="workshop-meta-item">
+              <span class="workshop-meta-label">Online</span>
+              <span class="workshop-meta-value" style="color: var(--slate);">$95 CAD</span>
+            </div>
+            <div class="workshop-meta-item">
+              <span class="workshop-meta-label">In-Person</span>
+              <span class="workshop-meta-value" style="color: var(--slate);">$125 CAD</span>
+            </div>
+          </div>
+          <a href="#book" class="btn-primary">Book a preview</a>
+        </div>
+        <div class="workshop-card" style="background: rgba(255,255,255,0.04); border-color: rgba(242,224,215,0.15);">
+          <span class="workshop-tag">The full experience</span>
+          <h3 class="workshop-title" style="color: var(--slate);">6–8 Week Program</h3>
+          <p class="workshop-desc" style="color: rgba(242,224,215,0.6);">
+            Weekly sessions over six to eight weeks. A container to go deeper — into your 
+            practice, your patterns, and what creativity is unlocking in you.
+          </p>
+          <div class="workshop-meta">
+            <div class="workshop-meta-item">
+              <span class="workshop-meta-label">Online</span>
+              <span class="workshop-meta-value" style="color: var(--slate);">$360–420 CAD</span>
+            </div>
+            <div class="workshop-meta-item">
+              <span class="workshop-meta-label">In-Person</span>
+              <span class="workshop-meta-value" style="color: var(--slate);">$480–560 CAD</span>
+            </div>
+          </div>
+          <a href="../pages/contact.html" class="btn-secondary" style="border-color: rgba(242,224,215,0.4); color: var(--slate);">Express interest</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="email-strip">
+    <span class="section-eyebrow">Join the circle</span>
+    <h2 class="section-title">Stay in the <em>conversation</em></h2>
+    <p>Be the first to know when new workshop dates open.</p>
+    <form class="email-form" onsubmit="return false;">
+      <input type="email" placeholder="your@email.com" aria-label="Your email address" />
+      <button type="submit">Come in</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-name">Apeksha Darbari | Art & Living</p>
+        <p class="footer-brand-tagline">"You were not meant to run on fumes. Come, sit with me and let's tend to your cup."</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <ul class="footer-links">
+          <li><a href="../pages/shop.html">Art Shop</a></li>
+          <li><a href="../pages/workshops.html">Workshops</a></li>
+          <li><a href="../pages/about.html">The Artist</a></li>
+          <li><a href="../pages/poetry.html">Rhymes & Ramblings</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Connect</p>
+        <ul class="footer-links">
+          <li><a href="../pages/contact.html">Say Hi</a></li>
+          <li><a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/apekshadarbari" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Policies</p>
+        <ul class="footer-links">
+          <li><a href="../pages/privacy.html">Privacy Policy</a></li>
+          <li><a href="../pages/refunds.html">Refund Policy</a></li>
+          <li><a href="../pages/shipping.html">Shipping</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Apeksha Darbari | Art & Living · Vancouver, BC</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/apekshadarbari" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

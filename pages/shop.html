@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art Shop · Apeksha Darbari | Art & Living</title>
+  <meta name="description" content="Original abstract acrylic pour paintings by Apeksha Darbari. Each piece is one of a kind — painted in Vancouver, shipped with care." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    .collection-intro {
+      max-width: 680px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-top: 1.5rem;
+    }
+    .shop-notice {
+      background: var(--teal-light);
+      border-left: 3px solid var(--teal);
+      padding: 1rem 1.5rem;
+      margin-bottom: 3rem;
+      font-size: 0.9rem;
+      color: var(--teal);
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .art-detail-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(53, 57, 76, 0.85);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .art-detail-modal.open { display: flex; }
+    .modal-inner {
+      background: var(--white);
+      max-width: 900px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-image { aspect-ratio: 4/5; overflow: hidden; }
+    .modal-image img { width: 100%; height: 100%; object-fit: cover; }
+    .modal-info { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .modal-title { font-family: var(--font-display); font-size: 2.5rem; color: var(--midnight); margin-bottom: 0.5rem; }
+    .modal-price { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; }
+    .modal-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem; }
+    .modal-meta { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 2; }
+    .modal-close {
+      position: absolute;
+      top: 1.5rem; right: 2rem;
+      font-size: 1.5rem;
+      color: var(--white);
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+    @media (max-width: 640px) {
+      .modal-inner { grid-template-columns: 1fr; }
+      .modal-image { aspect-ratio: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Apeksha Darbari <span>|</span> Art & Living</a>
+    <ul class="nav-links">
+      <li><a href="../pages/shop.html">Art Shop</a></li>
+      <li><a href="../pages/workshops.html">Workshops</a></li>
+      <li><a href="../pages/about.html">The Artist</a></li>
+      <li><a href="../pages/poetry.html">Rhymes & Ramblings</a></li>
+      <li><a href="../pages/contact.html">Say Hi</a></li>
+      <li><a href="../pages/workshops.html" class="nav-cta">Refill Your Cup</a></li>
+    </ul>
+    <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="section-eyebrow">Original Artworks</span>
+      <h1 class="section-title" style="font-size: clamp(2.5rem, 5vw, 4.5rem);">Wild <em>Wisps</em></h1>
+      <p class="collection-intro">
+        These are some of my favourite pieces from my first 100 paintings — the beginning 
+        of a new path in my journey. I named this first release Wild Wisps because that 
+        is how this expedition started, with little itches to create. Little did I know 
+        then that this would become a ritual, and eventually, a pilgrimage.
+        <br><br>I'm glad you are here. Enjoy the art.
+      </p>
+    </div>
+  </div>
+
+  <section style="background: var(--white); padding: var(--section-pad);">
+    <div class="shop-notice">
+      ✦ &nbsp; Something new is being born and the shop will open again soon — stay tuned.
+      Each original painting is one of a kind, ships from Vancouver, and arrives with a certificate of authenticity.
+    </div>
+
+    <div class="product-grid">
+
+      <div class="art-card fade-up" onclick="openModal('Eve', '$549 CAD', 'https://apekshadarbari.com/cdn/shop/files/IMG_0434_2.jpg?v=1759109535', 'Abstract acrylic pour on canvas.')">
+        <div class="art-card-image">
+          <img src="https://apekshadarbari.com/cdn/shop/files/IMG_0434_2.jpg?v=1759109535" alt="Eve" loading="lazy" />
+          <div class="art-card-overlay"><span>View work</span></div>
+        </div>
+        <div class="art-card-info">
+          <p class="art-card-name">Eve</p>
+          <div class="art-card-meta">
+            <span class="art-card-price">$549 CAD</span>
+            <span class="art-card-status">Available</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="art-card fade-up" onclick="openModal('Guilded Blues', '$679 CAD', 'https://apekshadarbari.com/cdn/shop/files/IMG_0503.jpg?v=1759107664', 'Abstract acrylic pour on canvas.')">
+        <div class="art-card-image">
+          <img src="https://apekshadarbari.com/cdn/shop/files/IMG_0503.jpg?v=1759107664" alt="Guilded Blues" loading="lazy" />
+          <div class="art-card-overlay"><span>View work</span></div>
+        </div>
+        <div class="art-card-info">
+          <p class="art-card-name">Guilded Blues</p>
+          <div class="art-card-meta">
+            <span class="art-card-price">$679 CAD</span>
+            <span class="art-card-status">Available</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="art-card fade-up" onclick="openModal('Homesick', '$649 CAD', 'https://apekshadarbari.com/cdn/shop/files/IMG_0405_2.jpg?v=1759109790', 'Abstract acrylic pour on canvas.')">
+        <div class="art-card-image">
+          <img src="https://apekshadarbari.com/cdn/shop/files/IMG_0405_2.jpg?v=1759109790" alt="Homesick" loading="lazy" />
+          <div class="art-card-overlay"><span>View work</span></div>
+        </div>
+        <div class="art-card-info">
+          <p class="art-card-name">Homesick</p>
+          <div class="art-card-meta">
+            <span class="art-card-price">$649 CAD</span>
+            <span class="art-card-status">Available</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="art-card fade-up" onclick="openModal('Beach', '$679 CAD', 'https://apekshadarbari.com/cdn/shop/files/IMG_0450_2.jpg?v=1759109820', 'Abstract acrylic pour on canvas.')">
+        <div class="art-card-image">
+          <img src="https://apekshadarbari.com/cdn/shop/files/IMG_0450_2.jpg?v=1759109820" alt="Beach" loading="lazy" />
+          <div class="art-card-overlay"><span>View work</span></div>
+        </div>
+        <div class="art-card-info">
+          <p class="art-card-name">Beach</p>
+          <div class="art-card-meta">
+            <span class="art-card-price">$679 CAD</span>
+            <span class="art-card-status">Available</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="art-card fade-up" onclick="openModal('Permission', '$579 CAD', 'https://apekshadarbari.com/cdn/shop/files/IMG_0584.jpg?v=1759109113', 'Abstract acrylic pour on canvas.')">
+        <div class="art-card-image">
+          <img src="https://apekshadarbari.com/cdn/shop/files/IMG_0584.jpg?v=1759109113" alt="Permission" loading="lazy" />
+          <div class="art-card-overlay"><span>View work</span></div>
+        </div>
+        <div class="art-card-info">
+          <p class="art-card-name">Permission</p>
+          <div class="art-card-meta">
+            <span class="art-card-price">$579 CAD</span>
+            <span class="art-card-status">Available</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="art-card fade-up" onclick="openModal('Ether', '$479 CAD', 'https://apekshadarbari.com/cdn/shop/files/IMG_0608.jpg?v=1759110552', 'Abstract acrylic pour on canvas.')">
+        <div class="art-card-image">
+          <img src="https://apekshadarbari.com/cdn/shop/files/IMG_0608.jpg?v=1759110552" alt="Ether" loading="lazy" />
+          <div class="art-card-overlay"><span>View work</span></div>
+        </div>
+        <div class="art-card-info">
+          <p class="art-card-name">Ether</p>
+          <div class="art-card-meta">
+            <span class="art-card-price">$479 CAD</span>
+            <span class="art-card-status">Available</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="art-card fade-up" onclick="openModal('Ripples', '$569 CAD', 'https://apekshadarbari.com/cdn/shop/files/IMG_0411.jpg?v=1759109710', 'Abstract acrylic pour on canvas.')">
+        <div class="art-card-image">
+          <img src="https://apekshadarbari.com/cdn/shop/files/IMG_0411.jpg?v=1759109710" alt="Ripples" loading="lazy" />
+          <div class="art-card-overlay"><span>View work</span></div>
+        </div>
+        <div class="art-card-info">
+          <p class="art-card-name">Ripples</p>
+          <div class="art-card-meta">
+            <span class="art-card-price">$569 CAD</span>
+            <span class="art-card-status">Available</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="art-card fade-up" onclick="openModal('Flux', '$479 CAD', 'https://apekshadarbari.com/cdn/shop/files/IMG_0500.jpg?v=1759110563', 'Abstract acrylic pour on canvas.')">
+        <div class="art-card-image">
+          <img src="https://apekshadarbari.com/cdn/shop/files/IMG_0500.jpg?v=1759110563" alt="Flux" loading="lazy" />
+          <div class="art-card-overlay"><span>View work</span></div>
+        </div>
+        <div class="art-card-info">
+          <p class="art-card-name">Flux</p>
+          <div class="art-card-meta">
+            <span class="art-card-price">$479 CAD</span>
+            <span class="art-card-status">Available</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="max-width: var(--max-width); margin: 3rem auto 0; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
+      ✦ Please pay close attention to the dimensions specified for each artwork.
+      Smartist was used to create some product images to help visualize scale and perspective in interior spaces.
+    </p>
+  </section>
+
+  <!-- Art detail modal -->
+  <div class="art-detail-modal" id="artModal" role="dialog" aria-modal="true">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    <div class="modal-inner">
+      <div class="modal-image">
+        <img id="modal-img" src="" alt="" />
+      </div>
+      <div class="modal-info">
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="modal-price" id="modal-price"></p>
+        <p class="modal-desc" id="modal-desc"></p>
+        <div class="modal-meta">
+          Medium: Abstract acrylic pour on canvas<br>
+          Location: Vancouver, BC<br>
+          Certificate of authenticity included
+        </div>
+        <a href="../pages/contact.html" class="btn-primary" style="display: inline-block; text-align: center;">Enquire about this piece</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="email-strip">
+    <span class="section-eyebrow">Join the circle</span>
+    <h2 class="section-title">Be first to know when<br><em>new work drops</em></h2>
+    <p>New collections, studio dispatches, and the occasional behind-the-scenes.</p>
+    <form class="email-form" onsubmit="return false;">
+      <input type="email" placeholder="your@email.com" aria-label="Your email address" />
+      <button type="submit">Come in</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-name">Apeksha Darbari | Art & Living</p>
+        <p class="footer-brand-tagline">"You were not meant to run on fumes. Come, sit with me and let's tend to your cup."</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <ul class="footer-links">
+          <li><a href="../pages/shop.html">Art Shop</a></li>
+          <li><a href="../pages/workshops.html">Workshops</a></li>
+          <li><a href="../pages/about.html">The Artist</a></li>
+          <li><a href="../pages/poetry.html">Rhymes & Ramblings</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Connect</p>
+        <ul class="footer-links">
+          <li><a href="../pages/contact.html">Say Hi</a></li>
+          <li><a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/apekshadarbari" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Policies</p>
+        <ul class="footer-links">
+          <li><a href="../pages/privacy.html">Privacy Policy</a></li>
+          <li><a href="../pages/refunds.html">Refund Policy</a></li>
+          <li><a href="../pages/shipping.html">Shipping</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Apeksha Darbari | Art & Living · Vancouver, BC</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/apekshadarbari" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    function openModal(title, price, img, desc) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-price').textContent = price;
+      document.getElementById('modal-img').src = img;
+      document.getElementById('modal-img').alt = title;
+      document.getElementById('modal-desc').textContent = desc;
+      document.getElementById('artModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('artModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('artModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+</html>
