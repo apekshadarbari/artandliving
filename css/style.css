@@ -780,14 +780,16 @@ footer {
 
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
-  padding: 11rem 3rem 5rem;
-  background: var(--slate);
+  padding: 13rem 3rem 6rem;
+  background: var(--midnight);
   max-width: 100%;
 }
 
 .page-hero-inner { max-width: var(--max-width); margin: 0 auto; }
 
-.page-hero .section-title { font-size: clamp(2.5rem, 5vw, 4rem); }
+.page-hero .section-eyebrow { color: var(--clay); }
+.page-hero .section-title { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--slate); }
+.page-hero .section-title em { color: var(--clay); }
 
 /* ── PRODUCT PAGE ── */
 .product-grid {
