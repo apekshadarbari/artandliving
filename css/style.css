@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@300;400;700&display=swap');
 
 :root {
   --teal: #176572;
@@ -13,8 +13,8 @@
   --white: #fdfaf8;
   --text: #2a2a2a;
   --text-muted: #6b6b6b;
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', sans-serif;
   --max-width: 1200px;
   --section-pad: 6rem 2rem;
 }
@@ -114,17 +114,42 @@ nav.scrolled { padding: 1rem 3rem; }
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding-top: 80px;
+  position: relative;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+  transition: transform 8s ease;
+}
+
+.hero:hover .hero-bg { transform: scale(1); }
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(20, 16, 12, 0.72) 0%,
+    rgba(20, 16, 12, 0.45) 60%,
+    rgba(20, 16, 12, 0.2) 100%
+  );
+}
+
 .hero-text {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 4rem 5rem 5rem;
+  padding: 8rem 5rem 6rem;
+  max-width: 680px;
 }
 
 .hero-eyebrow {
@@ -138,24 +163,24 @@ nav.scrolled { padding: 1rem 3rem; }
 
 .hero-title {
   font-size: clamp(3rem, 5vw, 5rem);
-  font-weight: 300;
-  color: var(--midnight);
-  line-height: 1.08;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.1;
   margin-bottom: 2rem;
 }
 
 .hero-title em {
   font-style: italic;
-  color: var(--teal);
+  color: var(--slate);
 }
 
 .hero-tagline {
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 300;
+  font-size: 1.2rem;
+  font-weight: 400;
   font-style: italic;
-  color: var(--text-muted);
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
   margin-bottom: 3rem;
   max-width: 480px;
   border-left: 2px solid var(--clay);
@@ -184,48 +209,28 @@ nav.scrolled { padding: 1rem 3rem; }
 .btn-secondary {
   display: inline-block;
   background: transparent;
-  color: var(--midnight);
+  color: #fff;
   padding: 0.9rem 2rem;
   font-size: 0.82rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 400;
   border-radius: 2px;
-  border: 1px solid var(--midnight);
+  border: 1px solid rgba(255,255,255,0.5);
   transition: all 0.2s;
   font-family: var(--font-body);
   cursor: pointer;
 }
 .btn-secondary:hover { border-color: var(--clay); color: var(--clay); transform: translateY(-1px); }
 
-.hero-image {
-  position: relative;
-  overflow: hidden;
-  background: var(--slate);
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-.hero-image-overlay {
-  position: absolute;
-  bottom: 2rem; left: 2rem;
-  background: rgba(253, 250, 248, 0.9);
-  padding: 1.2rem 1.5rem;
-  max-width: 260px;
-}
-
-.hero-image-overlay p {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1rem;
+/* btn-secondary outside hero reverts to dark */
+section:not(.hero) .btn-secondary,
+footer .btn-secondary {
   color: var(--midnight);
-  line-height: 1.5;
+  border-color: var(--midnight);
 }
+section:not(.hero) .btn-secondary:hover,
+footer .btn-secondary:hover { border-color: var(--clay); color: var(--clay); }
 
 /* ── SECTION SHARED ── */
 section { padding: var(--section-pad); }
@@ -779,9 +784,8 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
   nav { padding: 1.25rem 1.5rem; }
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-text { padding: 4rem 2rem 3rem; order: 2; }
-  .hero-image { min-height: 50vh; order: 1; }
+  .hero { min-height: 90vh; }
+  .hero-text { padding: 7rem 2.5rem 4rem; max-width: 100%; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-image-accent { display: none; }
   .about-text { padding-right: 0; }
