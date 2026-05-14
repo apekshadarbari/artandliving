@@ -100,7 +100,7 @@ nav.scrolled {
 .nav-links a:hover::after { width: 100%; }
 
 .nav-cta {
-  background: var(--teal);
+  background: var(--clay);
   color: var(--white) !important;
   padding: 0.6rem 1.4rem;
   border-radius: 2px;
@@ -108,7 +108,7 @@ nav.scrolled {
   letter-spacing: 0.1em !important;
   transition: background 0.2s !important;
 }
-.nav-cta:hover { background: var(--teal-mid) !important; color: var(--white) !important; }
+.nav-cta:hover { background: var(--midnight) !important; color: var(--white) !important; }
 .nav-cta::after { display: none !important; }
 
 .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
@@ -139,9 +139,9 @@ nav.scrolled {
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(20, 16, 12, 0.72) 0%,
-    rgba(20, 16, 12, 0.45) 60%,
-    rgba(20, 16, 12, 0.2) 100%
+    rgba(20, 16, 12, 0.42) 0%,
+    rgba(20, 16, 12, 0.22) 60%,
+    rgba(20, 16, 12, 0.05) 100%
   );
 }
 
@@ -194,7 +194,7 @@ nav.scrolled {
 
 .btn-primary {
   display: inline-block;
-  background: var(--teal);
+  background: var(--midnight);
   color: var(--white);
   padding: 0.9rem 2rem;
   font-size: 0.82rem;
@@ -207,7 +207,7 @@ nav.scrolled {
   border: none;
   cursor: pointer;
 }
-.btn-primary:hover { background: var(--teal-mid); transform: translateY(-1px); }
+.btn-primary:hover { background: var(--clay); transform: translateY(-1px); }
 
 .btn-secondary {
   display: inline-block;
@@ -255,7 +255,7 @@ section { padding: var(--section-pad); }
   font-weight: 300;
 }
 
-.section-title em { font-style: italic; color: var(--teal); }
+.section-title em { font-style: italic; color: var(--clay); }
 
 .section-body {
   font-size: 1.05rem;
@@ -321,11 +321,11 @@ section { padding: var(--section-pad); }
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.05rem;
-  color: var(--teal);
+  color: var(--midnight);
   line-height: 1.9;
   margin: 2rem 0;
   padding-left: 1.5rem;
-  border-left: 2px solid var(--teal-light);
+  border-left: 2px solid var(--slate-dark);
 }
 
 /* ── ART SHOP ── */
@@ -360,7 +360,7 @@ section { padding: var(--section-pad); }
   position: relative;
   overflow: hidden;
   aspect-ratio: 4/5;
-  background: var(--teal-light);
+  background: var(--slate);
 }
 
 .art-card-image img {
@@ -446,11 +446,11 @@ section { padding: var(--section-pad); }
   position: absolute;
   top: 0; left: 0;
   width: 3px; height: 0;
-  background: var(--teal);
+  background: var(--clay);
   transition: height 0.4s ease;
 }
 
-.workshop-card:hover { border-color: var(--teal-light); }
+.workshop-card:hover { border-color: var(--slate-dark); }
 .workshop-card:hover::before { height: 100%; }
 
 .workshop-tag {
@@ -458,8 +458,8 @@ section { padding: var(--section-pad); }
   font-size: 0.68rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--teal);
-  border: 1px solid var(--teal-light);
+  color: var(--midnight);
+  border: 1px solid var(--slate-dark);
   padding: 0.3rem 0.8rem;
   border-radius: 2px;
   margin-bottom: 1.5rem;
@@ -610,10 +610,10 @@ section { padding: var(--section-pad); }
 }
 
 .email-form input::placeholder { color: var(--text-muted); }
-.email-form input:focus { border-color: var(--teal); }
+.email-form input:focus { border-color: var(--midnight); }
 
 .email-form button {
-  background: var(--teal);
+  background: var(--midnight);
   color: var(--white);
   border: none;
   padding: 0.9rem 1.75rem;
@@ -627,7 +627,7 @@ section { padding: var(--section-pad); }
   border-radius: 0;
 }
 
-.email-form button:hover { background: var(--teal-mid); }
+.email-form button:hover { background: var(--clay); }
 
 /* ── CONTACT ── */
 .contact { background: var(--white); }
@@ -668,7 +668,7 @@ section { padding: var(--section-pad); }
 }
 
 .contact-form-group input:focus,
-.contact-form-group textarea:focus { border-color: var(--teal); }
+.contact-form-group textarea:focus { border-color: var(--midnight); }
 
 .contact-form-group textarea { min-height: 140px; resize: vertical; }
 
@@ -767,7 +767,7 @@ footer {
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
   padding: 8rem 3rem 4rem;
-  background: var(--teal-light);
+  background: var(--clay-light);
   max-width: 100%;
 }
 
