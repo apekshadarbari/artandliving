@@ -67,7 +67,7 @@ nav.nav-light {
   border-bottom: 1px solid rgba(229, 124, 95, 0.12);
 }
 
-nav.nav-light .nav-logo img { content: url('../assets/branding/01_Logo full/apeksha-darbari_logo-full_colour.svg'); }
+nav.nav-light .nav-logo img { content: url('../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_midnight.svg'); }
 nav.nav-light .nav-links a { color: var(--midnight); }
 nav.nav-light .nav-links a:hover { color: var(--clay); }
 nav.nav-light .nav-cta { color: var(--midnight) !important; border-color: rgba(53,57,76,0.4) !important; }
@@ -716,11 +716,11 @@ footer {
   margin-bottom: 3rem;
 }
 
-.footer-brand-name {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  color: var(--slate);
-  margin-bottom: 1rem;
+.footer-emblem {
+  height: 72px;
+  width: auto;
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
 }
 
 .footer-brand-tagline {
