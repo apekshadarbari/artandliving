@@ -61,15 +61,11 @@ nav.scrolled {
   backdrop-filter: blur(12px);
 }
 
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: var(--slate);
-  letter-spacing: 0.02em;
+.nav-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
 }
-
-.nav-logo span { color: var(--clay); }
 
 .nav-links {
   display: flex;
@@ -100,15 +96,16 @@ nav.scrolled {
 .nav-links a:hover::after { width: 100%; }
 
 .nav-cta {
-  background: var(--clay);
-  color: var(--white) !important;
-  padding: 0.6rem 1.4rem;
+  background: transparent;
+  color: var(--slate) !important;
+  padding: 0.55rem 1.4rem;
   border-radius: 2px;
+  border: 1px solid rgba(242, 224, 215, 0.6) !important;
   font-size: 0.78rem !important;
   letter-spacing: 0.1em !important;
-  transition: background 0.2s !important;
+  transition: background 0.2s, border-color 0.2s !important;
 }
-.nav-cta:hover { background: var(--midnight) !important; color: var(--white) !important; }
+.nav-cta:hover { background: rgba(242,224,215,0.12) !important; border-color: var(--slate) !important; }
 .nav-cta::after { display: none !important; }
 
 .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
@@ -207,7 +204,7 @@ nav.scrolled {
   border: none;
   cursor: pointer;
 }
-.btn-primary:hover { background: var(--clay); transform: translateY(-1px); }
+.btn-primary:hover { background: #4a4f66; transform: translateY(-1px); }
 
 .btn-secondary {
   display: inline-block;
@@ -627,7 +624,7 @@ section { padding: var(--section-pad); }
   border-radius: 0;
 }
 
-.email-form button:hover { background: var(--clay); }
+.email-form button:hover { background: #4a4f66; }
 
 /* ── CONTACT ── */
 .contact { background: var(--white); }
