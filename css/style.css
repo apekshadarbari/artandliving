@@ -69,8 +69,8 @@ nav.nav-light .nav-cta:hover { background: rgba(53,57,76,0.08) !important; borde
 nav.nav-light .hamburger span { background: var(--midnight); }
 
 .nav-logo img {
-  height: 72px;
-  width: auto;
+  height: auto;
+  width: 220px;
   display: block;
 }
 
@@ -771,7 +771,7 @@ footer {
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
   padding: 8rem 3rem 4rem;
-  background: var(--teal-light);
+  background: var(--slate);
   max-width: 100%;
 }
 
