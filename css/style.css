@@ -68,10 +68,13 @@ nav.nav-light.scrolled .nav-links a:hover { color: var(--clay); }
 nav.scrolled .nav-cta { color: var(--slate) !important; border-color: rgba(242,224,215,0.5) !important; background: transparent !important; }
 nav.scrolled .nav-cta:hover { background: rgba(242,224,215,0.12) !important; border-color: var(--slate) !important; }
 nav.nav-light.scrolled .nav-cta { color: var(--slate) !important; border-color: rgba(242,224,215,0.5) !important; background: transparent !important; }
-nav.scrolled .nav-logo img { content: url('../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_slate.svg'); }
-nav.nav-light.scrolled .nav-logo img { content: url('../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_slate.svg'); }
+nav.scrolled .nav-logo img,
+nav.nav-light.scrolled .nav-logo img { content: url('../assets/branding/01_Logo full/apeksha-darbari_logo-full_colour-slate.svg'); }
 
-nav.nav-light .nav-logo img { content: url('../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_midnight.svg'); }
+/* To revert nav to logotype: replace the two logo URLs below with:
+   ../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_midnight.svg
+   and in nav.scrolled use: ../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_slate.svg */
+nav.nav-light .nav-logo img { content: url('../assets/branding/01_Logo full/apeksha-darbari_logo-full_colour.svg'); }
 nav.nav-light .nav-links a { color: var(--midnight); }
 nav.nav-light .nav-links a:hover { color: var(--clay); }
 nav.nav-light .nav-cta { color: var(--midnight) !important; border-color: rgba(53,57,76,0.4) !important; }
@@ -721,8 +724,8 @@ footer {
 }
 
 .footer-emblem {
-  height: 72px;
-  width: auto;
+  height: auto;
+  width: 200px;
   margin-bottom: 1.25rem;
   opacity: 0.9;
 }
