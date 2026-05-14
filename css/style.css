@@ -61,6 +61,12 @@ nav.scrolled {
   backdrop-filter: blur(12px);
 }
 
+nav.scrolled .nav-links a { color: var(--slate); }
+nav.scrolled .nav-links a:hover { color: var(--clay); }
+nav.scrolled .nav-cta { color: var(--slate) !important; border-color: rgba(242,224,215,0.5) !important; }
+nav.scrolled .nav-logo img { content: url('assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_slate.svg'); }
+nav.nav-light.scrolled .nav-logo img { content: url('../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_slate.svg'); }
+
 nav.nav-light .nav-logo img { content: url('../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_midnight.svg'); }
 nav.nav-light .nav-links a { color: var(--midnight); }
 nav.nav-light .nav-links a:hover { color: var(--clay); }
