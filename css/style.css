@@ -784,7 +784,7 @@ footer {
 /* ── PAGE HERO (inner pages) ── */
 .page-hero-nav-bg {
   background: var(--slate);
-  height: 6.5rem;
+  height: 9rem;
 }
 
 .page-hero {
