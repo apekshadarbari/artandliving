@@ -69,12 +69,12 @@ nav.scrolled .nav-cta { color: var(--slate) !important; border-color: rgba(242,2
 nav.scrolled .nav-cta:hover { background: rgba(242,224,215,0.12) !important; border-color: var(--slate) !important; }
 nav.nav-light.scrolled .nav-cta { color: var(--slate) !important; border-color: rgba(242,224,215,0.5) !important; background: transparent !important; }
 nav.scrolled .nav-logo img,
-nav.nav-light.scrolled .nav-logo img { content: url('../assets/branding/01_Logo full/apeksha-darbari_logo-full_colour-slate.svg'); }
+nav.nav-light.scrolled .nav-logo img { content: url('../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_slate.svg'); }
 
-/* To revert nav to logotype: replace the two logo URLs below with:
-   ../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_midnight.svg
-   and in nav.scrolled use: ../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_slate.svg */
-nav.nav-light .nav-logo img { content: url('../assets/branding/01_Logo full/apeksha-darbari_logo-full_colour.svg'); }
+/* To switch nav to full logo: replace the two logo URLs below with:
+   ../assets/branding/01_Logo full/apeksha-darbari_logo-full_colour.svg
+   and in nav.scrolled use: ../assets/branding/01_Logo full/apeksha-darbari_logo-full_colour-slate.svg */
+nav.nav-light .nav-logo img { content: url('../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_midnight.svg'); }
 nav.nav-light .nav-links a { color: var(--midnight); }
 nav.nav-light .nav-links a:hover { color: var(--clay); }
 nav.nav-light .nav-cta { color: var(--midnight) !important; border-color: rgba(53,57,76,0.4) !important; }
@@ -83,7 +83,7 @@ nav.nav-light .hamburger span { background: var(--midnight); }
 
 .nav-logo img {
   height: auto;
-  width: 260px;
+  width: 182px;
   display: block;
 }
 
@@ -782,8 +782,13 @@ footer {
 .social-links a:hover { color: var(--clay); }
 
 /* ── PAGE HERO (inner pages) ── */
+.page-hero-nav-bg {
+  background: var(--slate);
+  height: 6.5rem;
+}
+
 .page-hero {
-  padding: 13rem 3rem 6rem;
+  padding: 4rem 3rem 6rem;
   background: var(--midnight);
   max-width: 100%;
 }
