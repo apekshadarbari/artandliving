@@ -783,7 +783,7 @@ footer {
 
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
-  padding: 9rem 3rem 6rem;
+  padding: 12rem 3rem 6rem;
   background: var(--midnight);
   max-width: 100%;
 }
