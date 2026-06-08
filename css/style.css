@@ -226,6 +226,10 @@ nav.nav-light .hamburger span { background: var(--slate); }
 }
 .btn-primary:hover { background: #4a4f66; transform: translateY(-1px); }
 
+/* Join the circle button — clay variant inside email-strip */
+.email-strip .btn-primary { background: var(--clay); color: var(--white); border: none; }
+.email-strip .btn-primary:hover { background: #d4694d; }
+
 .btn-secondary {
   display: inline-block;
   background: transparent;
