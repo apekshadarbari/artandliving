@@ -69,7 +69,82 @@
       </div>
 
       <div class="fade-up">
-        <iframe src="https://forms.zohocloud.ca/apekshadarbari1/form/DropaMessage" width="100%" height="900px" frameborder="0" style="border:none;"></iframe>
+        <form class="contact-form" id="contactForm" novalidate>
+
+          <div class="contact-form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+            <div class="contact-form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="Name_First" placeholder="Your first name" required />
+            </div>
+            <div class="contact-form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="Name_Last" placeholder="Your last name" required />
+            </div>
+          </div>
+
+          <div class="contact-form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" placeholder="your@email.com" required />
+          </div>
+
+          <div class="contact-form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="SingleLine" placeholder="Workshop, artwork, just saying hi..." required />
+          </div>
+
+          <div class="contact-form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="MultiLine" placeholder="Say what you need to say..." required></textarea>
+          </div>
+
+          <div class="contact-form-group">
+            <label for="howFound">How did you learn about me?</label>
+            <select id="howFound" name="Dropdown" required style="width:100%;padding:0.85rem 1rem;border:1px solid var(--slate-dark);background:var(--white);font-family:var(--font-body);font-size:0.95rem;color:var(--midnight);border-radius:0;appearance:none;-webkit-appearance:none;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2335394c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;">
+              <option value="" disabled selected>Select an option</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Online Search">Online Search</option>
+              <option value="Workshop or Events">Workshop or Events</option>
+              <option value="Word of Mouth or Local Networks">Word of Mouth or Local Networks</option>
+              <option value="LinkedIn">LinkedIn</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div id="formMessage" style="display:none;padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:0.95rem;line-height:1.6;"></div>
+
+          <button type="submit" class="btn-primary" id="submitBtn" style="width:100%;text-align:center;">Send it</button>
+
+        </form>
+
+        <script>
+          document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const btn = document.getElementById('submitBtn');
+            const msg = document.getElementById('formMessage');
+            const data = new URLSearchParams(new FormData(form));
+
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
+            msg.style.display = 'none';
+
+            try {
+              await fetch(
+                'https://forms.zohopublic.ca/apekshadarbari1/form/DropaMessage/formperma/eM_ftiXcXii4vgq50UXvR4qFKTlXoKP-2e76c7maihk',
+                { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data }
+              );
+              form.reset();
+              msg.style.cssText = 'display:block;background:#f0f7f4;border-left:3px solid #4a9b7f;color:#2a5a48;padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:0.95rem;line-height:1.6;';
+              msg.textContent = 'Thank you — I read every message myself and will be in touch within a few days.';
+              btn.textContent = 'Sent';
+            } catch(err) {
+              msg.style.cssText = 'display:block;background:#fdf3f0;border-left:3px solid #c0614a;color:#7a2e20;padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:0.95rem;line-height:1.6;';
+              msg.innerHTML = 'Something went wrong — please email me directly at <a href="mailto:hello@apekshadarbari.com" style="color:inherit;text-decoration:underline;">hello@apekshadarbari.com</a>';
+              btn.textContent = 'Send it';
+              btn.disabled = false;
+            }
+          });
+        </script>
       </div>
 
     </div>
