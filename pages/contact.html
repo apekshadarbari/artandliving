@@ -69,7 +69,9 @@
       </div>
 
       <div class="fade-up">
-        <form class="contact-form" action="mailto:hello@apekshadarbari.com" method="POST" enctype="text/plain">
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+
+          <input type="hidden" name="form-name" value="contact" />
 
           <div class="contact-form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
             <div class="contact-form-group">
