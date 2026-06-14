@@ -9,20 +9,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <style>
-    .about-story-grid {
+    .about-split-grid {
       max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1.5fr 1fr;
-      gap: 4rem;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 5rem;
       align-items: start;
     }
     @media (max-width: 960px) {
-      .about-story-grid {
+      .about-split-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
       }
-      .about-story-grid .sticky-img { position: static; }
+      .about-split-grid .sticky-img { position: static; }
     }
   </style>
 </head>
@@ -55,56 +55,57 @@
 
   <!-- Section 1 — Poetry intro -->
   <section style="background: var(--slate); padding: var(--section-pad);">
-    <div style="max-width: 760px; margin: 0 auto;" class="fade-up">
-      <h2 class="section-title" style="margin-bottom: 2rem;">In a land far, far away...</h2>
-
-      <p class="section-body" style="margin-bottom: 1.5rem;">
-        In a land far, far away, over a quarter of a century ago, a little girl was not just
-        discovering her love for writing but more importantly finding a channel, a safe space to
-        say what she couldn&#39;t speak. She&#39;d scribble little poems and musings at the back of all
-        her notebooks and diaries, which she had many. She started journaling when she was eight.
-        Odd, considering no one in her family did.
-      </p>
-      <p class="section-body" style="margin-bottom: 1.5rem;">
-        She knew she was odd. She was sure by now.
-      </p>
-      <p class="section-body" style="margin-bottom: 1.5rem;">
-        She was also an avid reader, always hungry to read more (bookstores are still like
-        Disneyland to me! And stationery stores! And art supplies stores! I digress). It was how
-        she travelled many lands and lived many lives.
-      </p>
-      <p class="section-body" style="margin-bottom: 1.5rem;">
-        Once she left home for her engineering degree, at age 17, her writing practice was never
-        the same again. Neither was her reading. The girl who never not had a book in her hand
-        went months without reading a page. For a long time, there were hardly any environments
-        that nurtured creativity.
-      </p>
-      <p class="section-body" style="margin-bottom: 1.5rem;">
-        But she never stopped scribbling her poems and ramblings. The backs of her now many,
-        many, many notebooks and diaries still look much the same. But she also writes in the
-        front now :)
-      </p>
-      <p class="section-body" style="margin-bottom: 2.5rem;">
-        Writing poetry was the first art form she ever practiced and now she&#39;s determined to
-        write more, once again.
-      </p>
-
-      <a href="../pages/poetry.html" class="btn-primary">Read my poetry</a>
-    </div>
-  </section>
-
-  <!-- Section 2 — About Apeksha -->
-  <section style="background: var(--midnight); padding: var(--section-pad);">
-    <div class="about-story-grid">
-
+    <div class="about-split-grid">
       <div class="fade-up sticky-img" style="position: sticky; top: 4rem;">
         <img
           src="../assets/20250921_photoshoot_apeksha_darbari-04.jpeg"
           alt="Apeksha Darbari"
           loading="lazy"
-          style="width: 100%; object-fit: contain; background: transparent; display: block;"
+          style="width: 100%; object-fit: contain; display: block;"
         />
       </div>
+      <div class="fade-up">
+        <h2 class="section-title" style="margin-bottom: 2rem;">In a land far, far away...</h2>
+
+        <p class="section-body" style="margin-bottom: 1.5rem;">
+          In a land far, far away, over a quarter of a century ago, a little girl was not just
+          discovering her love for writing but more importantly finding a channel, a safe space to
+          say what she couldn&#39;t speak. She&#39;d scribble little poems and musings at the back of all
+          her notebooks and diaries, which she had many. She started journaling when she was eight.
+          Odd, considering no one in her family did.
+        </p>
+        <p class="section-body" style="margin-bottom: 1.5rem;">
+          She knew she was odd. She was sure by now.
+        </p>
+        <p class="section-body" style="margin-bottom: 1.5rem;">
+          She was also an avid reader, always hungry to read more (bookstores are still like
+          Disneyland to me! And stationery stores! And art supplies stores! I digress). It was how
+          she travelled many lands and lived many lives.
+        </p>
+        <p class="section-body" style="margin-bottom: 1.5rem;">
+          Once she left home for her engineering degree, at age 17, her writing practice was never
+          the same again. Neither was her reading. The girl who never not had a book in her hand
+          went months without reading a page. For a long time, there were hardly any environments
+          that nurtured creativity.
+        </p>
+        <p class="section-body" style="margin-bottom: 1.5rem;">
+          But she never stopped scribbling her poems and ramblings. The backs of her now many,
+          many, many notebooks and diaries still look much the same. But she also writes in the
+          front now :)
+        </p>
+        <p class="section-body" style="margin-bottom: 2.5rem;">
+          Writing poetry was the first art form she ever practiced and now she&#39;s determined to
+          write more, once again.
+        </p>
+
+        <a href="../pages/poetry.html" class="btn-primary">Read my poetry</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 — About Apeksha -->
+  <section style="background: var(--midnight); padding: var(--section-pad);">
+    <div class="about-split-grid">
 
       <div class="fade-up">
         <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
@@ -174,8 +175,8 @@
 
       <div class="fade-up sticky-img" style="position: sticky; top: 4rem;">
         <img
-          src="../assets/20250921_photoshoot_apeksha_darbari-03.jpg"
-          alt="Apeksha Darbari"
+          src="../assets/20250921_photoshoot_apeksha_darbari-14.jpeg"
+          alt="Apeksha Darbari at the canvas"
           loading="lazy"
           style="width: 100%; object-fit: contain; background: transparent; display: block;"
         />
