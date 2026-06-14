@@ -8,6 +8,23 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    .about-story-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 960px) {
+      .about-story-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .about-story-grid .sticky-img { position: static; }
+    }
+  </style>
 </head>
 <body>
 
@@ -78,7 +95,16 @@
 
   <!-- Section 2 — About Apeksha -->
   <section style="background: var(--midnight); padding: var(--section-pad);">
-    <div style="max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
+    <div class="about-story-grid">
+
+      <div class="fade-up sticky-img" style="position: sticky; top: 4rem;">
+        <img
+          src="../assets/20250921_photoshoot_apeksha_darbari-04.jpeg"
+          alt="Apeksha Darbari"
+          loading="lazy"
+          style="width: 100%; object-fit: contain; background: transparent; display: block;"
+        />
+      </div>
 
       <div class="fade-up">
         <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
@@ -146,7 +172,7 @@
         <a href="../pages/workshops.html" class="btn-primary">Work with me</a>
       </div>
 
-      <div class="fade-up" style="position: sticky; top: 4rem;">
+      <div class="fade-up sticky-img" style="position: sticky; top: 4rem;">
         <img
           src="../assets/20250921_photoshoot_apeksha_darbari-03.jpg"
           alt="Apeksha Darbari"
