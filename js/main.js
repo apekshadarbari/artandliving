@@ -182,9 +182,9 @@ contactForm?.addEventListener('submit', (e) => {
   popup.innerHTML = `
     <button id="mail-popup-minimize" aria-label="Minimise">&#x2715;</button>
     <span id="mail-popup-eyebrow">Join the circle</span>
-    <h3>Letters from<br>the studio</h3>
-    <p>On creativity, neurodivergence, what women carry, and what we are building together. No noise. Just what matters.</p>
-    <a id="mail-popup-cta" href="${FLODESK_URL}" target="_blank" rel="noopener noreferrer">Join the circle</a>
+    <h3>A gift, your choice.<br>Then letters from the studio.</h3>
+    <p>Join the circle and choose one of two paid offerings, complimentary, as a quiet thank you for being here. What follows: letters on creativity, neurodivergence, what women carry, upcoming workshops, resources, and what we are building together — sent when there is something worth saying.</p>
+    <a id="mail-popup-cta" href="${FLODESK_URL}" target="_blank" rel="noopener noreferrer">Join and choose your gift</a>
   `;
 
   // Build minimised tab
