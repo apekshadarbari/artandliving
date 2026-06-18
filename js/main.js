@@ -1,3 +1,18 @@
+// ── GOOGLE ANALYTICS 4 ──
+// Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com
+(function () {
+  var GA_ID = 'G-XXXXXXXXXX';
+  if (GA_ID === 'G-XXXXXXXXXX') return; // Remove this line once you've added your real ID
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', GA_ID);
+})();
+
 // Nav scroll behaviour
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
