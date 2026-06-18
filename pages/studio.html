@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From the Studio · Apeksha Darbari | Art & Living</title>
+  <meta name="description" content="Letters, prompts, and permission slips from Apeksha Darbari — small things made with care, for the moments when you need something to hold." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    .studio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: var(--max-width);
+      margin: 3rem auto 0;
+    }
+    .studio-card {
+      background: var(--white);
+      padding: 2rem;
+      border-top: 3px solid var(--clay);
+      display: flex;
+      flex-direction: column;
+    }
+    .studio-card-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .studio-card-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--midnight);
+      margin-bottom: 0.85rem;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+    .studio-card-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+    .studio-card-price {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--midnight);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    .btn-clay {
+      display: inline-block;
+      background: var(--clay);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn-clay:hover { background: #d4694d; transform: translateY(-1px); }
+    @media (max-width: 768px) {
+      .studio-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-light">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_slate.svg" alt="Apeksha Darbari | Art &amp; Living" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="../pages/workshops.html">Workshops</a></li>
+      <li><a href="../pages/about.html">The Artist</a></li>
+      <li><a href="../pages/studio.html">From the Studio</a></li>
+      <li><a href="../pages/poetry.html">Rhymes &amp; Ramblings</a></li>
+      <li><a href="../pages/contact.html">Say Hi</a></li>
+      <li><a href="../pages/workshops.html" class="nav-cta">Refill Your Cup</a></li>
+    </ul>
+    <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="section-eyebrow">From the Studio</span>
+      <h1 class="section-title" style="font-size: clamp(2.5rem, 5vw, 4.5rem);">
+        Made for the woman<br>doing the <em>quiet work</em>
+      </h1>
+      <p style="font-family: var(--font-display); font-style: italic; font-size: 1.1rem; color: var(--text-muted); max-width: 560px; line-height: 1.85; margin-top: 1.5rem;">
+        Letters, prompts, and permission slips. Small things made with care, for the moments when you need something to hold.
+      </p>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section style="background: var(--slate); padding: var(--section-pad);">
+    <div class="studio-grid">
+
+      <div class="studio-card fade-up">
+        <span class="studio-card-tag">A letter</span>
+        <h2 class="studio-card-title">A love letter to a sister. I see you.</h2>
+        <p class="studio-card-desc">For the woman who is fine, actually. A letter that sees (and says) what nobody else seems to notice.</p>
+        <p class="studio-card-price">CA$11.99</p>
+        <a href="https://stan.store/apekshadarbari/p/a-love-letter-to-a-sister-i-see-you" target="_blank" rel="noopener noreferrer" class="btn-clay">Send me the letter</a>
+      </div>
+
+      <div class="studio-card fade-up">
+        <span class="studio-card-tag">Six permission slips</span>
+        <h2 class="studio-card-title">You Have Permission</h2>
+        <p class="studio-card-desc">Six Permission Slips for the woman who forgot she was always allowed.</p>
+        <p class="studio-card-price">CA$15.99</p>
+        <a href="https://stan.store/apekshadarbari/p/you-have-permission" target="_blank" rel="noopener noreferrer" class="btn-clay">Get the Permission Slips</a>
+      </div>
+
+      <div class="studio-card fade-up">
+        <span class="studio-card-tag">A journaling deck</span>
+        <h2 class="studio-card-title">How are you making today?</h2>
+        <p class="studio-card-desc">Eleven invitations to meet yourself on the page, wherever that may be today.</p>
+        <p class="studio-card-price">CA$27.99</p>
+        <a href="https://stan.store/apekshadarbari/p/how-are-you-making-today" target="_blank" rel="noopener noreferrer" class="btn-clay">Get the Deck</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BUY ME A CHAI -->
+  <section style="background: var(--midnight); padding: var(--section-pad);">
+    <div style="max-width: 560px; margin: 0 auto; text-align: center;" class="fade-up">
+      <span class="section-eyebrow">Buy me a chai</span>
+      <h2 class="section-title" style="color: var(--slate); margin-bottom: 1.5rem;">If this work has meant<br><em style="color: var(--slate)">something to you.</em></h2>
+      <p class="section-body" style="color: rgba(242,224,215,0.7); margin-bottom: 2.5rem;">
+        No ask, no obligation. If something here landed, a chai is a quiet way to say so. Any amount. Entirely your call.
+      </p>
+      <a href="https://buy.stripe.com/00wdR82Mkg0a5Tm4lffAc00" target="_blank" rel="noopener noreferrer" class="btn-clay">Buy me a chai</a>
+    </div>
+  </section>
+
+  <!-- EMAIL STRIP -->
+  <section class="email-strip" style="background: var(--slate);">
+    <span class="section-eyebrow">Join the circle</span>
+    <h2 class="section-title" style="color: var(--midnight);">Stay in the <em style="color: var(--midnight)">conversation</em></h2>
+    <p style="color: rgba(53,57,76,0.75);">Letters from the studio on creativity, neurodivergence, and what we're building together.</p>
+    <a href="https://apekshadarbari.myflodesk.com/apekshadarbari-art-and-living" target="_blank" class="btn-primary">Join the circle</a>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <img src="../assets/branding/01_Logo full/apeksha-darbari_logo-full_colour-slate.svg" alt="Apeksha Darbari | Art &amp; Living" class="footer-emblem" />
+        <p class="footer-brand-tagline">"You were not meant to run on fumes. Come, sit with me and let's tend to your cup."</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <ul class="footer-links">
+          <li><a href="../pages/workshops.html">Workshops</a></li>
+          <li><a href="../pages/studio.html">From the Studio</a></li>
+          <li><a href="../pages/about.html">The Artist</a></li>
+          <li><a href="../pages/poetry.html">Rhymes &amp; Ramblings</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Connect</p>
+        <ul class="footer-links">
+          <li><a href="../pages/contact.html">Say Hi</a></li>
+          <li><a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/apekshadarbari" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Policies</p>
+        <ul class="footer-links">
+          <li><a href="../pages/privacy.html">Privacy Policy</a></li>
+          <li><a href="../pages/refunds.html">Refund Policy</a></li>
+          <li><a href="../pages/shipping.html">Shipping</a></li>
+          <li><a href="../pages/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Apeksha Darbari | Art &amp; Living · Vancouver, BC</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/apekshadarbari" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
