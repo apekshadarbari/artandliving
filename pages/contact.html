@@ -81,39 +81,40 @@
       </div>
 
       <div class="fade-up">
-        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
 
           <input type="hidden" name="form-name" value="contact" />
+          <p hidden><label>Leave blank: <input name="bot-field" /></label></p>
 
           <div class="contact-form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
             <div class="contact-form-group">
               <label for="firstName">First Name</label>
-              <input type="text" id="firstName" name="Name_First" placeholder="Your first name" required />
+              <input type="text" id="firstName" name="first_name" placeholder="Your first name" required />
             </div>
             <div class="contact-form-group">
               <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" name="Name_Last" placeholder="Your last name" required />
+              <input type="text" id="lastName" name="last_name" placeholder="Your last name" required />
             </div>
           </div>
 
           <div class="contact-form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="Email" placeholder="your@email.com" required />
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
           </div>
 
           <div class="contact-form-group">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="SingleLine" placeholder="Workshop, artwork, just saying hi..." required />
+            <input type="text" id="subject" name="subject" placeholder="Workshop, artwork, just saying hi..." required />
           </div>
 
           <div class="contact-form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="MultiLine" placeholder="Say what you need to say..." required></textarea>
+            <textarea id="message" name="message" placeholder="Say what you need to say..." required></textarea>
           </div>
 
           <div class="contact-form-group">
             <label for="howFound">How did you learn about me?</label>
-            <select id="howFound" name="Dropdown" required style="width:100%;padding:0.85rem 1rem;border:1px solid var(--slate-dark);background:var(--white);font-family:var(--font-body);font-size:0.95rem;color:var(--midnight);border-radius:0;appearance:none;-webkit-appearance:none;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2335394c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;">
+            <select id="howFound" name="referral_source" required style="width:100%;padding:0.85rem 1rem;border:1px solid var(--slate-dark);background:var(--white);font-family:var(--font-body);font-size:0.95rem;color:var(--midnight);border-radius:0;appearance:none;-webkit-appearance:none;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2335394c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;">
               <option value="" disabled selected>Select an option</option>
               <option value="Instagram">Instagram</option>
               <option value="Online Search">Online Search</option>

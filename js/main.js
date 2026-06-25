@@ -73,7 +73,18 @@ document.querySelectorAll('.email-form').forEach(form => {
 const contactForm = document.querySelector('.contact-form');
 contactForm?.addEventListener('submit', (e) => {
   e.preventDefault();
-  contactForm.innerHTML = '<p style="font-family: var(--font-display); font-style: italic; color: var(--teal); font-size: 1.2rem; padding: 2rem 0;">Your message landed. I\'ll be in touch.</p>';
+  const data = new URLSearchParams(new FormData(contactForm)).toString();
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: data
+  })
+    .then(() => {
+      contactForm.innerHTML = '<p style="font-family: var(--font-display); font-style: italic; color: var(--teal); font-size: 1.2rem; padding: 2rem 0;">Your message landed. I\'ll be in touch.</p>';
+    })
+    .catch(() => {
+      contactForm.innerHTML = '<p style="font-family: var(--font-display); font-style: italic; color: var(--clay); font-size: 1.2rem; padding: 2rem 0;">Something went wrong on my end. Please email me directly while I sort it out.</p>';
+    });
 });
 
 // ── MAILING LIST POPUP ──
