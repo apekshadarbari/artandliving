@@ -8,33 +8,57 @@
   </url>
 
   <url>
-    <loc>https://apekshadarbari.com/pages/workshops.html</loc>
+    <loc>https://apekshadarbari.com/pages/workshops</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://apekshadarbari.com/pages/studio.html</loc>
+    <loc>https://apekshadarbari.com/pages/studio</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://apekshadarbari.com/pages/about.html</loc>
+    <loc>https://apekshadarbari.com/pages/about</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://apekshadarbari.com/pages/poetry.html</loc>
+    <loc>https://apekshadarbari.com/pages/poetry</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://apekshadarbari.com/pages/contact.html</loc>
+    <loc>https://apekshadarbari.com/pages/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://apekshadarbari.com/pages/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://apekshadarbari.com/pages/refunds</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://apekshadarbari.com/pages/shipping</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://apekshadarbari.com/pages/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>

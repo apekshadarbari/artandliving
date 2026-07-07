@@ -1,0 +1,17 @@
+# Redirect old .html URLs (previously listed in sitemap.xml) to the clean
+# URLs actually used across the site. This stops Google from seeing two
+# copies of the same page and fixes the "Duplicate without user-selected
+# canonical" issue.
+
+/pages/workshops.html   /pages/workshops   301!
+/pages/studio.html      /pages/studio      301!
+/pages/about.html       /pages/about       301!
+/pages/poetry.html      /pages/poetry      301!
+/pages/contact.html     /pages/contact     301!
+/pages/privacy.html     /pages/privacy     301!
+/pages/refunds.html     /pages/refunds     301!
+/pages/shipping.html    /pages/shipping    301!
+/pages/terms.html       /pages/terms       301!
+
+# If you find other broken/old URLs in the Search Console "404" report,
+# send them over and I'll add matching redirect lines here.
