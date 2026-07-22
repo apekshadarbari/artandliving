@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Workshops · Apeksha Darbari | Art & Living</title>
-  <meta name="description" content="Refill Your Cup — therapeutic arts workshops for women. A room where nothing is required except showing up. Book the in-person preview, A Room Safe to Let It Go, for $95 CAD." />
+  <meta name="description" content="A Room Safe to Let It Go: a therapeutic arts preview workshop for women, Saturday, August 15 in Vancouver. Capped at 8 seats, $95 CAD, credited toward a future cohort." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Apeksha Darbari | Art &amp; Living" />
   <meta property="og:url" content="https://apekshadarbari.com/pages/workshops" />
   <link rel="canonical" href="https://apekshadarbari.com/pages/workshops" />
   <meta property="og:title" content="Workshops · Apeksha Darbari | Art &amp; Living" />
-  <meta property="og:description" content="Therapeutic arts workshops for women — online, no experience needed. A space to put it down, just for a while." />
+  <meta property="og:description" content="Therapeutic arts workshops for women, online and in person, no experience needed. A space to put it down, just for a while." />
   <meta property="og:image" content="https://apekshadarbari.com/assets/20250921_photoshoot_apeksha_darbari-11.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://apekshadarbari.com/assets/20250921_photoshoot_apeksha_darbari-11.jpg" />
@@ -30,6 +30,55 @@
       color: rgba(242, 224, 215, 0.75);
       line-height: 1.85;
       margin-top: 1.5rem;
+    }
+    .flyer-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 400;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .flyer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem 3rem;
+      margin-top: 1rem;
+    }
+    .flyer-label {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--slate);
+      margin-bottom: 0.6rem;
+    }
+    .flyer-block .section-body { color: rgba(242, 224, 215, 0.75); max-width: 100%; }
+    .flyer-details {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(242, 224, 215, 0.2);
+    }
+    .flyer-detail-row {
+      display: flex;
+      gap: 1.5rem;
+      padding: 0.75rem 0;
+      color: rgba(242, 224, 215, 0.85);
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+    .flyer-detail-label {
+      min-width: 110px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.75rem;
+      color: var(--clay);
+      padding-top: 0.15rem;
+    }
+    @media (max-width: 768px) {
+      .flyer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+      .flyer-detail-row { flex-direction: column; gap: 0.35rem; }
     }
     .testimonial-grid {
       display: grid;
@@ -154,57 +203,80 @@
     </div>
   </nav>
 
-  <div class="page-hero">
+  <!--
+    TEMPORARY TOP BLOCK: leads with the Aug 15 Founding Circle preview until that date has passed.
+    This is NOT the permanent page structure. Once August 15, 2026 passes, revert this to the
+    evergreen "#upcoming" section (see brief), which then holds whatever session is next
+    (a future preview, or the fall cohort) without another one-off rebuild.
+    The "Refill Your Cup" headline is intentionally not used here for now; it returns once this
+    block reverts to the evergreen framing below.
+  -->
+  <div class="page-hero" id="upcoming" style="padding-bottom: var(--section-pad);">
+    <a id="book"></a>
     <div class="page-hero-inner">
-      <span class="section-eyebrow">Therapeutic Arts Workshops</span>
+      <span class="section-eyebrow">A Therapeutic Arts Preview Workshop: Founding Circle</span>
       <h1 class="section-title" style="font-size: clamp(2.5rem, 5vw, 4.5rem);">
-        Refill <em>Your Cup</em>
+        A Room Safe <em>to Let It Go</em>
       </h1>
       <p class="workshop-hero-text">
-        A room built for the woman who has been the strong one for everyone else. Here there is nothing to hold, nothing to perform, and nothing you have to be good at. You make something with your hands, and something inside you gets to set itself down.
+        For the woman who is tired of constantly holding it all together.
       </p>
+
+      <span class="flyer-eyebrow">The Experience: Therapeutic Arts</span>
+      <p class="section-body" style="color: rgba(242,224,215,0.75); max-width: 640px;">
+        An intimate, guided experience for reconnecting with yourself and your body through creating art in community with other women. Two hours, just for you, to express something honest rather than make something pretty.
+      </p>
+
+      <div class="flyer-grid">
+        <div class="flyer-block fade-up">
+          <p class="flyer-label">The Host: Apeksha Darbari</p>
+          <p class="section-body">After years of burning out in tech and a late ADHD diagnosis, I found creating art as my compass back home. Now, I work as an artist and a certified Therapeutic Arts Practitioner, building the room I needed when I was running on fumes.</p>
+        </div>
+        <div class="flyer-block fade-up">
+          <p class="flyer-label">The Requirements</p>
+          <p class="section-body">None. Come as you are. No skills needed. Nothing to get right.</p>
+        </div>
+        <div class="flyer-block fade-up" style="grid-column: 1 / -1;">
+          <p class="flyer-label">The Arc</p>
+          <p class="section-body">Meditation, check in, the making, sharing circle, reflections, soft close.</p>
+          <p class="section-body" style="font-style: italic; margin-top: 0.6rem;">Everything is always an invitation, never an expectation.</p>
+        </div>
+      </div>
+
+      <div class="flyer-details">
+        <div class="flyer-detail-row">
+          <span class="flyer-detail-label">When</span>
+          <span>Saturday, August 15, 2026, 10:00am to 12:00 noon</span>
+        </div>
+        <div class="flyer-detail-row">
+          <span class="flyer-detail-label">Where</span>
+          <span>The Garden Strathcona, Studio, 868 East Hastings St, Vancouver</span>
+        </div>
+        <div class="flyer-detail-row">
+          <span class="flyer-detail-label">Investment</span>
+          <span>$95 CAD, credited in full towards a fall or winter cohort, should you choose to continue.</span>
+        </div>
+        <p class="section-body" style="margin-top: 1.25rem; color: rgba(242,224,215,0.75);">
+          Capped at 8 women. Intimate, not exclusive.
+        </p>
+        <a href="https://stan.store/apekshadarbari/p/tend-to-your-cup--inperson-preview-session" class="btn-primary" style="margin-top: 1.75rem; display: inline-block;">Reserve Your Spot</a>
+      </div>
     </div>
   </div>
 
-  <!-- UPCOMING SESSIONS — evergreen anchor block. Keep #upcoming permanent (flyer QR codes point here). -->
   <!--
-    MAINTENANCE: This block always shows whatever is genuinely NEXT.
-      • When a session passes → remove it same-day.
-      • When a new date is set → update title, date/time, venue, price, credit line, seats, checkout link.
-      • When nothing is open for booking → swap in the EMPTY-STATE block (commented out below).
-  -->
-  <section id="upcoming" style="background: var(--slate); padding: var(--section-pad);">
-    <a id="book"></a>
-    <div style="max-width: var(--max-width); margin: 0 auto;">
-      <span class="section-eyebrow">What's next</span>
-      <h2 class="section-title">Reserve <em>your spot</em></h2>
-      <p class="section-body">
-        A preview is a single morning to feel what this work is before you commit to the full arc of it. If you go on to the program, the full price of your preview credits toward it — so trying the room costs you nothing extra if you continue.
-      </p>
-    </div>
-    <div class="upcoming-sessions">
-      <div class="session-row fade-up" style="border-bottom-color: var(--slate-dark);">
-        <div class="session-date" style="color: var(--midnight);">Sat, August 15<br><span style="font-size: 0.9rem; color: var(--text-muted);">10:00am–12:00 noon</span></div>
-        <div class="session-name" style="color: var(--text-muted);">
-          <strong style="color: var(--midnight); font-weight: 400;">A Room Safe to Let It Go</strong> — In-Person Preview<br>
-          The Garden Strathcona – Studio · 868 East Hastings St, Vancouver<br>
-          <em>Credited in full toward the fall founding cohort · only 8 seats</em>
-        </div>
-        <div class="session-price" style="color: var(--midnight);">$95 CAD</div>
-        <a href="https://stan.store/apekshadarbari/p/tend-to-your-cup--inperson-preview-session" class="btn-primary" style="white-space: nowrap;">Book your seat</a>
-      </div>
-    </div>
-    <!--
-      EMPTY-STATE — use this exact block whenever nothing is open for booking, instead of leaving a passed date live:
+    EMPTY-STATE (for later, once this reverts to the evergreen #upcoming block): use whenever
+    nothing is open for booking, instead of leaving a passed date live:
 
-      <div style="max-width: var(--max-width); margin: 2rem auto 0;">
-        <p class="section-body">
-          The next in-person preview date is being set. To be first to know when it opens — and to hear when the fall founding cohort enrolls — join the circle below. That's where dates go out first.
-        </p>
-        <a href="https://apekshadarbari.myflodesk.com/apekshadarbari-art-and-living" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 1.5rem;">Join the list</a>
-      </div>
-    -->
-  </section>
+    <div style="max-width: var(--max-width); margin: 2rem auto 0;">
+      <p class="section-body">
+        The next in-person preview date is being set. To be first to know when it opens, and to
+        hear when the fall founding cohort enrolls, join the circle below. That's where dates go
+        out first.
+      </p>
+      <a href="https://apekshadarbari.myflodesk.com/apekshadarbari-art-and-living" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 1.5rem;">Join the list</a>
+    </div>
+  -->
 
   <!-- TESTIMONIALS -->
   <section style="background: var(--midnight); padding: var(--section-pad);">
@@ -236,62 +308,6 @@
     </div>
   </section>
 
-  <!-- WHAT TO EXPECT -->
-  <section style="background: var(--slate); padding: var(--section-pad);">
-    <div class="what-to-expect">
-      <div class="fade-up">
-        <span class="section-eyebrow">What to expect</span>
-        <h2 class="section-title">A session that feels<br>like <em>permission</em></h2>
-        <p class="section-body">
-          Every part of this is paced on purpose. Nothing is rushed, and the slack in the schedule is not an accident — it's the design. Your nervous system can't soften on a clock.
-        </p>
-        <br>
-        <p class="section-body">
-          No art experience needed. The space is small and intentional — never more than 7–8 women in a group, or you're welcome to book a private 1:1 session if you're not ready for a group. You will be met where you are. You will be witnessed and supported, not instructed or evaluated.
-        </p>
-      </div>
-      <div class="fade-up">
-        <ul class="session-steps">
-          <li class="session-step">
-            <span class="step-num">01</span>
-            <div class="step-content">
-              <h4>Arrival + stretching <span style="color: var(--clay); font-style: italic;">· 8–10 min</span></h4>
-              <p>We start by landing in the body. A little movement, a little stretch, no pressure to arrive as anything in particular. You don't have to be ready. You just have to be here.</p>
-            </div>
-          </li>
-          <li class="session-step">
-            <span class="step-num">02</span>
-            <div class="step-content">
-              <h4>Meditation <span style="color: var(--clay); font-style: italic;">· under 10 min, unhurried</span></h4>
-              <p>A short settling. Long enough to drop below the noise, never so long it becomes another thing to get right.</p>
-            </div>
-          </li>
-          <li class="session-step">
-            <span class="step-num">03</span>
-            <div class="step-content">
-              <h4>The reframe <span style="color: var(--clay); font-style: italic;">· 5–6 min</span></h4>
-              <p>A gentle turn in how we're holding the making — permission over performance, sensation over outcome. This is where <em>"I'm not creative"</em> gets quietly put down.</p>
-            </div>
-          </li>
-          <li class="session-step">
-            <span class="step-num">04</span>
-            <div class="step-content">
-              <h4>The making <span style="color: var(--clay); font-style: italic;">· 60–65 min, protected</span></h4>
-              <p>The heart of it. Following instinct, colours, and your body, not chasing a specific result. The moment where creativity flows in safety.</p>
-            </div>
-          </li>
-          <li class="session-step">
-            <span class="step-num">05</span>
-            <div class="step-content">
-              <h4>Sharing + soft close <span style="color: var(--clay); font-style: italic;">· 10–12 min</span></h4>
-              <p>A circle to land what moved, if you want to speak — and full permission to simply witness if you don't. We close soft, so you leave regulated, not raw.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <!-- PRICING -->
   <section style="background: var(--midnight); padding: var(--section-pad);">
     <div style="max-width: var(--max-width); margin: 0 auto;">
@@ -302,7 +318,7 @@
           <span class="workshop-tag">Taster</span>
           <h3 class="workshop-title">Preview Session</h3>
           <p class="workshop-desc">
-            A single session. The full experience — meditation, making, sharing circle.
+            A single session. The full experience: meditation, making, sharing circle.
             Your preview isn't a separate purchase; the full price credits toward the program if you continue.
           </p>
           <div class="workshop-meta">
@@ -321,7 +337,7 @@
           <span class="workshop-tag">The full experience</span>
           <h3 class="workshop-title">6-Week Program</h3>
           <p class="workshop-desc">
-            Six weekly sessions. A container to go deeper — into your
+            Six weekly sessions. A container to go deeper, into your
             practice, your patterns, and what creativity is unlocking in you.
             After your preview credit: online $355, in-person $480.
           </p>
@@ -339,7 +355,7 @@
         </div>
       </div>
       <p class="section-body" style="max-width: 640px; margin-top: 2.5rem; color: rgba(242,224,215,0.7); font-style: italic;">
-        This is founding pricing for our first cohorts — rates rise once we've proven the room. You're getting them because you're early, not because the work is worth less.
+        This is founding pricing for our first cohorts. Rates rise once we've proven the room. You're getting them because you're early, not because the work is worth less.
       </p>
     </div>
   </section>
@@ -353,8 +369,8 @@
         A private hour and a bit, where you make something with your hands and I hold the space. No brief, no right answer, nothing to produce. You set the pace. Come, sit with me.
       </p>
       <p class="section-body" style="color: var(--midnight); margin-bottom: 2.5rem;">
-        <strong style="font-weight: 400;">$95</strong> — single session<br>
-        <strong style="font-weight: 400;">$330</strong> — set of three <span style="color: var(--text-muted); font-style: italic;">(for the work that unfolds over time)</span>
+        <strong style="font-weight: 400;">$95</strong>: single session<br>
+        <strong style="font-weight: 400;">$330</strong>: pack of three <span style="color: var(--text-muted); font-style: italic;">(for the work that unfolds over time)</span>
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="https://stan.store/apekshadarbari/p/11-therapeutic-art-sessions" target="_blank" rel="noopener noreferrer" class="btn-clay">Book a single session</a>
@@ -369,7 +385,7 @@
       <span class="section-eyebrow">From the Studio</span>
       <h2 class="section-title" style="margin-bottom: 1.5rem; color: var(--slate);">Not ready for a live session?</h2>
       <p class="section-body" style="color: rgba(242,224,215,0.7); margin-bottom: 2.5rem;">
-        Letters, prompts, and permission slips — small things made for whenever you need something to hold.
+        Letters, prompts, and permission slips: small things made for whenever you need something to hold.
       </p>
       <a href="../pages/studio.html" class="btn-clay">See what's in the studio</a>
     </div>
