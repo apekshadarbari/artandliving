@@ -530,7 +530,8 @@ section { padding: var(--section-pad); }
 
 .poetry .section-eyebrow { color: var(--clay); }
 
-.poetry .section-title { color: var(--slate); }
+.poetry .section-title { color: var(--clay); }
+.poetry .section-title em { color: var(--clay); }
 
 .poetry-intro {
   font-family: var(--font-display);
@@ -598,7 +599,7 @@ section { padding: var(--section-pad); }
   text-align: center;
 }
 
-.email-strip .section-title { color: var(--midnight); margin-bottom: 0.75rem; }
+.email-strip .section-title { margin-bottom: 0.75rem; }
 
 .email-strip p {
   color: var(--text-muted);
@@ -794,7 +795,7 @@ footer {
 .page-hero-inner { max-width: var(--max-width); margin: 0 auto; }
 
 .page-hero .section-eyebrow { color: var(--clay); }
-.page-hero .section-title { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--slate); }
+.page-hero .section-title { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--clay); }
 .page-hero .section-title em { font-style: normal; color: var(--clay); }
 
 /* ── PRODUCT PAGE ── */
@@ -804,6 +805,20 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
+}
+
+/* ── HEADING ACCENT COLOR BY SECTION BACKGROUND (site-wide) ──
+   Clay headings on midnight-background sections, teal headings on
+   slate-background sections. Primary/body text is unaffected: it keeps
+   the existing midnight-on-light / slate-on-dark convention. This targets
+   .section-title (h1/h2 page and section headings) only. */
+section[style*="var(--midnight)"] .section-title,
+section[style*="var(--midnight)"] .section-title em {
+  color: var(--clay);
+}
+section[style*="var(--slate)"] .section-title,
+section[style*="var(--slate)"] .section-title em {
+  color: var(--teal);
 }
 
 /* ── RESPONSIVE ── */
