@@ -530,7 +530,7 @@ section { padding: var(--section-pad); }
 
 .poetry .section-eyebrow { color: var(--clay); }
 
-.poetry .section-title { color: var(--clay); }
+.poetry .section-title { color: var(--slate); }
 .poetry .section-title em { color: var(--clay); }
 
 .poetry-intro {
@@ -795,7 +795,7 @@ footer {
 .page-hero-inner { max-width: var(--max-width); margin: 0 auto; }
 
 .page-hero .section-eyebrow { color: var(--clay); }
-.page-hero .section-title { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--clay); }
+.page-hero .section-title { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--slate); }
 .page-hero .section-title em { font-style: normal; color: var(--clay); }
 
 /* ── PRODUCT PAGE ── */
@@ -807,16 +807,22 @@ footer {
   gap: 2rem;
 }
 
-/* ── HEADING ACCENT COLOR BY SECTION BACKGROUND (site-wide) ──
-   Clay headings on midnight-background sections, teal headings on
-   slate-background sections. Primary/body text is unaffected: it keeps
-   the existing midnight-on-light / slate-on-dark convention. This targets
-   .section-title (h1/h2 page and section headings) only. */
-section[style*="var(--midnight)"] .section-title,
+/* ── HEADING COLOR BY SECTION BACKGROUND (site-wide) ──
+   Two-tone headings: the lead-in text takes the primary text color for
+   that background, and the emphasized <em> phrase takes the accent color.
+   Midnight-background sections: lead-in slate, emphasis clay.
+   Slate-background sections: lead-in midnight, emphasis teal.
+   This targets .section-title (h1/h2 page and section headings) only;
+   body/primary text elsewhere is unaffected. */
+section[style*="var(--midnight)"] .section-title {
+  color: var(--slate);
+}
 section[style*="var(--midnight)"] .section-title em {
   color: var(--clay);
 }
-section[style*="var(--slate)"] .section-title,
+section[style*="var(--slate)"] .section-title {
+  color: var(--midnight);
+}
 section[style*="var(--slate)"] .section-title em {
   color: var(--teal);
 }
