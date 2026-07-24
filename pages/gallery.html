@@ -423,7 +423,8 @@
       return out;
     }
 
-    const MEDIUM_PLACEHOLDER = 'Acrylic on canvas';
+    const MEDIUM_ORIGINAL = 'Acrylic on canvas';
+    const MEDIUM_PRINT = 'Fine art print (available on paper and canvas)';
     const STATUS_DEFAULT = 'For Sale';
 
     // Parse Title and physical Dimensions straight from the filename:
@@ -444,7 +445,8 @@
     }
     function pieceOf(item) {
       const p = parseName(item.filename);
-      return { title: p.title, dimensions: p.dimensions, medium: MEDIUM_PLACEHOLDER, status: STATUS_DEFAULT };
+      const medium = item.category === 'prints' ? MEDIUM_PRINT : MEDIUM_ORIGINAL;
+      return { title: p.title, dimensions: p.dimensions, medium: medium, status: STATUS_DEFAULT };
     }
 
     function cardHTML(item, index) {
