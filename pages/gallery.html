@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery · Apeksha Darbari | Art & Living</title>
+  <meta name="description" content="A gallery of original abstract acrylic pour paintings and prints by Apeksha Darbari, painted in Vancouver." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Apeksha Darbari | Art &amp; Living" />
+  <meta property="og:url" content="https://apekshadarbari.com/pages/gallery" />
+  <link rel="canonical" href="https://apekshadarbari.com/pages/gallery" />
+  <meta property="og:title" content="Gallery · Apeksha Darbari | Art &amp; Living" />
+  <meta property="og:description" content="Original abstract acrylic pour paintings and prints by Apeksha Darbari." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    .gallery-hero { padding-bottom: calc(var(--section-pad) + 6.5rem); }
+    .gallery-intro {
+      max-width: 600px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: rgba(242, 224, 215, 0.72);
+      line-height: 1.9;
+      margin-top: 1.75rem;
+    }
+
+    /* ── FILTER BAR (understated text links) ── */
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      margin: 0 auto 5rem;
+    }
+    .gallery-filter {
+      background: none; border: none;
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0.35rem 0;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .gallery-filter::after {
+      content: '';
+      position: absolute;
+      left: 50%; right: 50%; bottom: -0.45rem;
+      height: 1px; background: var(--clay);
+      transition: left 0.3s ease, right 0.3s ease;
+    }
+    .gallery-filter:hover { color: var(--midnight); }
+    .gallery-filter.active { color: var(--midnight); }
+    .gallery-filter.active::after { left: 0; right: 0; }
+
+    /* ── GRID: two columns at most, generous spacing ── */
+    .gallery-grid {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5.5rem 4.5rem;
+      align-items: start;
+      justify-items: center;
+    }
+
+    .g-card { cursor: pointer; width: 100%; display: flex; flex-direction: column; align-items: center; }
+
+    /* ── THE FRAME - natural aspect ratio, no cropping (handles landscape / portrait / square / tall) ── */
+    /* Floating, no frame - art sits on the slate ground with a soft drop shadow */
+    .g-frame { max-width: 100%; }
+    .g-frame-inner { text-align: center; line-height: 0; }
+    .g-frame img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 32px 58px rgba(20, 22, 30, 0.52), 0 13px 26px rgba(20, 22, 30, 0.34);
+      transition: transform 0.55s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.55s ease;
+    }
+    /* Cap tall / portrait pieces so a single one doesn't dominate the page */
+    .g-card[data-orientation="tall"] .g-frame img,
+    .g-card[data-orientation="portrait"] .g-frame img { max-height: 74vh; width: auto; }
+    .g-card:hover .g-frame img { transform: translateY(-8px); box-shadow: 0 48px 84px rgba(20, 22, 30, 0.60), 0 18px 32px rgba(20, 22, 30, 0.40); }
+
+    .g-card-info { padding-top: 1.85rem; text-align: center; }
+    .g-card-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 400; font-style: italic;
+      color: var(--midnight);
+      letter-spacing: 0.015em;
+      line-height: 1.3;
+    }
+    .g-card-price {
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--text-muted); margin-top: 0.7rem;
+      opacity: 0; transition: opacity 0.35s ease;
+    }
+    .g-card:hover .g-card-price { opacity: 1; }
+
+    /* ── PAGINATION ── */
+    .gallery-pagination {
+      display: flex; justify-content: center; align-items: center;
+      gap: 0.4rem; margin-top: 5.5rem;
+    }
+    .page-btn {
+      background: none; border: none;
+      font-family: var(--font-body);
+      font-size: 0.82rem; letter-spacing: 0.08em;
+      color: var(--text-muted);
+      width: 2.6rem; height: 2.6rem;
+      cursor: pointer; border-radius: 50%;
+      transition: color 0.25s ease, background 0.25s ease;
+    }
+    .page-btn:hover:not(:disabled) { color: var(--midnight); }
+    .page-btn.active { background: var(--midnight); color: var(--white); }
+    .page-btn:disabled { opacity: 0.3; cursor: default; }
+    .page-arrow { letter-spacing: 0; font-size: 1rem; }
+
+    .gallery-notice {
+      max-width: 620px; margin: 0 auto; text-align: center;
+      color: var(--text-muted); font-size: 0.95rem; line-height: 1.85;
+    }
+    .gallery-notice code { background: var(--slate-dark); padding: 0.15rem 0.45rem; border-radius: 3px; font-size: 0.85rem; }
+
+    /* ── ALTERNATING GROUND: odd pages on slate, even pages on midnight ── */
+    #gallerySection { background: var(--slate); transition: background 0.6s ease; }
+    #gallerySection.gal-dark { background: var(--midnight); }
+    .gal-dark .gallery-filter { color: rgba(242, 224, 215, 0.55); }
+    .gal-dark .gallery-filter:hover,
+    .gal-dark .gallery-filter.active { color: var(--slate); }
+    .gal-dark .g-card-title { color: var(--slate); }
+    .gal-dark .g-card-price { color: rgba(242, 224, 215, 0.6); }
+    .gal-dark .page-btn { color: rgba(242, 224, 215, 0.6); }
+    .gal-dark .page-btn:hover:not(:disabled) { color: var(--slate); }
+    .gal-dark .page-btn.active { background: var(--slate); color: var(--midnight); }
+    .gal-dark .gallery-notice { color: rgba(242, 224, 215, 0.72); }
+    .gal-dark .gallery-notice code { background: rgba(242, 224, 215, 0.15); }
+
+    /* ── LIGHTBOX ── */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 10000; background: rgba(30,32,42,0.94); padding: 3rem; overflow-y: auto; }
+    .lightbox.open { display: flex; align-items: center; justify-content: center; }
+    .lightbox-inner { max-width: 1080px; width: 100%; display: grid; grid-template-columns: 1.4fr 1fr; background: var(--white); position: relative; }
+    .lightbox-image { background: var(--slate); display: flex; align-items: center; justify-content: center; padding: 2rem; }
+    .lightbox-image img { width: 100%; height: 100%; max-height: 78vh; object-fit: contain; display: block; }
+    .lightbox-info { padding: 3.5rem 3rem; display: flex; flex-direction: column; justify-content: center; }
+    .lightbox-cat { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--clay); margin-bottom: 1.1rem; }
+    .lightbox-title { font-family: var(--font-display); font-style: italic; font-size: 2.3rem; color: var(--midnight); margin-bottom: 0.6rem; line-height: 1.2; }
+    .lightbox-price { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.75rem; }
+    .lightbox-meta { font-size: 0.85rem; color: var(--text-muted); line-height: 2.1; }
+    .lightbox-meta div span { color: var(--midnight); }
+    .lightbox-close { position: absolute; top: 1rem; right: 1.25rem; background: none; border: none; font-size: 2rem; line-height: 1; color: var(--midnight); cursor: pointer; z-index: 2; padding: 0.25rem 0.5rem; }
+    .lightbox-close:hover { color: var(--clay); }
+
+    @media (max-width: 820px) {
+      .lightbox { padding: 0; }
+      .lightbox-inner { grid-template-columns: 1fr; max-height: 100vh; overflow-y: auto; }
+      .lightbox-image img { max-height: 55vh; }
+      .lightbox-info { padding: 2rem 1.75rem 2.75rem; }
+      .lightbox-title { font-size: 1.8rem; }
+    }
+    @media (max-width: 640px) {
+      /* One column on phones - most gallery traffic is mobile */
+      .gallery-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+      .gallery-filters { gap: 1.75rem; margin-bottom: 3rem; }
+      .g-card[data-orientation="tall"] .g-frame img,
+      .g-card[data-orientation="portrait"] .g-frame img { max-height: 68vh; }
+      .g-card-price { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-light">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_slate.svg" alt="Apeksha Darbari | Art &amp; Living" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="../pages/workshops.html">Workshops</a></li>
+      <li><a href="../pages/gallery.html">Gallery</a></li>
+      <li><a href="../pages/about.html">The Artist</a></li>
+      <li><a href="../pages/poetry.html">Rhymes & Ramblings</a></li>
+      <li><a href="../pages/contact.html">Say Hi</a></li>
+      <li><a href="../pages/workshops.html" class="nav-cta">Refill Your Cup</a></li>
+    </ul>
+    <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="page-hero gallery-hero">
+    <div class="page-hero-inner">
+      <span class="section-eyebrow">The Work</span>
+      <h1 class="section-title" style="font-size: clamp(2.75rem, 6vw, 5rem);">
+        The <em>Gallery</em>
+      </h1>
+      <p class="gallery-intro">
+        Abstract Artworks by Apeksha - each one a way of feeling rather than performing. Take your time to look around.
+      </p>
+    </div>
+  </div>
+
+  <section id="gallerySection" style="padding: 7rem 2rem 8rem;">
+    <div class="gallery-filters" id="galleryFilters" role="group" aria-label="Filter artwork">
+      <button class="gallery-filter active" data-filter="all">All</button>
+      <button class="gallery-filter" data-filter="originals">Originals</button>
+      <button class="gallery-filter" data-filter="prints">Prints</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
+    <nav class="gallery-pagination" id="galleryPagination" aria-label="Gallery pages"></nav>
+
+    <p class="gallery-notice" id="galleryNotice" style="display: none;"></p>
+  </section>
+
+  <!-- Lightbox / detail view (no purchase action) -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Artwork detail">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+      <div class="lightbox-image">
+        <img id="lightboxImg" src="" alt="" />
+      </div>
+      <div class="lightbox-info">
+        <p class="lightbox-cat" id="lightboxCat"></p>
+        <h2 class="lightbox-title" id="lightboxTitle"></h2>
+        <p class="lightbox-price" id="lightboxPrice"></p>
+        <div class="lightbox-meta" id="lightboxMeta"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="email-strip" style="background: var(--midnight);">
+    <span class="section-eyebrow">Join the circle</span>
+    <h2 class="section-title" style="color: var(--slate);">Be first to know when<br><em style="color: var(--slate)">new work is added</em></h2>
+    <p style="color: rgba(242,224,215,0.7);">New pieces, studio dispatches, and the occasional behind-the-scenes.</p>
+    <a href="https://apekshadarbari.myflodesk.com/apekshadarbari-art-and-living" target="_blank" class="btn-primary">Join the circle</a>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <img src="../assets/branding/01_Logo full/apeksha-darbari_logo-full_colour-slate.svg" alt="Apeksha Darbari | Art &amp; Living" class="footer-emblem" />
+        <p class="footer-brand-tagline">"You were not meant to run on fumes.<br>Come, sit with me and let's tend to your cup."</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <ul class="footer-links">
+          <li><a href="../pages/workshops.html">Workshops</a></li>
+          <li><a href="../pages/gallery.html">Gallery</a></li>
+          <li><a href="../pages/about.html">The Artist</a></li>
+          <li><a href="../pages/poetry.html">Rhymes & Ramblings</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Connect</p>
+        <ul class="footer-links">
+          <li><a href="../pages/contact.html">Say Hi</a></li>
+          <li><a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/apekshadarbari" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Policies</p>
+        <ul class="footer-links">
+          <li><a href="../pages/privacy.html">Privacy Policy</a></li>
+          <li><a href="../pages/refunds.html">Refund Policy</a></li>
+          <li><a href="../pages/shipping.html">Shipping</a></li>
+          <li><a href="../pages/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Apeksha Darbari | Art & Living · Vancouver, BC</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/apekshadarbari" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+  (function () {
+    // Single source of truth for gallery content. Real titles/prices/etc. get edited
+    // in gallery-data.json tomorrow - never in this markup.
+    const DATA_URL = '../gallery-data.json';
+    const IMG_BASE = '../assets/';
+    const FOLDERS = { originals: 'originals/', prints: 'prints/' };
+    const PER_PAGE = 6; // two columns × three rows - adjust here to space out more/less
+
+    const grid = document.getElementById('galleryGrid');
+    const pager = document.getElementById('galleryPagination');
+    const notice = document.getElementById('galleryNotice');
+    const filterBar = document.getElementById('galleryFilters');
+    const section = grid.closest('section');
+
+    let items = [];
+    let activeFilter = 'all';
+    let currentPage = 1;
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, c => (
+        { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+      ));
+    }
+    function srcFor(item) { return IMG_BASE + FOLDERS[item.category] + item.filename; }
+
+    function flatten(data) {
+      const out = [];
+      (data.originals || []).forEach(p => out.push(Object.assign({ category: 'originals' }, p)));
+      (data.prints || []).forEach(p => out.push(Object.assign({ category: 'prints' }, p)));
+      return out;
+    }
+
+    function cardHTML(item, index) {
+      const title = esc(item.title || 'Untitled');
+      const price = esc(item.price || 'Price on request');
+      const ratio = (item.width && item.height) ? `aspect-ratio: ${item.width} / ${item.height};` : '';
+      return `
+        <article class="g-card" tabindex="0" role="button"
+                 aria-label="${title}"
+                 data-category="${esc(item.category)}"
+                 data-orientation="${esc(item.orientation || '')}"
+                 data-index="${index}">
+          <div class="g-frame">
+            <div class="g-frame-inner">
+              <img src="${esc(srcFor(item))}" alt="${title}" loading="lazy" style="${ratio}" />
+            </div>
+          </div>
+          <div class="g-card-info">
+            <h3 class="g-card-title">${title}</h3>
+            <p class="g-card-price">${price}</p>
+          </div>
+        </article>`;
+    }
+
+    function filtered() {
+      return items.filter(it => activeFilter === 'all' || it.category === activeFilter);
+    }
+
+    function renderPager(total) {
+      const pages = Math.max(1, Math.ceil(total / PER_PAGE));
+      if (pages <= 1) { pager.innerHTML = ''; return; }
+      let html = `<button class="page-btn page-arrow" data-page="${currentPage - 1}" ${currentPage === 1 ? 'disabled' : ''} aria-label="Previous page">&lsaquo;</button>`;
+      for (let p = 1; p <= pages; p++) {
+        html += `<button class="page-btn ${p === currentPage ? 'active' : ''}" data-page="${p}" aria-label="Page ${p}">${p}</button>`;
+      }
+      html += `<button class="page-btn page-arrow" data-page="${currentPage + 1}" ${currentPage === pages ? 'disabled' : ''} aria-label="Next page">&rsaquo;</button>`;
+      pager.innerHTML = html;
+    }
+
+    function render(scroll) {
+      const list = filtered();
+      const pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+      if (currentPage > pages) currentPage = pages;
+      // Alternate the ground so each page of work contrasts with the last
+      if (section) section.classList.toggle('gal-dark', currentPage % 2 === 0);
+      const start = (currentPage - 1) * PER_PAGE;
+      const pageItems = list.slice(start, start + PER_PAGE);
+      grid.innerHTML = pageItems.map(it => cardHTML(it, items.indexOf(it))).join('');
+      renderPager(list.length);
+      notice.style.display = list.length ? 'none' : 'block';
+      if (!list.length) notice.textContent = 'No pieces to show here yet.';
+      if (scroll && section) window.scrollTo({ top: section.offsetTop - 20, behavior: 'smooth' });
+    }
+
+    // Filters (generic + extensible to status tags later)
+    filterBar.addEventListener('click', e => {
+      const btn = e.target.closest('.gallery-filter');
+      if (!btn) return;
+      activeFilter = btn.getAttribute('data-filter');
+      currentPage = 1;
+      filterBar.querySelectorAll('.gallery-filter').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(false);
+    });
+
+    // Pagination
+    pager.addEventListener('click', e => {
+      const btn = e.target.closest('.page-btn');
+      if (!btn || btn.disabled) return;
+      const p = parseInt(btn.getAttribute('data-page'), 10);
+      if (!isNaN(p)) { currentPage = p; render(true); }
+    });
+
+    // ── Lightbox ──
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbCat = document.getElementById('lightboxCat');
+    const lbTitle = document.getElementById('lightboxTitle');
+    const lbPrice = document.getElementById('lightboxPrice');
+    const lbMeta = document.getElementById('lightboxMeta');
+
+    function metaRows(item) {
+      const rows = [];
+      if (item.category === 'originals') {
+        if (item.medium) rows.push(['Medium', item.medium]);
+        if (item.dimensions) rows.push(['Dimensions', item.dimensions]);
+      } else if (item.size) {
+        rows.push(['Size', item.size]);
+      }
+      return rows.map(([k, v]) => `<div>${esc(k)}: <span>${esc(v)}</span></div>`).join('');
+    }
+
+    function openLightbox(item) {
+      lbImg.src = srcFor(item);
+      lbImg.alt = item.title || 'Untitled';
+      lbCat.textContent = item.category === 'originals' ? 'Original' : 'Print';
+      lbTitle.textContent = item.title || 'Untitled';
+      lbPrice.textContent = item.price || 'Price on request';
+      lbMeta.innerHTML = metaRows(item);
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+
+    grid.addEventListener('click', e => {
+      const card = e.target.closest('.g-card');
+      if (card) openLightbox(items[+card.getAttribute('data-index')]);
+    });
+    grid.addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const card = e.target.closest('.g-card');
+      if (card) { e.preventDefault(); openLightbox(items[+card.getAttribute('data-index')]); }
+    });
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    // ── Load manifest ──
+    fetch(DATA_URL, { cache: 'no-cache' })
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(data => { items = flatten(data); render(false); })
+      .catch(() => {
+        notice.style.display = 'block';
+        notice.innerHTML = 'Could not load <code>gallery-data.json</code>. ' +
+          'If you opened this file directly, serve the folder over a local server instead - ' +
+          'e.g. run <code>python3 -m http.server</code> in the site root, then visit ' +
+          '<code>localhost:8000/pages/gallery.html</code>.';
+      });
+  })();
+  </script>
+</body>
+</html>
