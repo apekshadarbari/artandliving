@@ -852,13 +852,17 @@ section[style*="var(--slate)"] .section-title em {
     flex-direction: column;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: var(--white);
+    background: var(--midnight);
     align-items: center;
     justify-content: center;
     gap: 2rem;
     z-index: 99;
   }
-  .nav-links.open a { font-size: 1.1rem; }
+  .nav-links.open a { font-size: 1.1rem; color: var(--slate); }
+  .nav-links.open a:hover { color: var(--clay); }
+  .nav-links.open a.nav-cta { color: var(--slate) !important; border-color: rgba(242,224,215,0.5) !important; background: transparent !important; }
+  .nav-links.open a.nav-cta:hover { color: var(--clay) !important; border-color: var(--clay) !important; }
+  .nav-links.open ~ .hamburger span { background: var(--slate); }
   .art-grid { grid-template-columns: 1fr; }
   .poetry-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
