@@ -1,0 +1,8 @@
+# Security headers applied to every response (Netlify reads this file at the site root).
+# These are safe, non-breaking hardening headers for a static site.
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
