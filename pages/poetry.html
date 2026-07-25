@@ -63,9 +63,16 @@
       padding-left: 1.25rem;
       margin-bottom: 1.5rem;
     }
+    /* Each poem sits in a full-width band that contrasts with its image background */
+    .poem-entry.flip { direction: rtl; }
+    .poem-entry.flip > * { direction: ltr; }
+    .poem-band .poem-entry { margin-bottom: 0; }
+    .poem-band-dark .poem-title { color: var(--slate); }
+    .poem-band-dark .poem-context { color: rgba(242, 224, 215, 0.8); border-left-color: rgba(242, 224, 215, 0.35); }
     @media (max-width: 768px) {
       .poem-entry { grid-template-columns: 1fr; gap: 1.5rem; }
       .poem-entry:nth-child(even) { direction: ltr; }
+      .poem-entry.flip { direction: ltr; }
     }
   </style>
 </head>
@@ -101,8 +108,11 @@
     </div>
   </div>
 
-  <section style="background: var(--slate); padding: var(--section-pad);">
+  <!-- Each poem gets a full-width band in the OPPOSITE colour of its image background,
+       so slate-background poems sit on midnight and vice versa. -->
 
+  <!-- shedding.png has a SLATE image -> midnight band -->
+  <section class="poem-band poem-band-dark" style="background: var(--midnight); padding: var(--section-pad);">
     <div class="poem-entry fade-up">
       <img
         class="poem-image"
@@ -115,20 +125,23 @@
         <p class="poem-date">Fall, 2025</p>
         <p class="poem-context">
           Written at a park, after it came to me on a walk, the morning of October 14th, 2025.
-          Exactly two weeks after launching the website on my 37th birthday. A lot of feelings 
+          Exactly two weeks after launching the website on my 37th birthday. A lot of feelings
           had been coming up — joy, pride, nervousness, overwhelm, excitement, anxiety.
           <br><br>
-          And while dealing with various, strong, sometimes conflicting feelings, I noticed 
-          how no part of it was doubt. I have never been this sure of the path I have chosen. 
+          And while dealing with various, strong, sometimes conflicting feelings, I noticed
+          how no part of it was doubt. I have never been this sure of the path I have chosen.
           It has never felt this aligned with the current.
           <br><br>
-          I am ready to be witnessed in my humanity, not in anyone's definition of perfection, 
+          I am ready to be witnessed in my humanity, not in anyone's definition of perfection,
           including my own. I am here for it.
         </p>
       </div>
     </div>
+  </section>
 
-    <div class="poem-entry fade-up">
+  <!-- i-wish.png has a MIDNIGHT image -> slate band -->
+  <section class="poem-band" style="background: var(--slate); padding: var(--section-pad);">
+    <div class="poem-entry flip fade-up">
       <img
         class="poem-image"
         src="../assets/poetry/i-wish.png"
@@ -139,14 +152,17 @@
         <h2 class="poem-title">I Wish</h2>
         <p class="poem-date">Circa 2011–2013</p>
         <p class="poem-context">
-          Written circa 2011–2013. When I read this poem now, I notice the undiagnosed 
+          Written circa 2011–2013. When I read this poem now, I notice the undiagnosed
           neurodivergence. It is literally all I see.
           <br><br>
           Just one more quiet cry for help buried in my journals.
         </p>
       </div>
     </div>
+  </section>
 
+  <!-- with-eyes-closed.png has a SLATE image -> midnight band -->
+  <section class="poem-band poem-band-dark" style="background: var(--midnight); padding: var(--section-pad);">
     <div class="poem-entry fade-up">
       <img
         class="poem-image"
@@ -160,17 +176,20 @@
         <p class="poem-context">
           Written during the winter of 2023, a couple of months after the Genocide in Gaza started.
           <br><br>
-          The duality of watching it unfold on my phone while also living my life, going to work, 
-          meeting people like nothing was happening messed with my head. No one around was even 
+          The duality of watching it unfold on my phone while also living my life, going to work,
+          meeting people like nothing was happening messed with my head. No one around was even
           ready to engage in conversation about it.
           <br><br>
-          As it continued unchecked, a lot of my illusions of the world were shattered. 
+          As it continued unchecked, a lot of my illusions of the world were shattered.
           I felt insane. Something broke inside me. Something also awakened.
         </p>
       </div>
     </div>
+  </section>
 
-    <div class="poem-entry fade-up">
+  <!-- why-do...png has a MIDNIGHT image -> slate band -->
+  <section class="poem-band" style="background: var(--slate); padding: var(--section-pad);">
+    <div class="poem-entry flip fade-up">
       <img
         class="poem-image"
         src="../assets/poetry/why-do-they-get-to-have-it-and-not-me.png"
@@ -185,14 +204,13 @@
           <br><br>
           For the first time in my life, it didn't stick. Just slid off. Entirely.
           <br><br>
-          After I got over the pleasant surprise of that, I wondered how sad must her life be, 
-          if this is how she chooses to spend her time. She seemed so unhappy and discontent, 
-          packaging her sadness as hate, or so I felt. I sent some good wishes her way 
+          After I got over the pleasant surprise of that, I wondered how sad must her life be,
+          if this is how she chooses to spend her time. She seemed so unhappy and discontent,
+          packaging her sadness as hate, or so I felt. I sent some good wishes her way
           (I know! I'm a whole new person!) and wrote this poem.
         </p>
       </div>
     </div>
-
   </section>
 
   <section class="email-strip" style="background: var(--midnight);">
