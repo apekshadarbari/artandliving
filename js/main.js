@@ -3,7 +3,7 @@
 // enter apekshadarbari.com → copy the token → paste it below in place of
 // PASTE_CLOUDFLARE_TOKEN. It stays inert (no tracking) until a real token is set.
 (function () {
-  var CF_TOKEN = 'PASTE_CLOUDFLARE_TOKEN';
+  var CF_TOKEN = '511802b794d1465fa2cfd59a5c23c4d1';
   if (CF_TOKEN === 'PASTE_CLOUDFLARE_TOKEN') return;
   var s = document.createElement('script');
   s.defer = true;
