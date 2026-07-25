@@ -1,15 +1,15 @@
-// ── GOOGLE ANALYTICS 4 ──
-// Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com
+// ── CLOUDFLARE WEB ANALYTICS (cookieless — no consent banner needed) ──
+// One-time setup: sign in to Cloudflare (free) → Web Analytics → "Add a site" →
+// enter apekshadarbari.com → copy the token → paste it below in place of
+// PASTE_CLOUDFLARE_TOKEN. It stays inert (no tracking) until a real token is set.
 (function () {
-  var GA_ID = 'G-0LM9XW9N6Y';
+  var CF_TOKEN = 'PASTE_CLOUDFLARE_TOKEN';
+  if (CF_TOKEN === 'PASTE_CLOUDFLARE_TOKEN') return;
   var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  s.defer = true;
+  s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  s.setAttribute('data-cf-beacon', JSON.stringify({ token: CF_TOKEN }));
   document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', GA_ID);
 })();
 
 // Nav scroll behaviour
