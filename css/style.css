@@ -66,7 +66,7 @@ nav.nav-light.scrolled .nav-links a { color: var(--slate); }
 nav.scrolled .nav-links a:hover,
 nav.nav-light.scrolled .nav-links a:hover { color: var(--clay); }
 nav.scrolled .nav-cta { color: var(--slate) !important; border-color: rgba(242,224,215,0.5) !important; background: transparent !important; }
-nav.scrolled .nav-cta:hover { background: rgba(242,224,215,0.12) !important; border-color: var(--slate) !important; }
+nav.scrolled .nav-cta:hover { background: var(--clay) !important; color: var(--white) !important; border-color: var(--clay) !important; }
 nav.nav-light.scrolled .nav-cta { color: var(--slate) !important; border-color: rgba(242,224,215,0.5) !important; background: transparent !important; }
 nav.scrolled .nav-logo img,
 nav.nav-light.scrolled .nav-logo img { content: url('../assets/branding/02_Logotype (with tagline)/apeksha-darbari_logotype-tagline_slate.svg'); }
@@ -78,7 +78,7 @@ nav.nav-light .nav-logo img { content: url('../assets/branding/02_Logotype (with
 nav.nav-light .nav-links a { color: var(--slate); }
 nav.nav-light .nav-links a:hover { color: var(--clay); }
 nav.nav-light .nav-cta { color: var(--slate) !important; border-color: rgba(242,224,215,0.5) !important; }
-nav.nav-light .nav-cta:hover { background: rgba(242,224,215,0.12) !important; border-color: var(--slate) !important; }
+nav.nav-light .nav-cta:hover { background: var(--clay) !important; color: var(--white) !important; border-color: var(--clay) !important; }
 nav.nav-light .hamburger span { background: var(--slate); }
 
 .nav-logo img {
@@ -125,7 +125,7 @@ nav.nav-light .hamburger span { background: var(--slate); }
   letter-spacing: 0.1em !important;
   transition: background 0.2s, border-color 0.2s !important;
 }
-.nav-cta:hover { background: rgba(242,224,215,0.12) !important; border-color: var(--slate) !important; }
+.nav-cta:hover { background: var(--clay) !important; color: var(--white) !important; border-color: var(--clay) !important; }
 .nav-cta::after { display: none !important; }
 
 .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
@@ -271,7 +271,7 @@ section { padding: var(--section-pad); }
 
 .section-title {
   font-size: clamp(2rem, 3.5vw, 3rem);
-  color: var(--midnight);
+  color: var(--teal);
   margin-bottom: 1.5rem;
   font-weight: 300;
 }
@@ -530,7 +530,7 @@ section { padding: var(--section-pad); }
 
 .poetry .section-eyebrow { color: var(--clay); }
 
-.poetry .section-title { color: var(--slate); }
+.poetry .section-title { color: var(--clay); }
 .poetry .section-title em { color: var(--clay); }
 
 .poetry-intro {
@@ -795,7 +795,8 @@ footer {
 .page-hero-inner { max-width: var(--max-width); margin: 0 auto; }
 
 .page-hero .section-eyebrow { color: var(--clay); }
-.page-hero .section-title { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--slate); }
+.page-hero .section-title { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--clay); }
+.page-hero .section-title em { color: var(--clay); }
 .page-hero .section-title em { font-style: normal; color: var(--clay); }
 
 /* ── PRODUCT PAGE ── */
@@ -815,13 +816,13 @@ footer {
    This targets .section-title (h1/h2 page and section headings) only;
    body/primary text elsewhere is unaffected. */
 section[style*="var(--midnight)"] .section-title {
-  color: var(--slate);
+  color: var(--clay);
 }
 section[style*="var(--midnight)"] .section-title em {
   color: var(--clay);
 }
 section[style*="var(--slate)"] .section-title {
-  color: var(--midnight);
+  color: var(--teal);
 }
 section[style*="var(--slate)"] .section-title em {
   color: var(--teal);
@@ -861,7 +862,7 @@ section[style*="var(--slate)"] .section-title em {
   .nav-links.open a { font-size: 1.1rem; color: var(--slate); }
   .nav-links.open a:hover { color: var(--clay); }
   .nav-links.open a.nav-cta { color: var(--slate) !important; border-color: rgba(242,224,215,0.5) !important; background: transparent !important; }
-  .nav-links.open a.nav-cta:hover { color: var(--clay) !important; border-color: var(--clay) !important; }
+  .nav-links.open a.nav-cta:hover { background: var(--clay) !important; color: var(--white) !important; border-color: var(--clay) !important; }
   .nav-links.open ~ .hamburger span { background: var(--slate); }
   .art-grid { grid-template-columns: 1fr; }
   .poetry-grid { grid-template-columns: 1fr; }
