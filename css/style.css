@@ -184,7 +184,7 @@ nav.nav-light .hamburger span { background: var(--slate); }
 .hero-title {
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 500;
-  color: #fff;
+  color: var(--slate);
   line-height: 1.1;
   margin-bottom: 2rem;
 }
@@ -199,7 +199,7 @@ nav.nav-light .hamburger span { background: var(--slate); }
   font-size: 1.2rem;
   font-weight: 400;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--slate);
   line-height: 1.7;
   margin-bottom: 3rem;
   max-width: 480px;
@@ -208,6 +208,7 @@ nav.nav-light .hamburger span { background: var(--slate); }
 }
 
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-actions .btn-primary:hover { background: var(--clay); color: var(--white); }
 
 .btn-primary {
   display: inline-block;
@@ -276,7 +277,7 @@ section { padding: var(--section-pad); }
   font-weight: 300;
 }
 
-.section-title em { font-style: normal; color: var(--teal); }
+.section-title em { font-style: italic; color: var(--teal); }
 
 .section-body {
   font-size: 1.05rem;
@@ -738,7 +739,7 @@ footer {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 0.95rem;
-  color: rgba(242, 224, 215, 0.55);
+  color: var(--slate);
   line-height: 1.7;
   max-width: 260px;
 }
@@ -797,7 +798,7 @@ footer {
 .page-hero .section-eyebrow { color: var(--clay); }
 .page-hero .section-title { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--slate); }
 .page-hero .section-title em { color: var(--clay); }
-.page-hero .section-title em { font-style: normal; color: var(--clay); }
+.page-hero .section-title em { font-style: italic; color: var(--clay); }
 
 /* ── PRODUCT PAGE ── */
 .product-grid {
