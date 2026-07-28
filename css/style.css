@@ -271,7 +271,7 @@ section { padding: var(--section-pad); }
 
 .section-title {
   font-size: clamp(2rem, 3.5vw, 3rem);
-  color: var(--teal);
+  color: var(--midnight);
   margin-bottom: 1.5rem;
   font-weight: 300;
 }
@@ -530,7 +530,7 @@ section { padding: var(--section-pad); }
 
 .poetry .section-eyebrow { color: var(--clay); }
 
-.poetry .section-title { color: var(--clay); }
+.poetry .section-title { color: var(--slate); }
 .poetry .section-title em { color: var(--clay); }
 
 .poetry-intro {
@@ -795,7 +795,7 @@ footer {
 .page-hero-inner { max-width: var(--max-width); margin: 0 auto; }
 
 .page-hero .section-eyebrow { color: var(--clay); }
-.page-hero .section-title { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--clay); }
+.page-hero .section-title { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--slate); }
 .page-hero .section-title em { color: var(--clay); }
 .page-hero .section-title em { font-style: normal; color: var(--clay); }
 
@@ -816,13 +816,13 @@ footer {
    This targets .section-title (h1/h2 page and section headings) only;
    body/primary text elsewhere is unaffected. */
 section[style*="var(--midnight)"] .section-title {
-  color: var(--clay);
+  color: var(--slate);
 }
 section[style*="var(--midnight)"] .section-title em {
   color: var(--clay);
 }
 section[style*="var(--slate)"] .section-title {
-  color: var(--teal);
+  color: var(--midnight);
 }
 section[style*="var(--slate)"] .section-title em {
   color: var(--teal);
