@@ -184,7 +184,7 @@ nav.nav-light .hamburger span { background: var(--slate); }
 .hero-title {
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 500;
-  color: var(--slate);
+  color: #fff;
   line-height: 1.1;
   margin-bottom: 2rem;
 }
