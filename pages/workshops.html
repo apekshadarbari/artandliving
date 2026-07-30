@@ -209,6 +209,10 @@
       .section-body, .flyer-block .section-body { font-size: 1.12rem; }
       .flyer-detail-row { font-size: 1.05rem; }
     }
+
+    /* Flyer content on a slate ground: dark text instead of the light-on-midnight default */
+    .flyer-on-slate .flyer-block .section-body { color: var(--text-muted); }
+    .flyer-on-slate .arc-line { color: var(--midnight); }
   </style>
 </head>
 <body>
@@ -354,7 +358,7 @@
   </section>
 
   <!-- WHAT HAPPENS IN THE ROOM -->
-  <section style="background: var(--midnight); padding: var(--section-pad);">
+  <section class="flyer-on-slate" style="background: var(--slate); padding: var(--section-pad);">
     <div style="max-width: var(--max-width); margin: 0 auto;">
       <div class="flyer-grid" style="grid-template-columns: 1fr; gap: 2.75rem;">
         <div class="flyer-block fade-up">
@@ -367,7 +371,7 @@
         </div>
         <div class="flyer-block fade-up">
           <p class="flyer-label">What's held for you</p>
-          <p class="section-body">Nothing is required except your presence. Come as you are, no skills needed, nothing to get right. All supplies are included.</p>
+          <p class="section-body">Nothing is required except your presence. No skills needed, nothing to get right. All supplies are included. Come as you are.</p>
         </div>
       </div>
     </div>
