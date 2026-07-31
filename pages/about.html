@@ -30,12 +30,22 @@
       gap: 5rem;
       align-items: start;
     }
+    /* Same 40/60 image-to-text ratio as .about-split-grid, but for sections where the
+       text column comes first in markup and the image second (so the wide fraction
+       needs to go first instead). */
+    .about-split-grid-reverse {
+      grid-template-columns: 1.5fr 1fr;
+    }
     @media (max-width: 960px) {
-      .about-split-grid {
+      .about-split-grid,
+      .about-split-grid-reverse {
         grid-template-columns: 1fr;
         gap: 2.5rem;
       }
-      .about-split-grid .sticky-img { position: static; }
+      .about-split-grid .sticky-img,
+      .about-split-grid-reverse .sticky-img {
+        position: static;
+      }
     }
     .btn-clay {
       display: inline-block;
@@ -99,13 +109,13 @@
 
         <p class="section-body" style="margin-bottom: 1.5rem;">
           In a land far, far away, over a quarter of a century ago, a little girl was not just
-          discovering her love for writing but more importantly finding a channel, a safe space to
-          say what she couldn&#39;t speak. She&#39;d scribble little poems and musings at the back of all
-          her notebooks and diaries, which she had many. She started journaling when she was eight.
-          Odd, considering no one in her family did.
+          discovering her love for writing but finding a channel, a safe space to say what she
+          couldn&#39;t speak. She&#39;d scribble little poems and musings at the back of all her
+          notebooks and diaries, which she had many. She started journaling when she was eight.
+          Odd she always thought, considering no one in her family did.
         </p>
         <p class="section-body" style="margin-bottom: 1.5rem;">
-          She knew she was odd. She was sure by now.
+          But she knew she was odd. She was sure of it by now.
         </p>
         <p class="section-body" style="margin-bottom: 1.5rem;">
           She was also an avid reader, always hungry to read more (bookstores are still like
@@ -115,8 +125,9 @@
         <p class="section-body" style="margin-bottom: 1.5rem;">
           Once she left home for her engineering degree, at age 17, her writing practice was never
           the same again. Neither was her reading. The girl who never not had a book in her hand
-          went months without reading a page. For a long time, there were hardly any environments
-          that nurtured creativity.
+          went months without reading a page. For the next two decades, there were hardly any
+          environments that nurtured creativity and she kept becoming smaller and smaller to fit
+          in those rooms.
         </p>
         <p class="section-body" style="margin-bottom: 1.5rem;">
           But she never stopped scribbling her poems and ramblings. The backs of her now many,
@@ -125,7 +136,8 @@
         </p>
         <p class="section-body" style="margin-bottom: 2.5rem;">
           Writing poetry was the first art form she ever practiced and now she&#39;s determined to
-          write more, once again.
+          not just write more, once again, but go after every form of art that calls out to her.
+          She is an artist after all.
         </p>
 
         <a href="../pages/poetry.html" class="btn-primary">Read my poetry</a>
@@ -135,70 +147,75 @@
 
   <!-- Section 2 — About Apeksha -->
   <section style="background: var(--midnight); padding: var(--section-pad);">
-    <div class="about-split-grid">
+    <div class="about-split-grid about-split-grid-reverse">
 
       <div class="fade-up">
         <h2 class="section-title" style="color: var(--slate); margin-bottom: 2rem;">Why I do <em style="color: var(--clay);">what I do</em></h2>
         <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
-          Hello there! I&#39;m Apeksha, a human and an artist. I&#39;m also a late-diagnosed
-          neurodivergent, immigrant, woman of color. Quite a mouthful, all those labels! They
-          are so helpful but very often also another way for people to put you in a neat little
-          box (you&#39;ve already handed them the label for it). I don&#39;t like being put in a box.
-          I believe these many ways of being different lend to a unique perspective — one that
-          cannot be categorized in any single way.
+          I was diagnosed with ADHD a couple of years ago. It explained my whole life so clearly.
+          I realized why I kept hitting a wall every few years, how tightly wound everything in
+          my body was trying to contort myself in rooms that didn&#39;t see me. How I was
+          conditioned to trust anything outside of myself because my natural instinct is always
+          wrong.
         </p>
         <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
-          I imagine these differences as additional complex layers which inform and compound each
-          other, constantly shaping my experience of the world and its experience of me, not to
-          mention my experience of myself in all of that.
-        </p>
-        <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
-          I was diagnosed with ADHD a couple of years ago. It explained, with almost comic
-          precision, every moment I had spent feeling like I was running software on the wrong
-          operating system. I learnt I wasn&#39;t broken. I was never built for this life to begin
-          with.
-        </p>
-        <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
-          With the diagnosis, started the slow, uncomfortable work (at first) of reconnecting
-          with my body. I realized I had spent most of my life tuning it out until it had to
-          scream, overriding my instinct because my instinct was inconvenient, or too much, or
-          didn&#39;t translate well into the language the room was speaking.
+          Getting the diagnosis when I was already in deep burnout, made me reflect on the life I
+          had built which looked splendid on paper but was hollowing me from the inside. I
+          started the slow, uncomfortable work of challenging my conditioning, reclaiming my
+          life, and reconnecting with my body. I realized I had spent most of my life tuning her
+          out until she had to scream, constantly overriding my instinct because my instinct was
+          inconvenient, or too much, or didn&#39;t translate well into the language the room was
+          speaking. And this whole time, I didn&#39;t even realize I was doing it.
         </p>
         <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
           So I started listening again. And when I did, I got the itch to paint.
         </p>
         <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
-          I had never painted before. A close friend offered her art supplies and we set up a
-          paint date. I created my first abstract piece and something unlocked, something
-          familiar and new at the same time. The same feeling I had known as a child with
-          writing, a simultaneous pouring out and filling up. A physical release and a
-          nourishing satisfaction.
+          When I painted for the first time only a few years ago and created my first abstract
+          piece, something inside me unlocked, something familiar and new at the same time. The
+          same feeling I had known as a child with writing, a simultaneous pouring out and
+          filling up. A physical release and a deep-seated satisfaction.
         </p>
         <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
-          A portal opened inside of me. I haven&#39;t stopped since.
+          A portal had opened inside me and I haven&#39;t stopped since.
         </p>
         <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
           But here&#39;s what I want to be clear about: the art was for me. It was a reclamation of
-          instinct, of trust, of a self I had spent a lifetime managing into smallness. That
-          part was personal and private and necessary.
+          instinct, of trust, of a self I had spent a lifetime managing into smallness. Breaking
+          the rules of what good art should be, of productivity and goals, and choosing to let my
+          body speak what it wants to say.
         </p>
         <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
-          What happened alongside it was that I started to understand something larger.
-          Creativity is not a talent some people have. It is a human need. And the particular
-          kind of relief I felt when I painted, the permission of being in a process with no
-          right answer, the state of being, not becoming, that is where the magic happens.
+          Alongside those discoveries and inventions, I started to understand something larger.
+          Creativity is not a talent some people have and others don&#39;t. It is a human need. It
+          has been a need since our ancestors painted on their cave walls. It is how we tell our
+          story about our universal yet individual human experience.
+        </p>
+        <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
+          The particular kind of relief I felt when I painted, the permission of being in a
+          process with no right answer, the state of being, not becoming, I soon realized that is
+          where the magic happens.
+        </p>
+        <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
+          And it is available to each one of us.
         </p>
         <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
           I completed my Therapeutic Arts Practitioner Certification because I want other women
-          running on fumes to experience what I experienced, a homecoming through creating art.
-          I got trained not just for me but for every past version of me that I see in the
-          women around.
+          running on fumes to experience what I experienced, a homecoming through creating art. I
+          got trained to hold this space ethically and in an informed way. But my biggest
+          qualification is my journey on this path not just for me but for every past version of
+          me that I see in the women around.
+        </p>
+        <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 1.5rem;">
+          That is what Art &amp; Living is. A philosophy to live by and a safe room to practice
+          choosing process over product, reclaiming our definition of what &quot;productive&quot;
+          means and looks like for us. Where there is no correct way to show up. Where the only
+          instruction is to follow what your body already knows.
         </p>
         <p class="section-body" style="color: rgba(242,224,215,0.85); margin-bottom: 2.5rem;">
-          That is what Art &amp; Living is. Spaces where the point is not the product but the
-          process. Where there is no correct way to show up. Where the only instruction is to
-          follow what your body already knows.<br><br>
-          I was the woman who carried too much. Now I help other women put it down.
+          For the woman who is constantly holding everything, afraid that something will fall if
+          she&#39;s not holding it all &mdash; you were not meant to run on fumes. Come, sit with me
+          and let&#39;s tend to your cup.
         </p>
 
         <a href="../pages/workshops.html" class="btn-clay">Work with me</a>
