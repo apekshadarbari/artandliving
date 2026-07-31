@@ -41,8 +41,12 @@ h1, h2, h3, h4 {
   line-height: 1.2;
 }
 
-/* ── NAV ── */
-nav {
+/* ── NAV ──
+   Scoped to :not(.gallery-pagination) because the gallery page also has a <nav> element
+   for its page-number controls (nav.gallery-pagination) - without this exclusion, that
+   inherited position:fixed/top:0 and rendered pinned to the top of the viewport instead
+   of sitting under the grid where it belongs. */
+nav:not(.gallery-pagination) {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
@@ -832,7 +836,7 @@ section[style*="var(--slate)"] .section-title em {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
-  nav { padding: 1.25rem 1.5rem; }
+  nav:not(.gallery-pagination) { padding: 1.25rem 1.5rem; }
   .hero { min-height: 90vh; }
   .hero-text { padding: 7rem 2.5rem 4rem; max-width: 100%; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -847,7 +851,7 @@ section[style*="var(--slate)"] .section-title em {
 
 @media (max-width: 640px) {
   :root { --section-pad: 4rem 1.5rem; }
-  nav { padding: 1rem 1.5rem; }
+  nav:not(.gallery-pagination) { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .nav-links.open {
