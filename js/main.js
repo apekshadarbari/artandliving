@@ -103,7 +103,7 @@ contactForm?.addEventListener('submit', (e) => {
       right: 2rem;
       z-index: 9999;
       width: 340px;
-      background: #35394c;
+      background: #f2e0d7;
       padding: 2rem;
       box-shadow: 0 8px 40px rgba(0,0,0,0.25);
       transform: translateY(20px);
@@ -129,14 +129,14 @@ contactForm?.addEventListener('submit', (e) => {
       font-family: 'Playfair Display', Georgia, serif;
       font-weight: 400;
       font-size: 1.35rem;
-      color: #f2e0d7;
+      color: #35394c;
       line-height: 1.3;
       margin-bottom: 0.85rem;
     }
     #mail-popup p {
       font-family: 'Nunito Sans', sans-serif;
       font-size: 0.875rem;
-      color: rgba(242,224,215,0.7);
+      color: #6b6b6b;
       line-height: 1.65;
       margin-bottom: 1.5rem;
     }
@@ -161,14 +161,14 @@ contactForm?.addEventListener('submit', (e) => {
       right: 0.9rem;
       background: none;
       border: none;
-      color: rgba(242,224,215,0.45);
+      color: rgba(53,57,76,0.45);
       font-size: 1.2rem;
       cursor: pointer;
       line-height: 1;
       padding: 0.25rem;
       transition: color 0.2s ease;
     }
-    #mail-popup-minimize:hover { color: #f2e0d7; }
+    #mail-popup-minimize:hover { color: #35394c; }
     #mail-tab {
       position: fixed;
       bottom: 2rem;
