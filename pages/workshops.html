@@ -92,32 +92,116 @@
       .flyer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
       .flyer-detail-row { flex-direction: column; gap: 0.35rem; }
     }
+    /* Featured testimonial: visual anchor of the section */
+    .testimonial-featured {
+      position: relative;
+      max-width: 700px;
+      margin: 2.5rem auto 3.25rem;
+      padding: 0.5rem 1.5rem 0;
+      text-align: center;
+    }
+    .testimonial-quote-mark {
+      position: absolute;
+      top: -3.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 10rem;
+      line-height: 1;
+      color: var(--clay);
+      opacity: 0.16;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+    .testimonial-featured-quote {
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.55rem;
+      color: var(--slate);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .testimonial-featured-quote.expanded {
+      display: block;
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+    .testimonial-featured-name {
+      position: relative;
+      z-index: 1;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-top: 0.75rem;
+    }
+    @media (max-width: 768px) {
+      .testimonial-quote-mark { font-size: 7rem; top: -2.5rem; }
+      .testimonial-featured-quote { font-size: 1.25rem; }
+    }
+
+    /* Secondary testimonials: smaller, tighter, visually subordinate to the featured quote */
     .testimonial-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.85rem;
       max-width: var(--max-width);
-      margin: 3rem auto 0;
+      margin: 0 auto;
     }
     .testimonial-card {
       background: var(--white);
-      padding: 2rem;
+      padding: 1.6rem 1.75rem;
       border-top: 2px solid var(--clay);
     }
     .testimonial-quote {
       font-family: var(--font-display);
       font-style: italic;
       font-weight: 400;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--midnight);
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
+      line-height: 1.65;
+      margin-bottom: 0.65rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .testimonial-quote.expanded {
+      display: block;
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+    .testimonial-toggle {
+      display: inline-block;
+      background: none;
+      border: none;
+      padding: 0;
+      margin-bottom: 0.6rem;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--clay);
+      text-decoration: underline;
+      cursor: pointer;
     }
     .testimonial-name {
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--text-muted);
+    }
+    @media (max-width: 900px) {
+      .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
     }
     .what-to-expect {
       max-width: var(--max-width);
@@ -203,7 +287,6 @@
     .arc-line { font-size: 1.18rem; }
     .step-content p { font-size: 1.02rem; line-height: 1.75; }
     .step-content h4 { font-size: 1.2rem; }
-    .testimonial-quote { font-size: 1.2rem; }
     .workshop-hero-text { font-size: 1.28rem; }
     @media (max-width: 768px) {
       .section-body, .flyer-block .section-body { font-size: 1.12rem; }
@@ -213,6 +296,59 @@
     /* Flyer content on a slate ground: dark text instead of the light-on-midnight default */
     .flyer-on-slate .flyer-block .section-body { color: var(--text-muted); }
     .flyer-on-slate .arc-line { color: var(--midnight); }
+
+    /* Secondary offers: 1:1 sessions + From the Studio + Join the Circle, equal-height cards */
+    .secondary-offers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      align-items: stretch;
+    }
+    .secondary-offer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: var(--white);
+      border-top: 2px solid var(--clay);
+      padding: 2.25rem 1.75rem;
+      height: 100%;
+    }
+    .secondary-offer h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--midnight);
+      margin-bottom: 0.65rem;
+    }
+    .secondary-offer p { font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); }
+    .secondary-offer .offer-price { margin-top: 0.9rem; margin-bottom: 0; }
+    .secondary-offer .offer-actions {
+      margin-top: auto;
+      padding-top: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .secondary-offer .btn-clay, .secondary-offer .btn-primary {
+      padding: 0.65rem 1.35rem;
+      font-size: 0.75rem;
+      background: transparent;
+      color: var(--midnight);
+      border: 1px solid var(--midnight);
+    }
+    .secondary-offer .btn-clay:hover, .secondary-offer .btn-primary:hover {
+      background: var(--clay);
+      color: var(--white);
+      border-color: var(--clay);
+    }
+    .secondary-offer .offer-links { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+    @media (max-width: 768px) {
+      .secondary-offers { grid-template-columns: 1fr; gap: 1.75rem; }
+    }
   </style>
 </head>
 <body>
@@ -228,7 +364,7 @@
       <li><a href="../pages/studio.html">From the Studio</a></li>
       <li><a href="../pages/poetry.html">Rhymes & Ramblings</a></li>
       <li><a href="../pages/contact.html">Say Hi</a></li>
-      <li><a href="#book" class="nav-cta">Book Your Spot</a></li>
+      <li><a href="#book" class="nav-cta">Reserve Your Spot</a></li>
     </ul>
     <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
       <span></span><span></span><span></span>
@@ -270,7 +406,6 @@
         <div class="flyer-block fade-up">
           <p class="flyer-label">The Host: Apeksha Darbari</p>
           <p class="section-body">After years of burning out in tech and a late ADHD diagnosis, I found creating art as my compass back home. Now, I work as an artist and a certified Therapeutic Arts Practitioner, building the room I needed when I was running on fumes.</p>
-          <p class="section-body" style="margin-top: 0.75rem;">Want to see more of the work and the room before you decide? Find me on Instagram <a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: underline;">@apekshadarbari</a>.</p>
         </div>
       </div>
 
@@ -301,7 +436,12 @@
             </div>
           </div>
           <div class="fade-up">
-            <span class="flyer-eyebrow" style="margin-top: 0;">After you've booked</span>
+            <span class="flyer-eyebrow" style="margin-top: 0;">Have questions?</span>
+            <p class="section-body" style="color: rgba(242,224,215,0.75);">
+              <a href="mailto:apeksha@apekshadarbari.com" style="color: var(--slate); text-decoration: underline;">Email me</a> or find me on Instagram <a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: underline;">@apekshadarbari</a> &mdash; happy to chat before you decide.
+            </p>
+
+            <span class="flyer-eyebrow">After you've booked</span>
             <p class="section-body" style="color: rgba(242,224,215,0.75);">
               <strong style="color: var(--slate); font-weight: 400;">Before this session:</strong> I'll reach out with a few questions so I know how to make this room comfortable for you (e.g. sensory needs). You're encouraged to share as much or as little as feels right.
             </p>
@@ -329,51 +469,38 @@
   -->
 
   <!-- TESTIMONIALS -->
-  <section style="background: var(--midnight); padding: var(--section-pad);">
-    <div style="max-width: var(--max-width); margin: 0 auto;">
+  <section style="background: var(--midnight); padding: 3.5rem 2rem;">
+    <div style="max-width: var(--max-width); margin: 0 auto; text-align: center;">
       <span class="section-eyebrow">What women say</span>
-      <h2 class="section-title" style="color: var(--slate);">From <em style="color: var(--clay)">the room</em></h2>
+      <h2 class="section-title" style="color: var(--slate); font-size: clamp(1.6rem, 3vw, 2.25rem); margin-bottom: 0;">From <em style="color: var(--clay)">the room</em></h2>
     </div>
+
+    <!-- Featured testimonial: the visual anchor -->
+    <div class="testimonial-featured fade-up">
+      <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+      <p class="testimonial-featured-quote">Apeksha's workshop was an absolute gift in an otherwise very difficult week for me. I came into the workshop feeling emotionally, mentally and physically drained. Apeksha has a very calm and grounding energy which immediately made me feel safe, and supported me in remaining fully present throughout our session (not an easy task after an intense day of work). It was a moment of peace and healing that I am very grateful for!</p>
+      <button class="testimonial-toggle" type="button">Read more</button>
+      <p class="testimonial-featured-name">Natalie P.</p>
+    </div>
+
     <div class="testimonial-grid">
       <div class="testimonial-card fade-up" style="background: var(--slate); border-top-color: var(--clay);">
-        <p class="testimonial-quote" style="color: var(--midnight);">"Apeksha's workshop was an absolute gift in an otherwise very difficult week for me. I came into the workshop feeling emotionally, mentally and physically drained. Apeksha has a very calm and grounding energy which immediately made me feel safe, and supported me in remaining fully present throughout our session (not an easy task after an intense day of work). It was a moment of peace and healing that I am very grateful for!"</p>
-        <p class="testimonial-name" style="color: var(--teal); font-size: 0.85rem;">Natalie P.</p>
-      </div>
-      <div class="testimonial-card fade-up" style="background: var(--slate); border-top-color: var(--clay);">
         <p class="testimonial-quote" style="color: var(--midnight);">"Apeksha has a gift. She can make you think deeply and relax at the same time."</p>
-        <p class="testimonial-name" style="color: var(--teal); font-size: 0.85rem;">Kim A.</p>
+        <p class="testimonial-name" style="color: var(--teal);">Kim A.</p>
       </div>
       <div class="testimonial-card fade-up" style="background: var(--slate); border-top-color: var(--clay);">
         <p class="testimonial-quote" style="color: var(--midnight);">"Apeksha is a very skilled, calm and empathetic therapeutic arts practitioner. Her workshops provide a safe space for exploring art and looking deeper inside ourselves. In just a short time I felt connected to the other women in the workshop. The art making was fun and insightful and the sharing was authentic. Thank you Apeksha!"</p>
-        <p class="testimonial-name" style="color: var(--teal); font-size: 0.85rem;">Talya</p>
+        <button class="testimonial-toggle" type="button">Read more</button>
+        <p class="testimonial-name" style="color: var(--teal);">Talya</p>
       </div>
       <div class="testimonial-card fade-up" style="background: var(--slate); border-top-color: var(--clay);">
         <p class="testimonial-quote" style="color: var(--midnight);">"This workshop was incredible. Apeksha has a way with words that really reels you into what the true essence of what the workshop is meant to achieve. I would recommend this to all women that want to explore their creative side in a safe and thought-provoking environment."</p>
-        <p class="testimonial-name" style="color: var(--teal); font-size: 0.85rem;">Anonymous</p>
+        <button class="testimonial-toggle" type="button">Read more</button>
+        <p class="testimonial-name" style="color: var(--teal);">Anonymous</p>
       </div>
       <div class="testimonial-card fade-up" style="background: var(--slate); border-top-color: var(--clay);">
         <p class="testimonial-quote" style="color: var(--midnight);">"This was a lovely offering and just the type of thing I think many people would find comfort in right now."</p>
-        <p class="testimonial-name" style="color: var(--teal); font-size: 0.85rem;">Aurelia K.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHAT HAPPENS IN THE ROOM -->
-  <section class="flyer-on-slate" style="background: var(--slate); padding: var(--section-pad);">
-    <div style="max-width: var(--max-width); margin: 0 auto;">
-      <div class="flyer-grid" style="grid-template-columns: 1fr; gap: 2.75rem;">
-        <div class="flyer-block fade-up">
-          <p class="flyer-label">What happens in the room</p>
-          <p class="section-body">You'll make something with your hands in the company of other women who are also, finally, putting something down they've been carrying too long.</p>
-          <p class="section-body" style="margin-top: 0.75rem;">This is a safe space to breathe, to move, to create, to be. We spend too much trying to become. How about taking a moment to be who you are right now?</p>
-          <p class="section-body" style="margin-top: 0.75rem;">I'll be there as a guide and companion, holding the space while you explore what your body wants to say and put it on the page.</p>
-          <p class="arc-line" style="margin-top: 1.75rem;">Short Meditation &ndash; Check in &ndash; The Making &ndash; Sharing Circle &ndash; Reflections &amp; Soft Close</p>
-          <p class="section-body" style="font-style: italic; margin-top: 0.75rem;">Everything is always an invitation, never an expectation.</p>
-        </div>
-        <div class="flyer-block fade-up">
-          <p class="flyer-label">What's held for you</p>
-          <p class="section-body">Nothing is required except your presence. No skills needed, nothing to get right. All supplies are included. Come as you are.</p>
-        </div>
+        <p class="testimonial-name" style="color: var(--teal);">Aurelia K.</p>
       </div>
     </div>
   </section>
@@ -384,66 +511,66 @@
       <p class="flyer-eyebrow" style="font-size: 1.25rem; margin-top: 0; margin-bottom: 1.75rem;">Tell Me More</p>
       <div class="flyer-grid" style="grid-template-columns: 1fr; gap: 2.75rem;">
         <div class="flyer-block fade-up">
-          <p class="flyer-label">What This Is</p>
-          <p class="section-body">A non-clinical therapeutic arts session. I'm not a licensed therapist, and this isn't therapy. Here, we play. We let that tiny voice speak before we try to correct it, and follow the body and spirit without a goal to accomplish. This version of you, exactly as she is, doesn't need fixing.</p>
+          <p class="flyer-label">What Happens in the Room</p>
+          <p class="section-body">You'll make something with your hands in the company of other women who are also, finally, putting something down they've been carrying too long. I'll be there as a guide and companion, holding the space while you explore what your body wants to say and put it on the page.</p>
+          <p class="section-body" style="margin-top: 0.75rem;">Nothing is required except your presence &mdash; no skills needed, nothing to get right. Watercolours, markers, oil pastels, charcoal, crayons: work with whatever calls to you, all supplies included.</p>
+          <p class="arc-line" style="margin-top: 1.75rem;">Short Meditation &ndash; Check in &ndash; The Making &ndash; Sharing Circle &ndash; Reflections &amp; Soft Close</p>
+          <p class="section-body" style="font-style: italic; margin-top: 0.75rem;">Everything here is an invitation, never an expectation.</p>
         </div>
         <div class="flyer-block fade-up">
           <p class="flyer-label">What This Isn't</p>
-          <p class="section-body">Not a replacement for therapy, but a companion to it. My training is as a space holder and facilitator, but my deepest qualification is having walked this path myself. I'd be honoured to guide you.</p>
-        </div>
-        <div class="flyer-block fade-up">
-          <p class="flyer-label">What We Do</p>
-          <p class="section-body">There's no single modality, just guidance, attention, and gentle encouragement to follow your own instinct. Watercolours, markers, oil pastels, charcoal, crayons: work with whatever calls to you. A couple of hours where no one needs anything from you.</p>
+          <p class="section-body">This is a non-clinical therapeutic arts session &mdash; not a replacement for therapy, but rather a wonderful companion to it. I'm not a licensed therapist; my training is as a space holder and facilitator, but my biggest qualification is having walked this path myself.</p>
+          <p class="section-body" style="margin-top: 0.75rem;">Here, we play. We let that tiny voice speak before we try to correct it, and follow the body and spirit without a goal to accomplish. This version of you, exactly as she is, doesn't need fixing. I'd be honoured to guide you.</p>
         </div>
         <div class="flyer-block fade-up">
           <p class="flyer-label">Refunds and cancellations</p>
-          <p class="section-body">If you change your mind, you can request a full refund within 48 hours of booking, as long as it's more than 72 hours before the session. After that, spots are final, but if a genuine emergency comes up, reach out and we'll look at crediting it toward a future session, evaluated case by case.</p>
+          <p class="section-body">If you change your mind, you can request a full refund within 48 hours of booking, as long as it's more than 72 hours before the session. After that, spots are final, but if a genuine emergency comes up, please reach out and we can look at crediting it toward a future session. This will be evaluated on a case by case basis.</p>
         </div>
         <div class="flyer-block fade-up">
           <p class="flyer-label">If this date doesn't work</p>
-          <p class="section-body">Leave your email at the link above and I'll let you know about future sessions.</p>
+          <p class="section-body"><a href="https://apekshadarbari.myflodesk.com/workshop-waitlist" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: underline;">Leave your email</a> and I'll keep you in the loop about future sessions.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 1:1 SESSIONS -->
-  <section style="background: var(--slate); padding: var(--section-pad);">
-    <div style="max-width: 560px; margin: 0 auto; text-align: center;" class="fade-up">
-      <span class="section-eyebrow">One to one</span>
-      <h2 class="section-title" style="margin-bottom: 1.5rem; color: var(--midnight);">Not a group? <em style="color: var(--teal)">Just us.</em></h2>
-      <p class="section-body" style="color: var(--text-muted); margin-bottom: 2rem;">
-        A private hour and a bit, where you make something with your hands and I hold the space. No brief, no right answer, nothing to produce. You set the pace. Come, sit with me.
-      </p>
-      <p class="section-body" style="color: var(--midnight); margin-bottom: 2.5rem;">
-        <strong style="font-weight: 400;">$95</strong>: single session<br>
-        <strong style="font-weight: 400;">$255</strong>: pack of three <span style="color: var(--text-muted); font-style: italic;">(for the work that unfolds over time)</span>
-      </p>
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="https://stan.store/apekshadarbari/p/11-therapeutic-art-sessions" target="_blank" rel="noopener noreferrer" class="btn-clay">Book a single session</a>
-        <a href="https://stan.store/apekshadarbari/p/come-sit-with-me-three-times-over" target="_blank" rel="noopener noreferrer" class="btn-clay">Book a set of three</a>
+  <!-- SECONDARY: 1:1 SESSIONS + FROM THE STUDIO + JOIN THE CIRCLE (equal-height row) -->
+  <section style="background: var(--slate); padding: 3.5rem 2rem;">
+    <div class="secondary-offers">
+      <div class="secondary-offer fade-up">
+        <span class="section-eyebrow" style="margin-bottom: 0.5rem;">One to one</span>
+        <h3>Not a group? <em style="color: var(--teal); font-style: italic;">Just us.</em></h3>
+        <p>A private hour and a bit, where you make something with your hands and I hold the space. You set the pace.</p>
+        <div class="offer-actions">
+          <div class="offer-links">
+            <a href="https://stan.store/apekshadarbari/p/11-therapeutic-art-sessions" target="_blank" rel="noopener noreferrer" class="btn-clay">Book a single session</a>
+          </div>
+          <p style="font-size: 0.72rem; margin: 0;">Via Stan Store, opens in a new tab.</p>
+        </div>
       </div>
-      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 1rem;">You'll complete your booking securely via Stan Store. It opens in a new tab.</p>
+      <div class="secondary-offer fade-up">
+        <span class="section-eyebrow" style="margin-bottom: 0.5rem;">From the Studio</span>
+        <h3>Not ready for a live session?</h3>
+        <p>Letters, prompts, and permission slips: small things made for whenever you need something to hold.</p>
+        <div class="offer-actions">
+          <div class="offer-links">
+            <a href="../pages/studio.html" class="btn-clay">See what's in the studio</a>
+          </div>
+          <p style="font-size: 0.72rem; margin: 0; visibility: hidden;" aria-hidden="true">&nbsp;</p>
+        </div>
+      </div>
+      <div class="secondary-offer fade-up">
+        <span class="section-eyebrow" style="margin-bottom: 0.5rem;">Join the circle</span>
+        <h3>Stay in <em style="color: var(--teal); font-style: italic;">the conversation</em></h3>
+        <p>Be the first to know when new workshop dates open.</p>
+        <div class="offer-actions">
+          <div class="offer-links">
+            <a href="https://apekshadarbari.myflodesk.com/apekshadarbari-art-and-living" target="_blank" rel="noopener noreferrer" class="btn-clay">Join the circle</a>
+          </div>
+          <p style="font-size: 0.72rem; margin: 0; visibility: hidden;" aria-hidden="true">&nbsp;</p>
+        </div>
+      </div>
     </div>
-  </section>
-
-  <!-- FROM THE STUDIO TEASER -->
-  <section style="background: var(--midnight); padding: var(--section-pad);">
-    <div style="max-width: 560px; margin: 0 auto; text-align: center;" class="fade-up">
-      <span class="section-eyebrow">From the Studio</span>
-      <h2 class="section-title" style="margin-bottom: 1.5rem; color: var(--slate);">Not ready for a live session?</h2>
-      <p class="section-body" style="color: rgba(242,224,215,0.7); margin-bottom: 2.5rem;">
-        Letters, prompts, and permission slips: small things made for whenever you need something to hold.
-      </p>
-      <a href="../pages/studio.html" class="btn-clay">See what's in the studio</a>
-    </div>
-  </section>
-
-  <section class="email-strip" style="background: var(--slate);">
-    <span class="section-eyebrow">Join the circle</span>
-    <h2 class="section-title">Stay in <em>the conversation</em></h2>
-    <p>Be the first to know when new workshop dates open.</p>
-    <a href="https://apekshadarbari.myflodesk.com/apekshadarbari-art-and-living" target="_blank" class="btn-primary">Join the circle</a>
   </section>
 
   <footer>
@@ -490,5 +617,14 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script>
+    document.querySelectorAll('.testimonial-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var quote = btn.previousElementSibling;
+        var expanded = quote.classList.toggle('expanded');
+        btn.textContent = expanded ? 'Show less' : 'Read more';
+      });
+    });
+  </script>
 </body>
 </html>
