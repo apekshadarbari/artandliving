@@ -92,7 +92,6 @@ contactForm?.addEventListener('submit', (e) => {
 // ── MAILING LIST POPUP ──
 (function () {
   const FLODESK_URL = 'https://apekshadarbari.myflodesk.com/apekshadarbari-art-and-living';
-  const SESSION_KEY = 'mailPopupState'; // 'minimized' | 'dismissed'
 
   // Inject styles
   const style = document.createElement('style');
@@ -235,18 +234,12 @@ contactForm?.addEventListener('submit', (e) => {
   function minimisePopup() {
     popup.classList.remove('visible');
     tab.classList.add('visible');
-    sessionStorage.setItem(SESSION_KEY, 'minimized');
   }
 
-  // Restore previous state or show after delay
-  const savedState = sessionStorage.getItem(SESSION_KEY);
-  if (savedState === 'minimized') {
-    // Show only the tab immediately
-    setTimeout(() => tab.classList.add('visible'), 800);
-  } else {
-    // Fresh visit: show popup after 4 seconds
-    setTimeout(showPopup, 4000);
-  }
+  // Show the big popup after a short delay on every visit/page load
+  // (intentionally not persisted in sessionStorage — Apeksha wants it
+  // to appear big every time someone opens the site, not just once).
+  setTimeout(showPopup, 4000);
 
   document.getElementById('mail-popup-minimize').addEventListener('click', minimisePopup);
   tab.addEventListener('click', showPopup);
