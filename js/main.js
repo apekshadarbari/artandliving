@@ -90,12 +90,105 @@ contactForm?.addEventListener('submit', (e) => {
 });
 
 // ── MAILING LIST POPUP ──
+// Three states, remembered per browser session (sessionStorage):
+//   1. (no state)  → first time this session: big, page-wide welcome dialog
+//   2. 'small'      → dialog was closed: small card in the corner
+//   3. 'minimized'  → small card was minimised: just the little tab button
+// Reopening the tab or card never brings back the big dialog — that's a
+// one-time first-visit moment. State always stays at whatever level the
+// visitor left it at, including across page loads within the same session.
 (function () {
   const FLODESK_URL = 'https://apekshadarbari.myflodesk.com/apekshadarbari-art-and-living';
+  const SESSION_KEY = 'mailPopupState'; // 'small' | 'minimized'
 
   // Inject styles
   const style = document.createElement('style');
   style.textContent = `
+    #mail-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(53,57,76,0.78);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    #mail-modal-overlay.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+    #mail-modal {
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      background: #f2e0d7;
+      padding: 3.5rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      transform: translateY(20px);
+      transition: transform 0.4s ease;
+    }
+    #mail-modal-overlay.visible #mail-modal {
+      transform: translateY(0);
+    }
+    #mail-modal-eyebrow {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #e57c5f;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    #mail-modal h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      color: #35394c;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    #mail-modal p {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 1rem;
+      color: #6b6b6b;
+      line-height: 1.75;
+      max-width: 460px;
+      margin: 0 auto 2rem;
+    }
+    #mail-modal-cta {
+      display: inline-block;
+      background: #e57c5f;
+      color: #fff;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2.25rem;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+    #mail-modal-cta:hover { background: #d4694d; }
+    #mail-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      color: rgba(53,57,76,0.45);
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0.25rem;
+      transition: color 0.2s ease;
+    }
+    #mail-modal-close:hover { color: #35394c; }
     #mail-popup {
       position: fixed;
       bottom: 2rem;
@@ -200,7 +293,23 @@ contactForm?.addEventListener('submit', (e) => {
   `;
   document.head.appendChild(style);
 
-  // Build popup
+  // Build big welcome dialog (first visit only)
+  const overlay = document.createElement('div');
+  overlay.id = 'mail-modal-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Join the circle');
+  overlay.innerHTML = `
+    <div id="mail-modal">
+      <button id="mail-modal-close" aria-label="Close">&#x2715;</button>
+      <span id="mail-modal-eyebrow">Join the circle</span>
+      <h2>Letters from the studio.</h2>
+      <p>Letters on creativity, neurodivergence, what women carry, upcoming workshops, resources, and what we are building together. You'll only hear from me when there's something worth saying.</p>
+      <a id="mail-modal-cta" href="${FLODESK_URL}" target="_blank" rel="noopener noreferrer">Join the circle</a>
+    </div>
+  `;
+
+  // Build small corner popup
   const popup = document.createElement('div');
   popup.id = 'mail-popup';
   popup.setAttribute('role', 'dialog');
@@ -223,8 +332,20 @@ contactForm?.addEventListener('submit', (e) => {
     Join the circle
   `;
 
+  document.body.appendChild(overlay);
   document.body.appendChild(popup);
   document.body.appendChild(tab);
+
+  function showModal() {
+    overlay.classList.add('visible');
+  }
+
+  function closeModal() {
+    // Closing the big dialog demotes it to the small corner card, not the tab.
+    overlay.classList.remove('visible');
+    sessionStorage.setItem(SESSION_KEY, 'small');
+    showPopup();
+  }
 
   function showPopup() {
     popup.classList.add('visible');
@@ -234,13 +355,27 @@ contactForm?.addEventListener('submit', (e) => {
   function minimisePopup() {
     popup.classList.remove('visible');
     tab.classList.add('visible');
+    sessionStorage.setItem(SESSION_KEY, 'minimized');
   }
 
-  // Show the big popup after a short delay on every visit/page load
-  // (intentionally not persisted in sessionStorage — Apeksha wants it
-  // to appear big every time someone opens the site, not just once).
-  setTimeout(showPopup, 4000);
+  // Restore whatever state the visitor left things at, or show the
+  // big dialog for a true first-time-this-session visit.
+  const savedState = sessionStorage.getItem(SESSION_KEY);
+  if (savedState === 'minimized') {
+    setTimeout(() => tab.classList.add('visible'), 800);
+  } else if (savedState === 'small') {
+    setTimeout(showPopup, 2000);
+  } else {
+    setTimeout(showModal, 2000);
+  }
 
+  document.getElementById('mail-modal-close').addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModal();
+  });
   document.getElementById('mail-popup-minimize').addEventListener('click', minimisePopup);
-  tab.addEventListener('click', showPopup);
+  tab.addEventListener('click', () => {
+    showPopup();
+    sessionStorage.setItem(SESSION_KEY, 'small');
+  });
 })();
