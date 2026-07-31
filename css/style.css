@@ -741,7 +741,8 @@ footer {
   font-size: 0.95rem;
   color: var(--slate);
   line-height: 1.7;
-  max-width: 260px;
+  max-width: 420px;
+  white-space: normal;
 }
 
 .footer-heading {
