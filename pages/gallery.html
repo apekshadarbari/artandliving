@@ -472,10 +472,10 @@
       const title = esc(p.title);
       const ratio = (item.width && item.height) ? `aspect-ratio: ${item.width} / ${item.height};` : '';
       const isPrint = item.category === 'prints';
-      const sizes = isPrint ? (item.sizes || []) : [];
-      const fromPrice = sizes.length ? Math.min.apply(null, sizes.map(s => Number(s.price))) : null;
+      // Print pricing (paper vs. canvas) isn't finalized yet - show "Coming soon" for now.
+      // Size/price data still lives in gallery-data.json, ready to switch back on later.
       const actionHTML = isPrint
-        ? (fromPrice != null ? `<p class="g-card-sizes">From $${esc(fromPrice)}</p>` : '')
+        ? `<p class="g-card-sizes">Coming soon</p>`
         : `<button type="button" class="g-request">Request price</button>`;
       return `
         <article class="g-card" tabindex="0" role="button"
@@ -561,9 +561,9 @@
         .map(([k, v]) => `<div>${esc(k)}: <span>${esc(v)}</span></div>`).join('');
     }
 
-    function sizeRows(sizes) {
-      return sizes.map(s => `<div class="lightbox-size-row">${esc(s.label)}<span>$${esc(s.price)}</span></div>`).join('')
-        + `<p class="lightbox-sizes-note">Archival quality giclée print, available on paper or canvas. <a href="../pages/contact.html">Get in touch</a> to order.</p>`;
+    function comingSoonHTML() {
+      // Print sizing/pricing (paper vs. canvas) isn't finalized yet.
+      return `<p class="lightbox-sizes-note" style="margin-top: 0;">Sizes and pricing coming soon.</p>`;
     }
 
     function openLightbox(item) {
@@ -576,9 +576,8 @@
       lbMeta.innerHTML = metaRows(p);
 
       const isPrint = item.category === 'prints';
-      const sizes = isPrint ? (item.sizes || []) : [];
-      if (isPrint && sizes.length) {
-        lbSizes.innerHTML = sizeRows(sizes);
+      if (isPrint) {
+        lbSizes.innerHTML = comingSoonHTML();
         lbSizes.style.display = 'block';
         lbActions.style.display = 'none';
       } else {
