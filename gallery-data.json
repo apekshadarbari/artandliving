@@ -107,7 +107,21 @@
       "height": 1100,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "sizes": [
+        {
+          "label": "8 x 10 in",
+          "price": 45
+        },
+        {
+          "label": "11 x 14 in",
+          "price": 75
+        },
+        {
+          "label": "13 x 17 in",
+          "price": 105
+        }
+      ]
     },
     {
       "id": "beach",
@@ -118,7 +132,21 @@
       "height": 1100,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "sizes": [
+        {
+          "label": "8 x 10 in",
+          "price": 45
+        },
+        {
+          "label": "11 x 14 in",
+          "price": 75
+        },
+        {
+          "label": "13 x 17 in",
+          "price": 105
+        }
+      ]
     },
     {
       "id": "blackhole",
@@ -129,7 +157,21 @@
       "height": 1100,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "sizes": [
+        {
+          "label": "8 x 10 in",
+          "price": 45
+        },
+        {
+          "label": "11 x 14 in",
+          "price": 75
+        },
+        {
+          "label": "13 x 17 in",
+          "price": 105
+        }
+      ]
     },
     {
       "id": "defiance",
@@ -140,7 +182,21 @@
       "height": 1100,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "sizes": [
+        {
+          "label": "8 x 10 in",
+          "price": 45
+        },
+        {
+          "label": "11 x 14 in",
+          "price": 75
+        },
+        {
+          "label": "13 x 17 in",
+          "price": 105
+        }
+      ]
     },
     {
       "id": "eve",
@@ -151,7 +207,21 @@
       "height": 1100,
       "orientation": "square",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "sizes": [
+        {
+          "label": "8 x 10 in",
+          "price": 45
+        },
+        {
+          "label": "11 x 14 in",
+          "price": 75
+        },
+        {
+          "label": "13 x 17 in",
+          "price": 105
+        }
+      ]
     },
     {
       "id": "gilded-blues",
@@ -162,7 +232,21 @@
       "height": 1100,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "sizes": [
+        {
+          "label": "8 x 10 in",
+          "price": 45
+        },
+        {
+          "label": "11 x 14 in",
+          "price": 75
+        },
+        {
+          "label": "13 x 17 in",
+          "price": 105
+        }
+      ]
     },
     {
       "id": "ripples",
@@ -173,7 +257,21 @@
       "height": 1100,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "sizes": [
+        {
+          "label": "8 x 10 in",
+          "price": 45
+        },
+        {
+          "label": "11 x 14 in",
+          "price": 75
+        },
+        {
+          "label": "13 x 17 in",
+          "price": 105
+        }
+      ]
     },
     {
       "id": "seep",
@@ -184,7 +282,21 @@
       "height": 1100,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "sizes": [
+        {
+          "label": "8 x 10 in",
+          "price": 45
+        },
+        {
+          "label": "11 x 14 in",
+          "price": 75
+        },
+        {
+          "label": "13 x 17 in",
+          "price": 105
+        }
+      ]
     },
     {
       "id": "splunk",
@@ -195,7 +307,21 @@
       "height": 1100,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "sizes": [
+        {
+          "label": "8 x 10 in",
+          "price": 45
+        },
+        {
+          "label": "11 x 14 in",
+          "price": 75
+        },
+        {
+          "label": "13 x 17 in",
+          "price": 105
+        }
+      ]
     },
     {
       "id": "surge",
@@ -206,7 +332,21 @@
       "height": 1100,
       "orientation": "tall",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "sizes": [
+        {
+          "label": "8 x 10 in",
+          "price": 45
+        },
+        {
+          "label": "11 x 14 in",
+          "price": 75
+        },
+        {
+          "label": "13 x 17 in",
+          "price": 105
+        }
+      ]
     },
     {
       "id": "winter",
@@ -217,7 +357,21 @@
       "height": 1100,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "sizes": [
+        {
+          "label": "8 x 10 in",
+          "price": 45
+        },
+        {
+          "label": "11 x 14 in",
+          "price": 75
+        },
+        {
+          "label": "13 x 17 in",
+          "price": 105
+        }
+      ]
     }
   ]
 }

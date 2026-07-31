@@ -190,6 +190,21 @@
     .g-request:hover { background: var(--clay); color: var(--white); border-color: var(--clay); }
     .gal-dark .g-card-meta { color: rgba(242, 224, 215, 0.55); }
 
+    /* ── PRINT PRICING (cards show a teaser, lightbox shows the full size list) ── */
+    .g-card-sizes {
+      margin-top: 1.2rem; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--clay);
+    }
+    .gal-dark .g-card-sizes { color: var(--clay); }
+    .lightbox-sizes { margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--slate-dark); }
+    .lightbox-size-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-size: 0.95rem; color: var(--midnight); padding: 0.55rem 0;
+    }
+    .lightbox-size-row + .lightbox-size-row { border-top: 1px solid rgba(53,57,76,0.08); }
+    .lightbox-size-row span { color: var(--text-muted); font-size: 0.9rem; }
+    .lightbox-sizes-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.6; }
+
     /* ── FORM MODAL (Request price) ── */
     .form-modal { display: none; position: fixed; inset: 0; z-index: 10001; background: rgba(30, 32, 42, 0.94); padding: 2rem; overflow-y: auto; }
     .form-modal.open { display: flex; align-items: center; justify-content: center; }
@@ -294,7 +309,8 @@
         <p class="lightbox-cat" id="lightboxCat"></p>
         <h2 class="lightbox-title" id="lightboxTitle"></h2>
         <div class="lightbox-meta" id="lightboxMeta"></div>
-        <div class="lightbox-actions">
+        <div class="lightbox-sizes" id="lightboxSizes" style="display: none;"></div>
+        <div class="lightbox-actions" id="lightboxActions">
           <button type="button" id="lightboxRequest" class="btn-clay">Request price</button>
         </div>
       </div>
@@ -455,6 +471,12 @@
       const p = pieceOf(item);
       const title = esc(p.title);
       const ratio = (item.width && item.height) ? `aspect-ratio: ${item.width} / ${item.height};` : '';
+      const isPrint = item.category === 'prints';
+      const sizes = isPrint ? (item.sizes || []) : [];
+      const fromPrice = sizes.length ? Math.min.apply(null, sizes.map(s => Number(s.price))) : null;
+      const actionHTML = isPrint
+        ? (fromPrice != null ? `<p class="g-card-sizes">From $${esc(fromPrice)}</p>` : '')
+        : `<button type="button" class="g-request">Request price</button>`;
       return `
         <article class="g-card" tabindex="0" role="button"
                  aria-label="${title}"
@@ -469,7 +491,7 @@
           <div class="g-card-info">
             <h3 class="g-card-title">${title}</h3>
             <p class="g-card-meta">${esc(p.medium)}</p>
-            <button type="button" class="g-request">Request price</button>
+            ${actionHTML}
           </div>
         </article>`;
     }
@@ -529,12 +551,19 @@
     const lbCat = document.getElementById('lightboxCat');
     const lbTitle = document.getElementById('lightboxTitle');
     const lbMeta = document.getElementById('lightboxMeta');
+    const lbSizes = document.getElementById('lightboxSizes');
+    const lbActions = document.getElementById('lightboxActions');
     let currentItem = null;
 
     function metaRows(p) {
       // Dimensions parsed from the filename but not shown yet (re-add ['Dimensions', p.dimensions] later)
       return [['Medium', p.medium], ['Status', p.status]]
         .map(([k, v]) => `<div>${esc(k)}: <span>${esc(v)}</span></div>`).join('');
+    }
+
+    function sizeRows(sizes) {
+      return sizes.map(s => `<div class="lightbox-size-row">${esc(s.label)}<span>$${esc(s.price)}</span></div>`).join('')
+        + `<p class="lightbox-sizes-note">Fine art print, available on paper or canvas. <a href="../pages/contact.html">Get in touch</a> to order.</p>`;
     }
 
     function openLightbox(item) {
@@ -545,6 +574,18 @@
       lbCat.textContent = item.category === 'originals' ? 'Original' : 'Print';
       lbTitle.textContent = p.title;
       lbMeta.innerHTML = metaRows(p);
+
+      const isPrint = item.category === 'prints';
+      const sizes = isPrint ? (item.sizes || []) : [];
+      if (isPrint && sizes.length) {
+        lbSizes.innerHTML = sizeRows(sizes);
+        lbSizes.style.display = 'block';
+        lbActions.style.display = 'none';
+      } else {
+        lbSizes.style.display = 'none';
+        lbActions.style.display = '';
+      }
+
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
