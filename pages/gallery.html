@@ -442,7 +442,7 @@
     }
 
     const MEDIUM_ORIGINAL = 'Acrylic on canvas';
-    const MEDIUM_PRINT = 'Fine art print (available on paper and canvas)';
+    const MEDIUM_PRINT = 'Archival quality giclée print (available on paper and canvas)';
     const STATUS_DEFAULT = 'For Sale';
 
     // Parse Title and physical Dimensions straight from the filename:
@@ -563,7 +563,7 @@
 
     function sizeRows(sizes) {
       return sizes.map(s => `<div class="lightbox-size-row">${esc(s.label)}<span>$${esc(s.price)}</span></div>`).join('')
-        + `<p class="lightbox-sizes-note">Fine art print, available on paper or canvas. <a href="../pages/contact.html">Get in touch</a> to order.</p>`;
+        + `<p class="lightbox-sizes-note">Archival quality giclée print, available on paper or canvas. <a href="../pages/contact.html">Get in touch</a> to order.</p>`;
     }
 
     function openLightbox(item) {
