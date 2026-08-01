@@ -341,10 +341,12 @@ contactForm?.addEventListener('submit', (e) => {
   }
 
   function closeModal() {
-    // Closing the big dialog demotes it to the small corner card, not the tab.
+    // Closing the big dialog demotes it to the small corner card for future visits/page
+    // loads this session — it does NOT reopen immediately as a second pop-up right now.
+    // (Round 7 bug fix: it previously called showPopup() here, which looked like two
+    // pop-ups firing back to back.)
     overlay.classList.remove('visible');
     sessionStorage.setItem(SESSION_KEY, 'small');
-    showPopup();
   }
 
   function showPopup() {

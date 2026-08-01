@@ -133,7 +133,9 @@ nav.nav-light .hamburger span { background: var(--slate); }
 .nav-cta::after { display: none !important; }
 
 .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-.hamburger span { width: 22px; height: 1.5px; background: var(--midnight); transition: 0.3s; display: block; }
+/* Default matches .nav-links a's default slate colour, since the base <nav> (no .nav-light)
+   is only used on the homepage, which sits over a dark hero image on load. */
+.hamburger span { width: 22px; height: 1.5px; background: var(--slate); transition: 0.3s; display: block; }
 
 /* ── HERO ── */
 .hero {

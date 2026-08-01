@@ -57,15 +57,25 @@
       display: block;
     }
     .flyer-block .section-body { color: rgba(242, 224, 215, 0.75); max-width: 100%; }
-    .arc-line {
+    .timeline-list { margin-top: 1.75rem; }
+    .timeline-row {
+      display: flex;
+      gap: 1.25rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(242, 224, 215, 0.12);
+    }
+    .timeline-row:last-child { border-bottom: none; }
+    .timeline-time {
+      min-width: 92px;
+      flex-shrink: 0;
       font-weight: 600;
-      font-size: 1.05rem;
-      letter-spacing: 0.02em;
       color: var(--slate);
-      line-height: 1.6;
+    }
+    .timeline-activity {
+      color: rgba(242, 224, 215, 0.85);
     }
     @media (max-width: 768px) {
-      .arc-line { font-size: 0.95rem; }
+      .timeline-time { min-width: 78px; }
     }
     .flyer-details {
       margin-top: 3rem;
@@ -284,7 +294,7 @@
     .section-body { font-size: 1.2rem; line-height: 1.9; }
     .flyer-block .section-body { font-size: 1.2rem; }
     .flyer-detail-row { font-size: 1.12rem; }
-    .arc-line { font-size: 1.18rem; }
+    .timeline-time, .timeline-activity { font-size: 1.05rem; }
     .step-content p { font-size: 1.02rem; line-height: 1.75; }
     .step-content h4 { font-size: 1.2rem; }
     .workshop-hero-text { font-size: 1.28rem; }
@@ -295,7 +305,14 @@
 
     /* Flyer content on a slate ground: dark text instead of the light-on-midnight default */
     .flyer-on-slate .flyer-block .section-body { color: var(--text-muted); }
-    .flyer-on-slate .arc-line { color: var(--midnight); }
+    .flyer-on-slate .timeline-time { color: var(--midnight); }
+    .flyer-on-slate .timeline-activity { color: var(--text-muted); }
+
+    /* Clay is hard to read on Slate backgrounds — swap to Teal for headings, eyebrows, and
+       emphasis points wherever a section on this page sits on a Slate ground. Midnight-background
+       sections keep Clay as-is. */
+    section[style*="var(--slate)"] .section-eyebrow { color: var(--teal); }
+    section[style*="var(--slate)"] .section-title em { color: var(--teal); }
 
   </style>
 </head>
@@ -336,7 +353,7 @@
           A Room Safe to <em>Let It Go</em>
         </h1>
         <p class="workshop-hero-text" style="margin-left: auto; margin-right: auto;">
-          For the woman who is tired of constantly holding it all together.
+          For the woman who is tired of holding it all together.
         </p>
       </div>
       <img
@@ -399,7 +416,7 @@
           <div class="fade-up">
             <span class="flyer-eyebrow" style="margin-top: 0;">Have questions?</span>
             <p class="section-body" style="color: rgba(242,224,215,0.75);">
-              <a href="mailto:apeksha@apekshadarbari.com" style="color: var(--slate); text-decoration: underline;">Email me</a> or find me on Instagram <a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: underline;">@apekshadarbari</a> &mdash; happy to chat before you decide.
+              <a href="mailto:apeksha@apekshadarbari.com" style="color: var(--slate); text-decoration: underline;">Email me</a> or find me on Instagram <a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: underline;">@apekshadarbari</a>.
             </p>
 
             <span class="flyer-eyebrow">After you've booked</span>
@@ -475,17 +492,30 @@
           <p class="flyer-label">What Happens in the Room</p>
           <p class="section-body">You'll make something with your hands in the company of other women who are also, finally, putting something down they've been carrying too long. I'll be there as a guide and companion, holding the space while you explore what your body wants to say and put it on the page.</p>
           <p class="section-body" style="margin-top: 0.75rem;">Nothing is required except your presence &mdash; no skills needed, nothing to get right. Watercolours, markers, oil pastels, charcoal, crayons: work with whatever calls to you, all supplies included.</p>
-          <p class="arc-line" style="margin-top: 1.75rem;">Short Meditation &ndash; Check in &ndash; The Making &ndash; Sharing Circle &ndash; Reflections &amp; Soft Close</p>
+          <p class="section-body" style="margin-top: 0.75rem;">Here, we play. We let that tiny voice speak before we try to correct it, and follow the body and spirit without a goal to accomplish. This version of you, exactly as she is, doesn't need fixing.</p>
+          <div class="timeline-list">
+            <p class="section-body" style="font-weight: 600; margin-bottom: 0.75rem;">What happens, minute by minute:</p>
+            <div class="timeline-row"><span class="timeline-time">5&ndash;10 min</span><span class="timeline-activity">Settling In</span></div>
+            <div class="timeline-row"><span class="timeline-time">8&ndash;10 min</span><span class="timeline-activity">Getting to Know Each Other</span></div>
+            <div class="timeline-row"><span class="timeline-time">~10 min</span><span class="timeline-activity">A (short) Meditation to land in the space</span></div>
+            <div class="timeline-row"><span class="timeline-time">10&ndash;15 min</span><span class="timeline-activity">The Unwind, a little ease before we begin</span></div>
+            <div class="timeline-row"><span class="timeline-time">~20 min</span><span class="timeline-activity">The Making, round one</span></div>
+            <div class="timeline-row"><span class="timeline-time">~10 min</span><span class="timeline-activity">Storytelling, round one</span></div>
+            <div class="timeline-row"><span class="timeline-time">~20 min</span><span class="timeline-activity">The Making, round two</span></div>
+            <div class="timeline-row"><span class="timeline-time">~10 min</span><span class="timeline-activity">Storytelling, round two</span></div>
+            <div class="timeline-row"><span class="timeline-time">10&ndash;15 min</span><span class="timeline-activity">Soft Close &amp; support transitioning out</span></div>
+          </div>
+          <p class="section-body" style="font-style: italic; margin-top: 1rem;">Storytelling &mdash; say as much or as little as you want about what came up. Always an invitation, never an expectation.</p>
           <p class="section-body" style="font-style: italic; margin-top: 0.75rem;">Everything here is an invitation, never an expectation.</p>
         </div>
         <div class="flyer-block fade-up">
           <p class="flyer-label">What This Isn't</p>
-          <p class="section-body">This is a non-clinical therapeutic arts session &mdash; not a replacement for therapy, but rather a wonderful companion to it. I'm not a licensed therapist; my training is as a space holder and facilitator, but my biggest qualification is having walked this path myself.</p>
-          <p class="section-body" style="margin-top: 0.75rem;">Here, we play. We let that tiny voice speak before we try to correct it, and follow the body and spirit without a goal to accomplish. This version of you, exactly as she is, doesn't need fixing. I'd be honoured to guide you.</p>
+          <p class="section-body">This is a non-clinical therapeutic arts session. It is not a replacement for therapy, but rather a wonderful companion to it. As a Therapeutic Arts Practitioner, I trained to hold this space ethically and in an informed way, but my biggest qualification is having walked this path myself.</p>
+          <p class="section-body" style="margin-top: 0.75rem;">This is a guided experience where I hold the space for you so you don't have to hold anything for some time. You're seen, you're heard, you're paid attention to. You deserve some time where you're being cared for too.</p>
         </div>
         <div class="flyer-block fade-up">
           <p class="flyer-label">Refunds and cancellations</p>
-          <p class="section-body">If you change your mind, you can request a full refund within 48 hours of booking, as long as it's more than 72 hours before the session. After that, spots are final, but if a genuine emergency comes up, please reach out and we can look at crediting it toward a future session. This will be evaluated on a case by case basis.</p>
+          <p class="section-body">Full refund within 48 hours of booking, as long as it's more than 72 hours before the session. After that, spots are final &mdash; though genuine emergencies are considered case by case.</p>
         </div>
         <div class="flyer-block fade-up">
           <p class="flyer-label">If this date doesn't work</p>
@@ -501,7 +531,7 @@
       <span class="section-eyebrow">One to one</span>
       <h2 class="section-title" style="margin-bottom: 1.5rem; color: var(--midnight);">Not a group? <em style="color: var(--teal)">Just us.</em></h2>
       <p class="section-body" style="color: var(--text-muted); margin-bottom: 2rem;">
-        A private hour and a bit, where you make something with your hands and I hold the space. You set the pace.
+        A private session, where you make something with your hands and I hold the space. You set the pace.
       </p>
       <a href="https://stan.store/apekshadarbari/p/11-therapeutic-art-sessions" target="_blank" rel="noopener noreferrer" class="btn-clay">Book a single session</a>
       <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 1rem;">Via Stan Store, opens in a new tab.</p>
