@@ -35,6 +35,11 @@ body {
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
+/* Nunito Sans is only loaded at weights 300/400/600 (see @import above) — the browser
+   default for <strong>/<b> is font-weight 700, which isn't in that set, so bold text was
+   rendering inconsistently (sometimes invisible) across browsers. Pin it to the loaded 600. */
+strong, b { font-weight: 600; }
+
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 400;
