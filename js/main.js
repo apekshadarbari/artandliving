@@ -90,105 +90,18 @@ contactForm?.addEventListener('submit', (e) => {
 });
 
 // ── MAILING LIST POPUP ──
-// Three states, remembered per browser session (sessionStorage):
-//   1. (no state)  → first time this session: big, page-wide welcome dialog
-//   2. 'small'      → dialog was closed: small card in the corner
-//   3. 'minimized'  → small card was minimised: just the little tab button
-// Reopening the tab or card never brings back the big dialog — that's a
-// one-time first-visit moment. State always stays at whatever level the
-// visitor left it at, including across page loads within the same session.
+// Two states, remembered per browser session (sessionStorage):
+//   1. (no state)   → shown: small card in the bottom corner (never full-screen)
+//   2. 'minimized'  → card was minimised: just the little tab button
+// State persists across page loads within the same session, so a minimised
+// visitor stays minimised as they browse.
 (function () {
   const FLODESK_URL = 'https://apekshadarbari.myflodesk.com/apekshadarbari-art-and-living';
-  const SESSION_KEY = 'mailPopupState'; // 'small' | 'minimized'
+  const SESSION_KEY = 'mailPopupState'; // 'minimized'
 
   // Inject styles
   const style = document.createElement('style');
   style.textContent = `
-    #mail-modal-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 10000;
-      background: rgba(53,57,76,0.78);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-    }
-    #mail-modal-overlay.visible {
-      opacity: 1;
-      pointer-events: all;
-    }
-    #mail-modal {
-      position: relative;
-      width: 100%;
-      max-width: 640px;
-      background: #f2e0d7;
-      padding: 3.5rem 3rem;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-      transform: translateY(20px);
-      transition: transform 0.4s ease;
-    }
-    #mail-modal-overlay.visible #mail-modal {
-      transform: translateY(0);
-    }
-    #mail-modal-eyebrow {
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #e57c5f;
-      margin-bottom: 1rem;
-      display: block;
-    }
-    #mail-modal h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(1.9rem, 4vw, 2.6rem);
-      color: #35394c;
-      line-height: 1.25;
-      margin-bottom: 1.25rem;
-    }
-    #mail-modal p {
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 1rem;
-      color: #6b6b6b;
-      line-height: 1.75;
-      max-width: 460px;
-      margin: 0 auto 2rem;
-    }
-    #mail-modal-cta {
-      display: inline-block;
-      background: #e57c5f;
-      color: #fff;
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 1rem 2.25rem;
-      text-decoration: none;
-      transition: background 0.2s ease;
-      border: none;
-      cursor: pointer;
-    }
-    #mail-modal-cta:hover { background: #d4694d; }
-    #mail-modal-close {
-      position: absolute;
-      top: 1rem;
-      right: 1.25rem;
-      background: none;
-      border: none;
-      color: rgba(53,57,76,0.45);
-      font-size: 1.4rem;
-      cursor: pointer;
-      line-height: 1;
-      padding: 0.25rem;
-      transition: color 0.2s ease;
-    }
-    #mail-modal-close:hover { color: #35394c; }
     #mail-popup {
       position: fixed;
       bottom: 2rem;
@@ -293,22 +206,6 @@ contactForm?.addEventListener('submit', (e) => {
   `;
   document.head.appendChild(style);
 
-  // Build big welcome dialog (first visit only)
-  const overlay = document.createElement('div');
-  overlay.id = 'mail-modal-overlay';
-  overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-label', 'Join the circle');
-  overlay.innerHTML = `
-    <div id="mail-modal">
-      <button id="mail-modal-close" aria-label="Close">&#x2715;</button>
-      <span id="mail-modal-eyebrow">Join the circle</span>
-      <h2>Letters from the studio.</h2>
-      <p>Letters on creativity, neurodivergence, what women carry, upcoming workshops, resources, and what we are building together. You'll only hear from me when there's something worth saying.</p>
-      <a id="mail-modal-cta" href="${FLODESK_URL}" target="_blank" rel="noopener noreferrer">Join the circle</a>
-    </div>
-  `;
-
   // Build small corner popup
   const popup = document.createElement('div');
   popup.id = 'mail-popup';
@@ -332,22 +229,8 @@ contactForm?.addEventListener('submit', (e) => {
     Join the circle
   `;
 
-  document.body.appendChild(overlay);
   document.body.appendChild(popup);
   document.body.appendChild(tab);
-
-  function showModal() {
-    overlay.classList.add('visible');
-  }
-
-  function closeModal() {
-    // Closing the big dialog demotes it to the small corner card for future visits/page
-    // loads this session — it does NOT reopen immediately as a second pop-up right now.
-    // (Round 7 bug fix: it previously called showPopup() here, which looked like two
-    // pop-ups firing back to back.)
-    overlay.classList.remove('visible');
-    sessionStorage.setItem(SESSION_KEY, 'small');
-  }
 
   function showPopup() {
     popup.classList.add('visible');
@@ -360,24 +243,17 @@ contactForm?.addEventListener('submit', (e) => {
     sessionStorage.setItem(SESSION_KEY, 'minimized');
   }
 
-  // Restore whatever state the visitor left things at, or show the
-  // big dialog for a true first-time-this-session visit.
+  // Restore whatever state the visitor left things at this session.
   const savedState = sessionStorage.getItem(SESSION_KEY);
   if (savedState === 'minimized') {
     setTimeout(() => tab.classList.add('visible'), 800);
-  } else if (savedState === 'small') {
-    setTimeout(showPopup, 2000);
   } else {
-    setTimeout(showModal, 2000);
+    setTimeout(showPopup, 3000);
   }
 
-  document.getElementById('mail-modal-close').addEventListener('click', closeModal);
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closeModal();
-  });
   document.getElementById('mail-popup-minimize').addEventListener('click', minimisePopup);
   tab.addEventListener('click', () => {
+    sessionStorage.removeItem(SESSION_KEY);
     showPopup();
-    sessionStorage.setItem(SESSION_KEY, 'small');
   });
 })();

@@ -58,13 +58,18 @@
     }
     .flyer-block .section-body { color: rgba(242, 224, 215, 0.75); max-width: 100%; }
     .timeline-list { margin-top: 1.75rem; }
+    .timeline-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 2.5rem;
+    }
     .timeline-row {
       display: flex;
       gap: 1.25rem;
       padding: 0.55rem 0;
       border-bottom: 1px solid rgba(242, 224, 215, 0.12);
     }
-    .timeline-row:last-child { border-bottom: none; }
+    .timeline-columns > div > .timeline-row:last-child { border-bottom: none; }
     .timeline-time {
       min-width: 92px;
       flex-shrink: 0;
@@ -76,6 +81,7 @@
     }
     @media (max-width: 768px) {
       .timeline-time { min-width: 78px; }
+      .timeline-columns { grid-template-columns: 1fr; gap: 0; }
     }
     .flyer-details {
       margin-top: 3rem;
@@ -378,12 +384,6 @@
         </div>
       </div>
 
-      <div class="fade-up" style="max-width: 720px; margin: 2.5rem auto 0; padding: 1.75rem 2rem; border-left: 2px solid var(--clay); background: rgba(242,224,215,0.05);">
-        <p class="section-body" style="font-style: italic; color: rgba(242,224,215,0.85); margin: 0;">
-          I built this room the way I wish rooms had been built for me &mdash; no pressure to perform, no expectation to mask what you're feeling, quiet if you need quiet, permission to step outside if your body asks for it. If you're neurodivergent, highly sensitive, or simply tired of holding yourself together for everyone else's comfort, this room already has you in mind.
-        </p>
-      </div>
-
       <div class="flyer-details" id="reserve">
         <div class="flyer-grid">
           <div class="fade-up">
@@ -456,9 +456,9 @@
     <!-- Featured testimonial: the visual anchor -->
     <div class="testimonial-featured fade-up">
       <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
-      <p class="testimonial-featured-quote">Apeksha's workshop was an absolute gift in an otherwise very difficult week for me. I came into the workshop feeling emotionally, mentally and physically drained. Apeksha has a very calm and grounding energy which immediately made me feel safe, and supported me in remaining fully present throughout our session (not an easy task after an intense day of work). It was a moment of peace and healing that I am very grateful for!</p>
+      <p class="testimonial-featured-quote">Apeksha is a very skilled, calm and empathetic therapeutic arts practitioner. Her workshops provide a safe space for exploring art and looking deeper inside ourselves. In just a short time I felt connected to the other women in the workshop. The art making was fun and insightful and the sharing was authentic. Thank you Apeksha!</p>
       <button class="testimonial-toggle" type="button">Read more</button>
-      <p class="testimonial-featured-name">Natalie P.</p>
+      <p class="testimonial-featured-name">Talya M.</p>
     </div>
 
     <div class="testimonial-grid">
@@ -467,9 +467,9 @@
         <p class="testimonial-name" style="color: var(--teal);">Kim A.</p>
       </div>
       <div class="testimonial-card fade-up" style="background: var(--slate); border-top-color: var(--clay);">
-        <p class="testimonial-quote" style="color: var(--midnight);">"Apeksha is a very skilled, calm and empathetic therapeutic arts practitioner. Her workshops provide a safe space for exploring art and looking deeper inside ourselves. In just a short time I felt connected to the other women in the workshop. The art making was fun and insightful and the sharing was authentic. Thank you Apeksha!"</p>
+        <p class="testimonial-quote" style="color: var(--midnight);">Apeksha's workshop was an absolute gift in an otherwise very difficult week for me. I came into the workshop feeling emotionally, mentally and physically drained. Apeksha has a very calm and grounding energy which immediately made me feel safe, and supported me in remaining fully present throughout our session (not an easy task after an intense day of work). It was a moment of peace and healing that I am very grateful for!</p>
         <button class="testimonial-toggle" type="button">Read more</button>
-        <p class="testimonial-name" style="color: var(--teal);">Talya</p>
+        <p class="testimonial-name" style="color: var(--teal);">Natalie P.</p>
       </div>
       <div class="testimonial-card fade-up" style="background: var(--slate); border-top-color: var(--clay);">
         <p class="testimonial-quote" style="color: var(--midnight);">"This workshop was incredible. Apeksha has a way with words that really reels you into what the true essence of what the workshop is meant to achieve. I would recommend this to all women that want to explore their creative side in a safe and thought-provoking environment."</p>
@@ -495,15 +495,19 @@
           <p class="section-body" style="margin-top: 0.75rem;">Here, we play. We let that tiny voice speak before we try to correct it, and follow the body and spirit without a goal to accomplish. This version of you, exactly as she is, doesn't need fixing.</p>
           <div class="timeline-list">
             <p class="section-body" style="font-weight: 600; margin-bottom: 0.75rem;">What happens, minute by minute:</p>
-            <div class="timeline-row"><span class="timeline-time">5&ndash;10 min</span><span class="timeline-activity">Settling In</span></div>
-            <div class="timeline-row"><span class="timeline-time">8&ndash;10 min</span><span class="timeline-activity">Getting to Know Each Other</span></div>
-            <div class="timeline-row"><span class="timeline-time">~10 min</span><span class="timeline-activity">A (short) Meditation to land in the space</span></div>
-            <div class="timeline-row"><span class="timeline-time">10&ndash;15 min</span><span class="timeline-activity">The Unwind, a little ease before we begin</span></div>
-            <div class="timeline-row"><span class="timeline-time">~20 min</span><span class="timeline-activity">The Making, round one</span></div>
-            <div class="timeline-row"><span class="timeline-time">~10 min</span><span class="timeline-activity">Storytelling, round one</span></div>
-            <div class="timeline-row"><span class="timeline-time">~20 min</span><span class="timeline-activity">The Making, round two</span></div>
-            <div class="timeline-row"><span class="timeline-time">~10 min</span><span class="timeline-activity">Storytelling, round two</span></div>
-            <div class="timeline-row"><span class="timeline-time">10&ndash;15 min</span><span class="timeline-activity">Soft Close &amp; support transitioning out</span></div>
+            <div class="timeline-columns">
+              <div>
+                <div class="timeline-row"><span class="timeline-time">5&ndash;10 min</span><span class="timeline-activity">Settling In</span></div>
+                <div class="timeline-row"><span class="timeline-time">8&ndash;10 min</span><span class="timeline-activity">Getting to Know Each Other</span></div>
+                <div class="timeline-row"><span class="timeline-time">~10 min</span><span class="timeline-activity">A (short) Meditation to land in the space</span></div>
+                <div class="timeline-row"><span class="timeline-time">10&ndash;15 min</span><span class="timeline-activity">The Unwind, a little ease before we begin</span></div>
+              </div>
+              <div>
+                <div class="timeline-row"><span class="timeline-time">~30 min</span><span class="timeline-activity">The Making &amp; Storytelling, round one</span></div>
+                <div class="timeline-row"><span class="timeline-time">~30 min</span><span class="timeline-activity">The Making &amp; Storytelling, round two</span></div>
+                <div class="timeline-row"><span class="timeline-time">10&ndash;15 min</span><span class="timeline-activity">Soft Close &amp; support transitioning out</span></div>
+              </div>
+            </div>
           </div>
           <p class="section-body" style="font-style: italic; margin-top: 1rem;">Storytelling &mdash; say as much or as little as you want about what came up. Always an invitation, never an expectation.</p>
           <p class="section-body" style="font-style: italic; margin-top: 0.75rem;">Everything here is an invitation, never an expectation.</p>
@@ -521,6 +525,12 @@
           <p class="flyer-label">If this date doesn't work</p>
           <p class="section-body"><a href="https://apekshadarbari.myflodesk.com/workshop-waitlist" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: underline;">Leave your email</a> and I'll keep you in the loop about future sessions.</p>
         </div>
+      </div>
+
+      <div class="fade-up" style="max-width: 720px; margin: 3rem auto 0; padding: 1.75rem 2rem; border-left: 2px solid var(--clay); background: rgba(242,224,215,0.05);">
+        <p class="section-body" style="font-style: italic; color: rgba(242,224,215,0.85); margin: 0;">
+          I built this room the way I wish rooms had been built for me &mdash; no pressure to perform, no expectation to mask what you're feeling, quiet if you need quiet, permission to step outside if your body asks for it. If you're neurodivergent, highly sensitive, or simply tired of holding yourself together for everyone else's comfort, this room already has you in mind.
+        </p>
       </div>
     </div>
   </section>
