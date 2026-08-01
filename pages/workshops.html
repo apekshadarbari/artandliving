@@ -73,11 +73,19 @@
     .timeline-time {
       min-width: 92px;
       flex-shrink: 0;
-      font-weight: 600;
-      color: var(--slate);
+      font-weight: 400;
+      color: var(--teal);
     }
     .timeline-activity {
+      font-weight: 600;
       color: rgba(242, 224, 215, 0.85);
+    }
+    .timeline-storytelling-note {
+      display: block;
+      margin-top: 0.75rem;
+      font-style: italic;
+      font-size: 0.88rem;
+      color: rgba(242, 224, 215, 0.6);
     }
     @media (max-width: 768px) {
       .timeline-time { min-width: 78px; }
@@ -301,6 +309,9 @@
     .flyer-block .section-body { font-size: 1.2rem; }
     .flyer-detail-row { font-size: 1.12rem; }
     .timeline-time, .timeline-activity { font-size: 1.05rem; }
+    /* Larger eyebrow-style headings across the workshops page (letter-spacing, small-caps,
+       and Clay/Teal color rules stay as-is — size only) */
+    .section-eyebrow, .flyer-eyebrow, .flyer-label { font-size: 0.85rem; }
     .step-content p { font-size: 1.02rem; line-height: 1.75; }
     .step-content h4 { font-size: 1.2rem; }
     .workshop-hero-text { font-size: 1.28rem; }
@@ -314,11 +325,9 @@
     .flyer-on-slate .timeline-time { color: var(--midnight); }
     .flyer-on-slate .timeline-activity { color: var(--text-muted); }
 
-    /* Clay is hard to read on Slate backgrounds — swap to Teal for headings, eyebrows, and
-       emphasis points wherever a section on this page sits on a Slate ground. Midnight-background
-       sections keep Clay as-is. */
-    section[style*="var(--slate)"] .section-eyebrow { color: var(--teal); }
-    section[style*="var(--slate)"] .section-title em { color: var(--teal); }
+    /* Clay-on-Slate contrast fix now lives sitewide in css/style.css
+       (section[style*="var(--slate)"] .section-eyebrow / .section-title em) —
+       removed the duplicate page-scoped copy that used to be here. */
 
   </style>
 </head>
@@ -491,7 +500,7 @@
         <div class="flyer-block fade-up">
           <p class="flyer-label">What Happens in the Room</p>
           <p class="section-body">You'll make something with your hands in the company of other women who are also, finally, putting something down they've been carrying too long. I'll be there as your guide and companion, holding the space while you explore what your body wants to say and put it on the page.</p>
-          <p class="section-body" style="margin-top: 0.75rem;">Nothing is required except your presence. No skills needed. Nothing to get right. All supplies included &mdash; watercolours, markers, oil pastels, charcoal, crayons. You get to work with whatever calls to you.</p>
+          <p class="section-body" style="margin-top: 0.75rem;"><strong>Nothing is required except your presence.</strong> No skills needed. Nothing to get right. <strong>All supplies included</strong> &mdash; watercolours, markers, oil pastels, charcoal, crayons. You get to work with whatever calls to you.</p>
           <p class="flyer-eyebrow" style="margin-top: 1.75rem; margin-bottom: 0.75rem;">The Arc</p>
           <div class="timeline-list" style="margin-top: 0;">
             <div class="timeline-columns">
@@ -505,26 +514,26 @@
                 <div class="timeline-row"><span class="timeline-time">~30 min</span><span class="timeline-activity">The Making &amp; Storytelling, round one</span></div>
                 <div class="timeline-row"><span class="timeline-time">~30 min</span><span class="timeline-activity">The Making &amp; Storytelling, round two</span></div>
                 <div class="timeline-row"><span class="timeline-time">10&ndash;15 min</span><span class="timeline-activity">Soft Close &amp; support transitioning out</span></div>
+                <span class="timeline-storytelling-note">Storytelling &mdash; say as much or as little as you want about what came up.</span>
               </div>
             </div>
           </div>
-          <p class="section-body" style="margin-top: 1rem;">Storytelling &mdash; say as much or as little as you want about what came up.</p>
-          <p class="section-body" style="font-style: italic; margin-top: 0.75rem;">Everything is always an invitation, never an expectation.</p>
+          <p class="section-body" style="font-style: italic; margin-top: 1rem;">Everything is always an invitation, never an expectation.</p>
         </div>
         <div class="flyer-block fade-up">
           <p class="flyer-label">What This Isn't</p>
-          <p class="section-body">This is neither therapy nor a replacement for it. I see therapy as important, hard work. It is examining, making sense of, and changing long standing behaviour and belief systems.</p>
-          <p class="section-body" style="margin-top: 0.75rem;">Here, we play. We create a safe, supportive space to allow that tiny voice to speak without trying to correct it. There's no way to fail at this. We follow our body and spirit and let the mind rest or wander, without performance, without the goal to accomplish anything, with the single intention to be as you are now, not become something better. This present version of you deserves to exist as she is too.</p>
-          <p class="section-body" style="margin-top: 0.75rem;">As a Therapeutic Arts Practitioner, I trained to facilitate these sessions ethically and in an informed way, but my biggest qualification as this space holder is having walked this path myself. I'm still on it, and would be honoured to be your companion and guide, as you get started.</p>
+          <p class="section-body">This is neither therapy nor a replacement for it. I see therapy as <strong>important, hard work.</strong> It is examining, making sense of, and changing long standing behaviour and belief systems.</p>
+          <p class="section-body" style="margin-top: 0.75rem;"><strong>Here, we play.</strong> We create a safe, supportive space to allow that tiny voice to speak without trying to correct it. <strong>There's no way to fail at this.</strong> We follow our body and spirit and let the mind rest or wander, without performance, without the goal to accomplish anything, with the single intention to be as you are now, not become something better. This present version of you deserves to exist as she is too.</p>
+          <p class="section-body" style="margin-top: 0.75rem;">As a Therapeutic Arts Practitioner, I trained to facilitate these sessions ethically and in an informed way, but <strong>my biggest qualification as this space holder is having walked this path myself.</strong> I'm still on it, and would be honoured to be your companion and guide, as you get started.</p>
         </div>
         <div class="flyer-block fade-up">
           <p class="flyer-label">What This Room Holds</p>
-          <p class="section-body">This is a guided experience where I hold the space for you so you don't have to hold anything for some time. You're seen, you're heard, you're paid attention to. You deserve some time where you're being cared for too.</p>
-          <p class="section-body" style="margin-top: 0.75rem;">I built this room like the rooms I want to be in &mdash; with no pressure to perform, no expectation to mask, no box to fit in; a room where I can be whimsical, funny, tired, angry, sad, and I don't have to pretend to be anything else; a room where I don't have to negotiate how much of me is allowed to be there; a room I don't have to contort myself to fit in. I built this room for the wonderful, unique, beautiful you, in all your glory. I built this room for us.</p>
+          <p class="section-body">This is a guided experience where I hold the space for you so you don't have to hold anything for some time. You're seen, you're heard, you're paid attention to. <strong>You deserve some time where you're being cared for too.</strong></p>
+          <p class="section-body" style="margin-top: 0.75rem;"><strong>I built this room like the rooms I want to be in</strong> &mdash; with no pressure to perform, no expectation to mask, no box to fit in; a room where I can be whimsical, funny, tired, angry, sad, and I don't have to pretend to be anything else; a room where I don't have to negotiate how much of me is allowed to be there; a room I don't have to contort myself to fit in. I built this room for the wonderful, unique, beautiful you, in all your glory. <strong>I built this room for us.</strong></p>
         </div>
         <div class="flyer-block fade-up">
           <p class="flyer-label">Refunds and Cancellations</p>
-          <p class="section-body">Full refund within 48 hours of booking, as long as it's more than 72 hours before the session. After that, spots are final &mdash; though genuine emergencies are considered case by case.</p>
+          <p class="section-body">Full refund within 48 hours of booking, as long as it's more than 72 hours before the session. After that, spots are final. Cancellations due to a genuine emergency may be considered case by case.</p>
         </div>
         <div class="flyer-block fade-up">
           <p class="flyer-label">If this date doesn't work</p>

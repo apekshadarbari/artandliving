@@ -108,6 +108,9 @@ contactForm?.addEventListener('submit', (e) => {
       right: 2rem;
       z-index: 9999;
       width: 340px;
+      max-width: calc(100vw - 2.5rem);
+      max-height: calc(100vh - 4rem);
+      overflow-y: auto;
       background: #f2e0d7;
       padding: 2rem;
       box-shadow: 0 8px 40px rgba(0,0,0,0.25);
@@ -121,12 +124,16 @@ contactForm?.addEventListener('submit', (e) => {
       transform: translateY(0);
       pointer-events: all;
     }
+    @media (max-width: 480px) {
+      #mail-popup { right: 1.25rem; bottom: 1.25rem; }
+      #mail-tab { right: 1.25rem; bottom: 1.25rem; }
+    }
     #mail-popup-eyebrow {
       font-family: 'Nunito Sans', sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.82rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #e57c5f;
+      color: #176572;
       margin-bottom: 0.75rem;
       display: block;
     }

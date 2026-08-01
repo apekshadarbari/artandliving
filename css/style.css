@@ -836,6 +836,13 @@ section[style*="var(--slate)"] .section-title em {
   color: var(--teal);
 }
 
+/* Same background-aware rule for eyebrow labels: Clay reads poorly on Slate,
+   so eyebrows switch to Teal there. Midnight-background eyebrows keep the
+   default Clay (already the base .section-eyebrow color, no override needed). */
+section[style*="var(--slate)"] .section-eyebrow {
+  color: var(--teal);
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
   nav:not(.gallery-pagination) { padding: 1.25rem 1.5rem; }
