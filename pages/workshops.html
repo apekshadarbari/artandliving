@@ -74,7 +74,8 @@
       text-align: left;
       font-family: inherit;
     }
-    .accordion-header .flyer-label { margin: 0; }
+    .accordion-header .flyer-label,
+    .accordion-header .flyer-eyebrow { margin: 0; }
     .accordion-icon {
       flex-shrink: 0;
       width: 8px;
@@ -437,6 +438,7 @@
         <p class="section-body">You'll make something with your hands in the company of other women who are also, finally, putting something down they've been carrying too long. I'll be there as your guide and companion, holding the space while you explore what your body wants to say and put it on the page.</p>
         <p class="section-body" style="margin-top: 0.75rem;"><strong>Nothing is required except your presence.</strong> No skills needed. Nothing to get right.</p>
         <p class="section-body" style="margin-top: 0.75rem;"><strong>All supplies included</strong> &mdash; watercolours, markers, oil pastels, charcoal, crayons. You get to work with whatever calls to you.</p>
+        <p class="section-body" style="margin-top: 0.75rem;"><strong>Multiple cups of tea and light snacks</strong> are available throughout &mdash; help yourself whenever you need a top-up.</p>
         <p class="flyer-eyebrow" style="margin-top: 1.75rem; margin-bottom: 0.75rem;">The Arc</p>
         <div class="timeline-list" style="margin-top: 0;">
           <div class="timeline-columns">
@@ -482,21 +484,38 @@
             <p style="font-size: 0.85rem; color: var(--slate); margin-top: 0.7rem;">You'll complete your booking securely via Stan Store. It opens in a new tab.</p>
           </div>
           <div class="fade-up" style="display: flex; flex-direction: column;">
-            <span class="flyer-eyebrow" style="margin-top: 0;">Have questions?</span>
-            <p class="section-body" style="color: var(--slate);">
-              <a href="mailto:apeksha@apekshadarbari.com" style="color: var(--slate); text-decoration: underline;">Email me</a> or find me on Instagram <a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: underline;">@apekshadarbari</a>.
-            </p>
-            <p class="section-body" style="color: var(--slate); margin-top: 0.75rem;">
-              If you'd like to learn more about me &mdash; <a href="../index.html#meet-apeksha" style="color: var(--slate); text-decoration: underline;">short version</a> or <a href="../pages/about.html" style="color: var(--slate); text-decoration: underline;">long version</a>. Or drop a message. You know where to find me.
-            </p>
-
-            <span class="flyer-eyebrow">After you've booked</span>
-            <p class="section-body" style="color: var(--slate); font-size: 1rem;">
-              <strong style="color: var(--clay); font-weight: 400;">Before this session:</strong> I'll reach out with a few questions so I know how to make this room comfortable for you (e.g. sensory needs). You're encouraged to share as much or as little as feels right.
-            </p>
-            <p class="section-body" style="color: var(--slate); font-size: 1rem; margin-top: 1rem;">
-              <strong style="color: var(--clay); font-weight: 400;">After this session:</strong> I'll follow up with an invitation to the <a href="#beyond-the-preview" style="color: var(--slate); text-decoration: underline;">six week cohorts running this fall</a>. Should you choose to continue, your investment here credits in full towards it.
-            </p>
+            <div class="accordion-item open">
+              <button class="accordion-header" type="button" aria-expanded="true">
+                <span class="flyer-eyebrow">Have questions?</span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  <p class="section-body" style="color: var(--slate);">
+                    <a href="mailto:apeksha@apekshadarbari.com" style="color: var(--slate); text-decoration: underline;">Email me</a> or find me on Instagram <a href="https://www.instagram.com/apekshadarbari" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: underline;">@apekshadarbari</a>.
+                  </p>
+                  <p class="section-body" style="color: var(--slate); margin-top: 0.75rem;">
+                    If you'd like to learn more about me &mdash; <a href="../index.html#meet-apeksha" style="color: var(--slate); text-decoration: underline;">short version</a> or <a href="../pages/about.html" style="color: var(--slate); text-decoration: underline;">long version</a>. Or drop a message. You know where to find me.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header" type="button" aria-expanded="false">
+                <span class="flyer-eyebrow">After you've booked</span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  <p class="section-body" style="color: var(--slate); font-size: 1rem;">
+                    <strong style="color: var(--clay); font-weight: 400;">Before this session:</strong> I'll reach out with a few questions so I know how to make this room comfortable for you (e.g. sensory needs). You're encouraged to share as much or as little as feels right.
+                  </p>
+                  <p class="section-body" style="color: var(--slate); font-size: 1rem; margin-top: 1rem;">
+                    <strong style="color: var(--clay); font-weight: 400;">After this session:</strong> I'll follow up with an invitation to the <a href="#beyond-the-preview" style="color: var(--slate); text-decoration: underline;">six week cohorts running this fall</a>. Should you choose to continue, your investment here credits in full towards it.
+                  </p>
+                </div>
+              </div>
+            </div>
 
             <div style="margin-top: auto; padding: 1.25rem 1.5rem; border: 1px solid rgba(242,224,215,0.25); background: rgba(242,224,215,0.06);">
               <p class="section-body" style="font-size: 0.9rem; color: var(--slate); margin: 0;">
