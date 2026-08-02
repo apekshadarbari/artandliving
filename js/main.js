@@ -96,7 +96,7 @@ contactForm?.addEventListener('submit', (e) => {
 // State persists across page loads within the same session, so a minimised
 // visitor stays minimised as they browse.
 (function () {
-  const FLODESK_URL = 'https://apekshadarbari.myflodesk.com/apekshadarbari-art-and-living';
+  const FLODESK_URL = 'https://apekshadarbari.myflodesk.com/dmn24att1h';
   const SESSION_KEY = 'mailPopupState'; // 'minimized'
 
   // Inject styles
