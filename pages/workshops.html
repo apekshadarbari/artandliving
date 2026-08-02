@@ -64,55 +64,36 @@
     .accordion-header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 0.65rem;
       width: 100%;
       background: none;
       border: none;
       cursor: pointer;
-      padding: 1.25rem 0;
+      padding: 0.9rem 0;
       text-align: left;
       font-family: inherit;
     }
     .accordion-header .flyer-label { margin: 0; }
     .accordion-icon {
-      position: relative;
-      width: 18px;
-      height: 18px;
       flex-shrink: 0;
-      margin-left: 1.5rem;
-    }
-    .accordion-icon::before,
-    .accordion-icon::after {
-      content: '';
-      position: absolute;
-      background: var(--clay);
-      border-radius: 1px;
-    }
-    .accordion-icon::before {
-      top: 50%;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      transform: translateY(-50%);
-    }
-    .accordion-icon::after {
-      left: 50%;
-      top: 0;
-      height: 100%;
-      width: 2px;
-      transform: translateX(-50%) scaleY(1);
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid var(--clay);
+      border-bottom: 2px solid var(--clay);
+      transform: rotate(45deg);
       transition: transform 0.3s ease;
+      margin-top: -3px;
     }
-    .accordion-item.open .accordion-icon::after { transform: translateX(-50%) scaleY(0); }
+    .accordion-item.open .accordion-icon { transform: rotate(-135deg); margin-top: 3px; }
     .accordion-content {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.35s ease;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
     }
-    .accordion-item.open .accordion-content { grid-template-rows: 1fr; }
-    .accordion-content-inner { overflow: hidden; }
+    .accordion-item.open .accordion-content { max-height: 900px; }
+    .accordion-content-inner { padding-bottom: 1.1rem; }
     .accordion-content-inner > *:first-child { margin-top: 0; }
-    .accordion-content-inner { padding-bottom: 1.75rem; }
     .timeline-list { margin-top: 1.75rem; }
     .timeline-columns {
       display: grid;
