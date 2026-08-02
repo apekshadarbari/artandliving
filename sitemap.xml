@@ -20,6 +20,12 @@
   </url>
 
   <url>
+    <loc>https://apekshadarbari.com/pages/gallery</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://apekshadarbari.com/pages/about</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
