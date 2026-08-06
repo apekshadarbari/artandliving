@@ -73,6 +73,18 @@ nav.scrolled {
   backdrop-filter: blur(12px);
 }
 
+/* backdrop-filter on nav.scrolled (above) turns <nav> into a containing block for any
+   position:fixed descendant, so the full-viewport mobile menu overlay (.nav-links.open,
+   which lives inside <nav>) gets trapped inside nav's own small header-height box instead
+   of covering the screen — the menu's background stops short and page content bleeds
+   through behind the menu text. Killing the blur while the menu is open (menu-open class
+   is toggled in js/main.js) removes that containing block so the overlay covers the full
+   viewport as intended. Same specificity as nav.scrolled above, so source order decides —
+   keep this rule after it. */
+nav.menu-open {
+  backdrop-filter: none;
+}
+
 nav.scrolled .nav-links a,
 nav.nav-light.scrolled .nav-links a { color: var(--slate); }
 nav.scrolled .nav-links a:hover,
@@ -140,7 +152,23 @@ nav.nav-light .hamburger span { background: var(--slate); }
 .nav-cta:hover { background: var(--clay) !important; color: var(--white) !important; border-color: var(--clay) !important; }
 .nav-cta::after { display: none !important; }
 
-.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  /* .nav-links.open (the mobile menu overlay) has z-index: 99 and lives inside <nav>.
+     .hamburger has no position set, and unpositioned elements always paint below
+     positioned ones regardless of z-index — so without this, the open overlay covers
+     the hamburger/close icon completely and there's no visible way to close the menu. */
+  position: relative;
+  z-index: 100;
+  /* Visual icon is only ~22x15px — well under the ~44px touch target recommended for
+     mobile. Padding expands the tappable area; the matching negative margin cancels it
+     out visually so the icon's position in the nav bar doesn't shift. */
+  padding: 14px 11px;
+  margin: -14px -11px;
+}
 /* Default matches .nav-links a's default slate colour, since the base <nav> (no .nav-light)
    is only used on the homepage, which sits over a dark hero image on load. */
 .hamburger span { width: 22px; height: 1.5px; background: var(--slate); transition: 0.3s; display: block; }

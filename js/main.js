@@ -21,11 +21,17 @@ window.addEventListener('scroll', () => {
 // Mobile hamburger
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
-hamburger?.addEventListener('click', () => {
-  navLinks?.classList.toggle('open');
-  const spans = hamburger.querySelectorAll('span');
-  const isOpen = navLinks?.classList.contains('open');
-  if (isOpen) {
+
+function setMobileMenu(open) {
+  navLinks?.classList.toggle('open', open);
+  // nav.scrolled applies backdrop-filter, which turns <nav> into a containing block for
+  // position:fixed descendants — that traps the full-viewport menu overlay inside nav's
+  // small header-height box instead of covering the screen. menu-open switches the blur
+  // off for as long as the menu is open (see css/style.css, nav.menu-open).
+  nav?.classList.toggle('menu-open', open);
+  hamburger?.setAttribute('aria-expanded', String(open));
+  const spans = hamburger?.querySelectorAll('span') ?? [];
+  if (open) {
     spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
     spans[1].style.opacity = '0';
     spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
@@ -34,16 +40,25 @@ hamburger?.addEventListener('click', () => {
     spans[1].style.opacity = '';
     spans[2].style.transform = '';
   }
+}
+
+hamburger?.addEventListener('click', () => {
+  setMobileMenu(!navLinks?.classList.contains('open'));
+});
+
+// hamburger is a <div role="button">, not a real <button> — divs don't fire click on
+// Enter/Space the way native buttons do, so without this, keyboard/switch-control users
+// can tab to the menu but can't actually open it.
+hamburger?.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+    e.preventDefault();
+    setMobileMenu(!navLinks?.classList.contains('open'));
+  }
 });
 
 // Close mobile nav on link click
 document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => {
-    navLinks?.classList.remove('open');
-    hamburger?.querySelectorAll('span').forEach(s => {
-      s.style.transform = ''; s.style.opacity = '';
-    });
-  });
+  a.addEventListener('click', () => setMobileMenu(false));
 });
 
 // Intersection Observer for fade-up
