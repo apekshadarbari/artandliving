@@ -401,18 +401,57 @@
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
 
     .offer-section { padding: var(--section-pad); }
-    /* Grid items default to min-width: auto, which lets an image's intrinsic size push a
-       column wider/narrower than its fr share and squeeze its sibling to nothing — force
-       both columns to respect the grid track instead of the image's natural size. */
-    .offer-section .about-grid > * { min-width: 0; }
-    .offer-section .about-image-wrap { width: 100%; overflow: hidden; }
-    .offer-body { max-width: var(--max-width); margin: 3rem auto 0; }
     .offer-on-slate .section-body { color: var(--text-muted); }
     .offer-on-slate .flyer-eyebrow { color: var(--teal); }
     .offer-on-midnight .section-body { color: var(--slate); }
 
     /* Clean visual break between the two stacked offer sections instead of an abrupt cut */
     #one-on-one { border-bottom: 1px solid rgba(53, 57, 76, 0.1); }
+
+    /* R18: Unified layout — image runs the full height of its section via position: sticky,
+       instead of only sitting beside the opening paragraph. This also narrows the reference
+       card automatically, since it now lives in the text column instead of full page width. */
+    .offer-layout {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .offer-section.offer-reverse .offer-layout { grid-template-columns: 7fr 5fr; }
+    /* Grid items default to min-width: auto, which lets an image's intrinsic size push a
+       column wider/narrower than its fr share and squeeze its sibling to nothing — force
+       both columns to respect the grid track instead of the image's natural size. */
+    .offer-layout > * { min-width: 0; }
+    .offer-image-col { position: relative; }
+    .offer-sticky-image { position: sticky; top: 6.5rem; width: 100%; overflow: hidden; }
+    .offer-content-col > .section-body,
+    .offer-content-col > .flyer-eyebrow,
+    .offer-content-col > .reference-card,
+    .offer-content-col > .btn-clay,
+    .offer-content-col > p {
+      margin-top: 1.75rem;
+    }
+    .offer-content-col > .flyer-eyebrow:first-child,
+    .offer-content-col > .section-body:first-child {
+      margin-top: 0;
+    }
+
+    .offer-signoff {
+      font-style: italic;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 2.75rem !important;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .offer-layout,
+      .offer-section.offer-reverse .offer-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .offer-sticky-image { position: static; }
+      .offer-section.offer-reverse .offer-image-col { order: -1; }
+    }
 
     .reference-card { margin-top: 0.5rem; padding: 1.75rem 2rem; }
     .reference-card ul { list-style: none; margin: 0; padding: 0; }
@@ -535,88 +574,86 @@
     </div>
   </div>
 
-  <!-- OFFER 1: 1:1 Therapeutic Art Session -->
+  <!-- OFFER 1: 1:1 Therapeutic Art Session (image left, sticky alongside the full text column) -->
   <section id="one-on-one" class="offer-section offer-on-slate" style="background: var(--slate);">
-    <div class="about-grid">
-      <div class="about-image-wrap fade-up">
-        <img
-          src="../assets/20250921_photoshoot_apeksha_darbari-32.jpg"
-          alt="Hands mixing blue paint with a palette knife."
-          loading="lazy"
-        />
-        <div class="about-image-accent"></div>
+    <div class="offer-layout">
+      <div class="offer-image-col fade-up">
+        <div class="about-image-wrap offer-sticky-image">
+          <img
+            src="../assets/20250921_photoshoot_apeksha_darbari-32.jpg"
+            alt="Hands mixing blue paint with a palette knife."
+            loading="lazy"
+          />
+          <div class="about-image-accent"></div>
+        </div>
       </div>
-      <div class="about-text fade-up">
-        <p class="flyer-eyebrow" style="margin-top: 0;">1:1 Therapeutic Art Session &mdash; CA$95</p>
+      <div class="offer-content-col fade-up">
+        <p class="flyer-eyebrow">1:1 Therapeutic Art Session &mdash; CA$95</p>
         <p class="section-body">Come, sit with me &mdash; one to one, 75 minutes.</p>
-        <p class="section-body" style="margin-top: 1.25rem;"><strong>THE EXPERIENCE</strong> This is the room, made private. Just you and me, online.</p>
+        <p class="section-body"><strong>THE EXPERIENCE</strong> This is the room, made private. Just you and me, online.</p>
+        <p class="section-body">You may not want a group. You might just want my complete attention and a safe, quiet space to come into yourself. We shape this session around what you personally want and need. That is what this is.</p>
+        <p class="section-body"><strong>THE HOST</strong> After years of burning out in tech and a late ADHD diagnosis, I found creating art as my compass back home. Now I work as an artist and certified Therapeutic Arts Practitioner, building the room I needed when I was running on fumes.</p>
+        <p class="section-body"><strong>WHAT HAPPENS IN THE SESSION</strong> We start by settling in, a few minutes to land and leave the day at the door. Then, after checking in, an art prompt to orient you, and from there you follow what comes. I can make alongside you, or simply hold space while you do. Near the end we slow down together, and if you want to, we talk about what came up. Everything here is an invitation, never an expectation. This is your time.</p>
+        <p class="section-body"><strong>WHAT YOU'LL NEED</strong> You'll get a basic supplies list after we do the intake, but nothing fancy to start. Usually we can work with what you already have at home. If we learn there's something specific worth exploring, I'll guide you on what might suit it better as we go.</p>
+
+        <p class="flyer-eyebrow" style="margin-bottom: 1rem;">The Practical Bits</p>
+        <div class="reference-card reference-card-on-slate" style="margin-top: 0;">
+          <ul>
+            <li>75 minutes, one to one, online, via Zoom &mdash; link sent after booking</li>
+            <li>Pick a time that works when you book. If none of the slots fit, just reach out and we'll find something that does</li>
+            <li>A short intake after you book, so I can meet you where you are</li>
+            <li>Cancellations and reschedules need at least 48 hours' notice</li>
+            <li>No skills needed. No wrong way to do this. Come as you are.</li>
+          </ul>
+        </div>
+
+        <p class="section-body offer-signoff">I'll see you in the room.</p>
+        <a href="https://stan.store/apekshadarbari/p/11-therapeutic-art-sessions" target="_blank" rel="noopener noreferrer" class="btn-clay" style="display: inline-block;">Book a Single Session</a>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.7rem;">You'll complete your booking securely via Stan Store. It opens in a new tab.</p>
       </div>
-    </div>
-
-    <div class="offer-body">
-      <p class="section-body">You may not want a group. You might just want my complete attention and a safe, quiet space to come into yourself. We shape this session around what you personally want and need. That is what this is.</p>
-      <p class="section-body" style="margin-top: 1.75rem;"><strong>THE HOST</strong> After years of burning out in tech and a late ADHD diagnosis, I found creating art as my compass back home. Now I work as an artist and certified Therapeutic Arts Practitioner, building the room I needed when I was running on fumes.</p>
-      <p class="section-body" style="margin-top: 1.75rem;"><strong>WHAT HAPPENS IN THE SESSION</strong> We start by settling in, a few minutes to land and leave the day at the door. Then, after checking in, an art prompt to orient you, and from there you follow what comes. I can make alongside you, or simply hold space while you do. Near the end we slow down together, and if you want to, we talk about what came up. Everything here is an invitation, never an expectation. This is your time.</p>
-      <p class="section-body" style="margin-top: 1.75rem;"><strong>WHAT YOU'LL NEED</strong> You'll get a basic supplies list after we do the intake, but nothing fancy to start. Usually we can work with what you already have at home. If we learn there's something specific worth exploring, I'll guide you on what might suit it better as we go.</p>
-
-      <p class="flyer-eyebrow" style="margin-top: 2.75rem; margin-bottom: 1rem;">The Practical Bits</p>
-      <div class="reference-card reference-card-on-slate">
-        <ul>
-          <li>75 minutes, one to one, online, via Zoom &mdash; link sent after booking</li>
-          <li>Pick a time that works when you book. If none of the slots fit, just reach out and we'll find something that does</li>
-          <li>A short intake after you book, so I can meet you where you are</li>
-          <li>Cancellations and reschedules need at least 48 hours' notice</li>
-          <li>No skills needed. No wrong way to do this. Come as you are.</li>
-        </ul>
-      </div>
-
-      <p class="section-body" style="margin-top: 2rem;">I'll see you in the room.</p>
-      <a href="https://stan.store/apekshadarbari/p/11-therapeutic-art-sessions" target="_blank" rel="noopener noreferrer" class="btn-clay" style="margin-top: 1.5rem; display: inline-block;">Book a Single Session</a>
-      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.7rem;">You'll complete your booking securely via Stan Store. It opens in a new tab.</p>
     </div>
   </section>
 
-  <!-- OFFER 2: Tend To Your Cup | Online Preview Session -->
-  <section id="online-preview" class="offer-section offer-on-midnight" style="background: var(--midnight);">
-    <div class="about-grid" style="grid-template-columns: 7fr 5fr;">
-      <div class="about-text fade-up" style="padding-right: 0; padding-left: 2rem;">
-        <p class="flyer-eyebrow" style="margin-top: 0;">Tend To Your Cup | Online Preview Session &mdash; CA$65</p>
+  <!-- OFFER 2: Tend To Your Cup | Online Preview Session (image right, sticky, mirrors Offer 1 on purpose — reinforced by the slate/midnight background alternation) -->
+  <section id="online-preview" class="offer-section offer-reverse offer-on-midnight" style="background: var(--midnight);">
+    <div class="offer-layout">
+      <div class="offer-content-col fade-up">
+        <p class="flyer-eyebrow">Tend To Your Cup | Online Preview Session &mdash; CA$65</p>
         <p class="section-body">This is a ~90-minute therapeutic arts session for women running on fumes, holding up everything around them while unconsciously putting themselves last. I know many such women. I was that woman, and still am on many days.</p>
-        <p class="section-body" style="font-style: italic; font-weight: 600; margin-top: 1.25rem;">You cannot pour from an empty cup.</p>
-        <p class="section-body" style="margin-top: 1.25rem;"><strong>THE EXPERIENCE</strong> An intimate, guided online session for reconnecting with yourself through creating art, in community with other women &mdash; from wherever you are. No experience or skills needed. Come as you are.</p>
-      </div>
-      <div class="about-image-wrap fade-up">
-        <img
-          src="../assets/20250921_photoshoot_apeksha_darbari-14.jpeg"
-          alt="Apeksha painting at the easel by the window."
-          loading="lazy"
-        />
-        <div class="about-image-accent" style="left: auto; right: -1.5rem;"></div>
-      </div>
-    </div>
+        <p class="section-body" style="font-style: italic; font-weight: 600;">You cannot pour from an empty cup.</p>
+        <p class="section-body"><strong>THE EXPERIENCE</strong> An intimate, guided online session for reconnecting with yourself through creating art, in community with other women &mdash; from wherever you are. No experience or skills needed. Come as you are.</p>
+        <p class="section-body"><strong>THE HOST</strong> After years of burning out in tech and a late ADHD diagnosis, I found creating art as my compass back home. Now I work as an artist and certified Therapeutic Arts Practitioner, building the room I needed when I was running on fumes.</p>
+        <p class="section-body"><strong>WHAT HAPPENS IN THE SESSION</strong> You'll make something with your hands, on camera together, in the company of other women who are also, finally, putting something down they've been carrying too long. I'll be there as your guide and companion, holding the space while you explore what your body wants to say and put it on the page.</p>
+        <p class="section-body"><strong>Nothing is required except your presence.</strong> No skills needed. Nothing to get right.</p>
+        <p class="section-body"><strong>All supplies included</strong> &mdash; any paper you have, and something to make marks with: pencil, pen, marker, crayon, paint. Nothing special needed, work with what's already at home.</p>
 
-    <div class="offer-body">
-      <p class="section-body"><strong>THE HOST</strong> After years of burning out in tech and a late ADHD diagnosis, I found creating art as my compass back home. Now I work as an artist and certified Therapeutic Arts Practitioner, building the room I needed when I was running on fumes.</p>
-      <p class="section-body" style="margin-top: 1.75rem;"><strong>WHAT HAPPENS IN THE SESSION</strong> You'll make something with your hands, on camera together, in the company of other women who are also, finally, putting something down they've been carrying too long. I'll be there as your guide and companion, holding the space while you explore what your body wants to say and put it on the page.</p>
-      <p class="section-body" style="margin-top: 1.75rem;"><strong>Nothing is required except your presence.</strong> No skills needed. Nothing to get right.</p>
-      <p class="section-body" style="margin-top: 1.75rem;"><strong>All supplies included</strong> &mdash; any paper you have, and something to make marks with: pencil, pen, marker, crayon, paint. Nothing special needed, work with what's already at home.</p>
+        <p class="flyer-eyebrow" style="margin-bottom: 1rem;">The Arc</p>
+        <div class="reference-card reference-card-on-midnight" style="margin-top: 0;">
+          <ul>
+            <li>Settling In &mdash; landing, leaving the day at the door</li>
+            <li>A Short Meditation &mdash; shifting from doing to being</li>
+            <li>The Making &mdash; one gentle prompt, your hands and the page</li>
+            <li>Soft Sharing Circle &mdash; say as much or as little as you want about what came up</li>
+            <li>Soft Close</li>
+          </ul>
+        </div>
 
-      <p class="flyer-eyebrow" style="margin-top: 2.75rem; margin-bottom: 1rem;">The Arc</p>
-      <div class="reference-card reference-card-on-midnight">
-        <ul>
-          <li>Settling In &mdash; landing, leaving the day at the door</li>
-          <li>A Short Meditation &mdash; shifting from doing to being</li>
-          <li>The Making &mdash; one gentle prompt, your hands and the page</li>
-          <li>Soft Sharing Circle &mdash; say as much or as little as you want about what came up</li>
-          <li>Soft Close</li>
-        </ul>
+        <p class="section-body" style="font-style: italic; font-weight: 600; text-align: center;">Everything is always an invitation, never an expectation.</p>
+        <p class="section-body" style="color: var(--slate);">Capped at 8 women. <em>Intimate, not exclusive.</em></p>
+        <p class="section-body offer-signoff">I'll see you online.</p>
+        <a href="https://stan.store/apekshadarbari/p/tend-to-your-cup--preview-session" target="_blank" rel="noopener noreferrer" class="btn-clay" style="display: inline-block;">Book This Session</a>
+        <p style="font-size: 0.85rem; color: var(--slate); margin-top: 0.7rem;">You'll complete your booking securely via Stan Store. It opens in a new tab.</p>
       </div>
-
-      <p class="section-body" style="font-style: italic; font-weight: 600; text-align: center; margin-top: 1.75rem;">Everything is always an invitation, never an expectation.</p>
-      <p class="section-body" style="margin-top: 0.75rem; color: var(--slate);">Capped at 8 women. <em>Intimate, not exclusive.</em></p>
-      <p class="section-body" style="margin-top: 2rem;">I'll see you online.</p>
-      <a href="https://stan.store/apekshadarbari/p/tend-to-your-cup--preview-session" target="_blank" rel="noopener noreferrer" class="btn-clay" style="margin-top: 1.5rem; display: inline-block;">Book This Session</a>
-      <p style="font-size: 0.85rem; color: var(--slate); margin-top: 0.7rem;">You'll complete your booking securely via Stan Store. It opens in a new tab.</p>
+      <div class="offer-image-col fade-up">
+        <div class="about-image-wrap offer-sticky-image">
+          <img
+            src="../assets/20250921_photoshoot_apeksha_darbari-14.jpeg"
+            alt="Apeksha painting at the easel by the window."
+            loading="lazy"
+          />
+          <div class="about-image-accent" style="left: auto; right: -1.5rem;"></div>
+        </div>
+      </div>
     </div>
   </section>
 
