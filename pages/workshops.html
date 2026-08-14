@@ -401,10 +401,18 @@
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
 
     .offer-section { padding: var(--section-pad); }
+    /* Grid items default to min-width: auto, which lets an image's intrinsic size push a
+       column wider/narrower than its fr share and squeeze its sibling to nothing — force
+       both columns to respect the grid track instead of the image's natural size. */
+    .offer-section .about-grid > * { min-width: 0; }
+    .offer-section .about-image-wrap { width: 100%; overflow: hidden; }
     .offer-body { max-width: var(--max-width); margin: 3rem auto 0; }
     .offer-on-slate .section-body { color: var(--text-muted); }
     .offer-on-slate .flyer-eyebrow { color: var(--teal); }
     .offer-on-midnight .section-body { color: var(--slate); }
+
+    /* Clean visual break between the two stacked offer sections instead of an abrupt cut */
+    #one-on-one { border-bottom: 1px solid rgba(53, 57, 76, 0.1); }
 
     .reference-card { margin-top: 0.5rem; padding: 1.75rem 2rem; }
     .reference-card ul { list-style: none; margin: 0; padding: 0; }
@@ -509,20 +517,19 @@
         <p class="workshop-hero-text" style="margin-left: auto; margin-right: auto;">
           One to one, or online with other women &mdash; two ways in.
         </p>
-        <nav class="jump-nav" aria-label="Jump to a session">
+        <div class="jump-nav" role="navigation" aria-label="Jump to a session">
           <a href="#one-on-one">1:1 Session</a>
           <span class="jump-sep">&middot;</span>
           <a href="#online-preview">Online Session</a>
           <span class="jump-sep">&middot;</span>
           <a href="#waitlist">Join the Waitlist</a>
-        </nav>
+        </div>
       </div>
       <div class="hero-photo fade-up">
         <img
           src="../assets/20250921_photoshoot_apeksha_darbari-01.jpg"
           alt="Paintbrushes resting in a jar of water by a sunlit window."
-          width="1066"
-          height="1600"
+          loading="lazy"
         />
       </div>
     </div>
@@ -530,17 +537,16 @@
 
   <!-- OFFER 1: 1:1 Therapeutic Art Session -->
   <section id="one-on-one" class="offer-section offer-on-slate" style="background: var(--slate);">
-    <div class="about-grid fade-up">
-      <div class="about-image-wrap">
+    <div class="about-grid">
+      <div class="about-image-wrap fade-up">
         <img
           src="../assets/20250921_photoshoot_apeksha_darbari-32.jpg"
           alt="Hands mixing blue paint with a palette knife."
-          width="3000"
-          height="2000"
+          loading="lazy"
         />
         <div class="about-image-accent"></div>
       </div>
-      <div class="about-text">
+      <div class="about-text fade-up">
         <p class="flyer-eyebrow" style="margin-top: 0;">1:1 Therapeutic Art Session &mdash; CA$95</p>
         <p class="section-body">Come, sit with me &mdash; one to one, 75 minutes.</p>
         <p class="section-body" style="margin-top: 1.25rem;"><strong>THE EXPERIENCE</strong> This is the room, made private. Just you and me, online.</p>
@@ -572,19 +578,18 @@
 
   <!-- OFFER 2: Tend To Your Cup | Online Preview Session -->
   <section id="online-preview" class="offer-section offer-on-midnight" style="background: var(--midnight);">
-    <div class="about-grid fade-up" style="grid-template-columns: 7fr 5fr;">
-      <div class="about-text" style="padding-right: 0; padding-left: 2rem;">
+    <div class="about-grid" style="grid-template-columns: 7fr 5fr;">
+      <div class="about-text fade-up" style="padding-right: 0; padding-left: 2rem;">
         <p class="flyer-eyebrow" style="margin-top: 0;">Tend To Your Cup | Online Preview Session &mdash; CA$65</p>
         <p class="section-body">This is a ~90-minute therapeutic arts session for women running on fumes, holding up everything around them while unconsciously putting themselves last. I know many such women. I was that woman, and still am on many days.</p>
         <p class="section-body" style="font-style: italic; font-weight: 600; margin-top: 1.25rem;">You cannot pour from an empty cup.</p>
         <p class="section-body" style="margin-top: 1.25rem;"><strong>THE EXPERIENCE</strong> An intimate, guided online session for reconnecting with yourself through creating art, in community with other women &mdash; from wherever you are. No experience or skills needed. Come as you are.</p>
       </div>
-      <div class="about-image-wrap">
+      <div class="about-image-wrap fade-up">
         <img
           src="../assets/20250921_photoshoot_apeksha_darbari-14.jpeg"
           alt="Apeksha painting at the easel by the window."
-          width="1066"
-          height="1600"
+          loading="lazy"
         />
         <div class="about-image-accent" style="left: auto; right: -1.5rem;"></div>
       </div>
