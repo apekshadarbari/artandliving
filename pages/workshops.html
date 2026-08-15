@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1:1 Therapeutic Art Sessions &amp; Online Preview | Apeksha Darbari | Art &amp; Living</title>
-  <meta name="description" content="Book a 1:1 therapeutic art session (CA$95, 75 minutes, online) or join Tend To Your Cup, an online preview session for women running on fumes (CA$65). No experience needed." />
+  <title>Book a Session | 1:1 &amp; Online Therapeutic Art | Apeksha Darbari | Art &amp; Living</title>
+  <meta name="description" content="Two ways in: a private 1:1 therapeutic art session (CA$95, 75 minutes, online) or Tend To Your Cup, an online preview session with other women (CA$65). No experience needed." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Apeksha Darbari | Art &amp; Living" />
   <meta property="og:url" content="https://apekshadarbari.com/pages/workshops" />
   <link rel="canonical" href="https://apekshadarbari.com/pages/workshops" />
-  <meta property="og:title" content="1:1 Therapeutic Art Sessions &amp; Online Preview | Apeksha Darbari | Art &amp; Living" />
+  <meta property="og:title" content="Book a Session | 1:1 &amp; Online Therapeutic Art | Apeksha Darbari | Art &amp; Living" />
   <meta property="og:description" content="Therapeutic arts sessions for women, online, no experience needed. A space to put it down, just for a while." />
   <meta property="og:image" content="https://apekshadarbari.com/assets/20250921_photoshoot_apeksha_darbari-11.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -96,41 +96,6 @@
     .accordion-item.open .accordion-content { max-height: 900px; }
     .accordion-content-inner { padding-bottom: 1.5rem; }
     .accordion-content-inner > *:first-child { margin-top: 0; }
-    .timeline-list { margin-top: 1.75rem; }
-    .timeline-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 2.5rem;
-    }
-    .timeline-row {
-      display: flex;
-      gap: 1.25rem;
-      padding: 0.55rem 0;
-      border-bottom: 1px solid rgba(242, 224, 215, 0.12);
-    }
-    .timeline-columns > div > .timeline-row:last-child { border-bottom: none; }
-    .timeline-time {
-      min-width: 92px;
-      flex-shrink: 0;
-      font-weight: 400;
-      color: var(--clay);
-    }
-    .timeline-activity {
-      font-weight: 600;
-      font-style: italic;
-      color: var(--slate);
-    }
-    .timeline-storytelling-note {
-      display: block;
-      margin-top: 0.75rem;
-      font-style: italic;
-      font-size: 0.88rem;
-      color: var(--slate);
-    }
-    @media (max-width: 768px) {
-      .timeline-time { min-width: 78px; }
-      .timeline-columns { grid-template-columns: 1fr; gap: 0; }
-    }
     .flyer-details {
       margin-top: 3rem;
       padding-top: 2.5rem;
@@ -156,178 +121,6 @@
       .flyer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
       .flyer-detail-row { flex-direction: column; gap: 0.35rem; }
     }
-    /* Featured testimonial: visual anchor of the section */
-    .testimonial-featured {
-      position: relative;
-      max-width: 700px;
-      margin: 2.5rem auto 3.25rem;
-      padding: 0.5rem 1.5rem 0;
-      text-align: center;
-    }
-    .testimonial-quote-mark {
-      position: absolute;
-      top: -3.25rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 10rem;
-      line-height: 1;
-      color: var(--clay);
-      opacity: 0.16;
-      pointer-events: none;
-      user-select: none;
-      z-index: 0;
-    }
-    .testimonial-featured-quote {
-      position: relative;
-      z-index: 1;
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: 1.55rem;
-      color: var(--slate);
-      line-height: 1.65;
-      margin-bottom: 1rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .testimonial-featured-quote.expanded {
-      display: block;
-      -webkit-line-clamp: unset;
-      overflow: visible;
-    }
-    .testimonial-featured-name {
-      position: relative;
-      z-index: 1;
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--clay);
-      margin-top: 0.75rem;
-    }
-    @media (max-width: 768px) {
-      .testimonial-quote-mark { font-size: 7rem; top: -2.5rem; }
-      .testimonial-featured-quote { font-size: 1.25rem; }
-    }
-
-    /* Secondary testimonials: smaller, tighter, visually subordinate to the featured quote */
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.85rem;
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-    .testimonial-card {
-      background: var(--white);
-      padding: 1.6rem 1.75rem;
-      border-top: 2px solid var(--clay);
-    }
-    .testimonial-quote {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: 1.15rem;
-      color: var(--midnight);
-      line-height: 1.65;
-      margin-bottom: 0.65rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .testimonial-quote.expanded {
-      display: block;
-      -webkit-line-clamp: unset;
-      overflow: visible;
-    }
-    .testimonial-toggle {
-      display: inline-block;
-      background: none;
-      border: none;
-      padding: 0;
-      margin-bottom: 0.6rem;
-      font-family: var(--font-body);
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--clay);
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    .testimonial-name {
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-    @media (max-width: 900px) {
-      .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    .what-to-expect {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-    .session-steps { list-style: none; margin-top: 2rem; }
-    .session-step {
-      display: flex;
-      gap: 1.5rem;
-      margin-bottom: 1.75rem;
-      align-items: flex-start;
-    }
-    .step-num {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      color: var(--clay);
-      line-height: 1;
-      min-width: 2rem;
-      font-weight: 300;
-    }
-    .step-content h4 {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      color: var(--midnight);
-      margin-bottom: 0.4rem;
-      font-weight: 400;
-    }
-    .step-content p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-    .upcoming-sessions {
-      max-width: var(--max-width);
-      margin: 3rem auto 0;
-    }
-    .session-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.75rem 0;
-      border-bottom: 1px solid var(--slate-dark);
-      gap: 2rem;
-    }
-    .session-date {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      color: var(--midnight);
-      min-width: 200px;
-    }
-    .session-name { font-size: 0.9rem; color: var(--text-muted); flex: 1; }
-    .session-price { font-size: 0.9rem; color: var(--midnight); font-weight: 400; min-width: 100px; text-align: right; }
-    @media (max-width: 768px) {
-      .testimonial-grid { grid-template-columns: 1fr; }
-      .what-to-expect { grid-template-columns: 1fr; gap: 2rem; }
-      .session-row { flex-direction: column; align-items: flex-start; }
-      .session-price { text-align: left; }
-    }
     .btn-clay {
       display: inline-block;
       background: var(--clay);
@@ -348,135 +141,12 @@
     .section-body { font-size: 1.2rem; line-height: 1.9; }
     .flyer-block .section-body { font-size: 1.2rem; }
     .flyer-detail-row { font-size: 1.12rem; }
-    .timeline-time, .timeline-activity { font-size: 1.05rem; }
-    /* Larger eyebrow-style headings across the workshops page (letter-spacing, small-caps,
-       and Clay/Teal color rules stay as-is — size only). Includes .flyer-detail-label so
-       When/Where/Investment labels match Have questions?/After you've booked in size. */
     .section-eyebrow, .flyer-eyebrow, .flyer-label, .flyer-detail-label { font-size: 0.85rem; }
-    .step-content p { font-size: 1.02rem; line-height: 1.75; }
-    .step-content h4 { font-size: 1.2rem; }
     .workshop-hero-text { font-size: 1.28rem; }
     @media (max-width: 768px) {
       .section-body, .flyer-block .section-body { font-size: 1.12rem; }
       .flyer-detail-row { font-size: 1.05rem; }
     }
-
-    /* Flyer content on a slate ground: dark text instead of the light-on-midnight default */
-    .flyer-on-slate .flyer-block .section-body { color: var(--text-muted); }
-    .flyer-on-slate .timeline-time { color: var(--midnight); }
-    .flyer-on-slate .timeline-activity { color: var(--text-muted); }
-
-    /* Clay-on-Slate contrast fix now lives sitewide in css/style.css
-       (section[style*="var(--slate)"] .section-eyebrow / .section-title em) —
-       removed the duplicate page-scoped copy that used to be here. */
-
-    /* R17: Structural redesign — jump nav, hero photo, offer sections, reference cards */
-    .jump-nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .jump-nav a {
-      color: var(--clay);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 2px;
-      transition: border-color 0.2s ease;
-    }
-    .jump-nav a:hover { border-color: var(--clay); }
-    .jump-nav .jump-sep { color: rgba(242, 224, 215, 0.4); }
-
-    .hero-photo {
-      max-width: 640px;
-      margin: 3rem auto 0;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-    }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
-
-    .offer-section { padding: var(--section-pad); }
-    .offer-on-slate .section-body { color: var(--text-muted); }
-    .offer-on-slate .flyer-eyebrow { color: var(--teal); }
-    .offer-on-midnight .section-body { color: var(--slate); }
-
-    /* Clean visual break between the two stacked offer sections instead of an abrupt cut */
-    #one-on-one { border-bottom: 1px solid rgba(53, 57, 76, 0.1); }
-
-    /* R18: Unified layout — image runs the full height of its section via position: sticky,
-       instead of only sitting beside the opening paragraph. This also narrows the reference
-       card automatically, since it now lives in the text column instead of full page width. */
-    .offer-layout {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 5fr 7fr;
-      gap: 4rem;
-      align-items: start;
-    }
-    .offer-section.offer-reverse .offer-layout { grid-template-columns: 7fr 5fr; }
-    /* Grid items default to min-width: auto, which lets an image's intrinsic size push a
-       column wider/narrower than its fr share and squeeze its sibling to nothing — force
-       both columns to respect the grid track instead of the image's natural size. */
-    .offer-layout > * { min-width: 0; }
-    .offer-image-col { position: relative; }
-    .offer-sticky-image { position: sticky; top: 6.5rem; width: 100%; overflow: hidden; }
-    .offer-content-col > .section-body,
-    .offer-content-col > .flyer-eyebrow,
-    .offer-content-col > .reference-card,
-    .offer-content-col > .btn-clay,
-    .offer-content-col > p {
-      margin-top: 1.75rem;
-    }
-    .offer-content-col > .flyer-eyebrow:first-child,
-    .offer-content-col > .section-body:first-child {
-      margin-top: 0;
-    }
-
-    .offer-signoff {
-      font-style: italic;
-      font-weight: 600;
-      text-align: center;
-      margin-top: 2.75rem !important;
-      margin-bottom: 0.5rem;
-    }
-
-    @media (max-width: 900px) {
-      .offer-layout,
-      .offer-section.offer-reverse .offer-layout { grid-template-columns: 1fr; gap: 2rem; }
-      .offer-sticky-image { position: static; }
-      .offer-section.offer-reverse .offer-image-col { order: -1; }
-    }
-
-    .reference-card { margin-top: 0.5rem; padding: 1.75rem 2rem; }
-    .reference-card ul { list-style: none; margin: 0; padding: 0; }
-    .reference-card li {
-      position: relative;
-      padding-left: 1.5rem;
-      font-size: 1.08rem;
-      line-height: 1.75;
-      margin-bottom: 0.85rem;
-    }
-    .reference-card li:last-child { margin-bottom: 0; }
-    .reference-card li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.6em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--clay);
-    }
-    .reference-card-on-slate { background: rgba(53, 57, 76, 0.05); border: 1px solid rgba(53, 57, 76, 0.1); }
-    .reference-card-on-slate li { color: var(--midnight); }
-    .reference-card-on-midnight { background: rgba(242, 224, 215, 0.06); border: 1px solid rgba(242, 224, 215, 0.15); }
-    .reference-card-on-midnight li { color: var(--slate); }
 
     .loop-section { background: var(--white); padding: var(--section-pad); text-align: center; }
     .loop-section .section-body { max-width: 560px; margin: 1rem auto 0; color: var(--text-muted); }
@@ -491,11 +161,9 @@
     }
     .loop-embed-placeholder a { color: var(--teal); }
 
-    @media (max-width: 768px) {
-      .hero-photo { aspect-ratio: 1 / 1; }
-      .offer-body .about-grid { margin-bottom: 0; }
-    }
-
+    /* Choose-your-path chooser section */
+    .choose-section { background: var(--slate); padding: var(--section-pad); text-align: center; }
+    .choose-section .section-body { max-width: 640px; margin: 1rem auto 0; color: var(--text-muted); }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LM9XW9N6Y"></script>
@@ -538,7 +206,7 @@
       <li><a href="../pages/studio.html">From the Studio</a></li>
       <li><a href="../pages/poetry.html">Rhymes & Ramblings</a></li>
       <li><a href="../pages/contact.html">Say Hi</a></li>
-      <li><a href="#sessions" class="nav-cta">Reserve Your Spot</a></li>
+      <li><a href="#choose" class="nav-cta">Reserve Your Spot</a></li>
     </ul>
     <div class="hamburger" aria-label="Open menu" role="button" tabindex="0" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -556,104 +224,68 @@
         <p class="workshop-hero-text" style="margin-left: auto; margin-right: auto;">
           One to one, or online with other women &mdash; two ways in.
         </p>
-        <div class="jump-nav" role="navigation" aria-label="Jump to a session">
-          <a href="#one-on-one">1:1 Session</a>
-          <span class="jump-sep">&middot;</span>
-          <a href="#online-preview">Online Session</a>
-          <span class="jump-sep">&middot;</span>
-          <a href="#waitlist">Join the Waitlist</a>
-        </div>
-      </div>
-      <div class="hero-photo fade-up">
-        <img
-          src="../assets/20250921_photoshoot_apeksha_darbari-01.jpg"
-          alt="Paintbrushes resting in a jar of water by a sunlit window."
-          loading="lazy"
-        />
       </div>
     </div>
   </div>
 
-  <!-- OFFER 1: 1:1 Therapeutic Art Session (image left, sticky alongside the full text column) -->
-  <section id="one-on-one" class="offer-section offer-on-slate" style="background: var(--slate);">
-    <div class="offer-layout">
-      <div class="offer-image-col fade-up">
-        <div class="about-image-wrap offer-sticky-image">
-          <img
-            src="../assets/20250921_photoshoot_apeksha_darbari-32.jpg"
-            alt="Hands mixing blue paint with a palette knife."
-            loading="lazy"
-          />
-          <div class="about-image-accent"></div>
+  <!-- CHOOSE YOUR PATH: two cards, each linking to its own dedicated session page -->
+  <section id="choose" class="choose-section">
+    <span class="section-eyebrow">Therapeutic Arts</span>
+    <h2 class="section-title">Choose <em style="color: var(--clay)">Your Path</em></h2>
+    <p class="section-body">
+      In-person and online sessions for women who need a room where nothing is required except showing up.
+      No art experience needed. No performance. Just presence, paint, and each other.
+    </p>
+    <div class="workshops-grid" style="margin-top: 3rem;">
+
+      <div class="workshop-card fade-up" style="background: var(--white);">
+        <span class="workshop-tag">1:1 Session</span>
+        <h3 class="workshop-title">Come, Sit With Me</h3>
+        <p class="workshop-desc">
+          One to one, 75 minutes. My complete attention, and a safe, quiet
+          space shaped around what you personally want and need.
+        </p>
+        <div class="workshop-meta">
+          <div class="workshop-meta-item">
+            <span class="workshop-meta-label">Format</span>
+            <span class="workshop-meta-value">Online, via Zoom</span>
+          </div>
+          <div class="workshop-meta-item">
+            <span class="workshop-meta-label">Investment</span>
+            <span class="workshop-meta-value">$95 CAD</span>
+          </div>
+          <div class="workshop-meta-item">
+            <span class="workshop-meta-label">Length</span>
+            <span class="workshop-meta-value">75 minutes</span>
+          </div>
         </div>
+        <a href="1-1-session.html" class="btn-primary">See This Session</a>
       </div>
-      <div class="offer-content-col fade-up">
-        <p class="flyer-eyebrow">1:1 Therapeutic Art Session &mdash; CA$95</p>
-        <p class="section-body">Come, sit with me &mdash; one to one, 75 minutes.</p>
-        <p class="section-body"><strong>THE EXPERIENCE</strong> This is the room, made private. Just you and me, online.</p>
-        <p class="section-body">You may not want a group. You might just want my complete attention and a safe, quiet space to come into yourself. We shape this session around what you personally want and need. That is what this is.</p>
-        <p class="section-body"><strong>THE HOST</strong> After years of burning out in tech and a late ADHD diagnosis, I found creating art as my compass back home. Now I work as an artist and certified Therapeutic Arts Practitioner, building the room I needed when I was running on fumes.</p>
-        <p class="section-body"><strong>WHAT HAPPENS IN THE SESSION</strong> We start by settling in, a few minutes to land and leave the day at the door. Then, after checking in, an art prompt to orient you, and from there you follow what comes. I can make alongside you, or simply hold space while you do. Near the end we slow down together, and if you want to, we talk about what came up. Everything here is an invitation, never an expectation. This is your time.</p>
-        <p class="section-body"><strong>WHAT YOU'LL NEED</strong> You'll get a basic supplies list after we do the intake, but nothing fancy to start. Usually we can work with what you already have at home. If we learn there's something specific worth exploring, I'll guide you on what might suit it better as we go.</p>
 
-        <p class="flyer-eyebrow" style="margin-bottom: 1rem;">The Practical Bits</p>
-        <div class="reference-card reference-card-on-slate" style="margin-top: 0;">
-          <ul>
-            <li>75 minutes, one to one, online, via Zoom &mdash; link sent after booking</li>
-            <li>Pick a time that works when you book. If none of the slots fit, just reach out and we'll find something that does</li>
-            <li>A short intake after you book, so I can meet you where you are</li>
-            <li>Cancellations and reschedules need at least 48 hours' notice</li>
-            <li>No skills needed. No wrong way to do this. Come as you are.</li>
-          </ul>
+      <div class="workshop-card fade-up" style="background: var(--white);">
+        <span class="workshop-tag">Online Preview</span>
+        <h3 class="workshop-title">Tend To Your Cup</h3>
+        <p class="workshop-desc">
+          A guided online session for women running on fumes. Make
+          something with your hands, in community, from wherever you are.
+        </p>
+        <div class="workshop-meta">
+          <div class="workshop-meta-item">
+            <span class="workshop-meta-label">Format</span>
+            <span class="workshop-meta-value">Online</span>
+          </div>
+          <div class="workshop-meta-item">
+            <span class="workshop-meta-label">Investment</span>
+            <span class="workshop-meta-value">$65 CAD</span>
+          </div>
+          <div class="workshop-meta-item">
+            <span class="workshop-meta-label">Spots</span>
+            <span class="workshop-meta-value">Capped at 8</span>
+          </div>
         </div>
-
-        <p class="section-body offer-signoff">I'll see you in the room.</p>
-        <a href="https://stan.store/apekshadarbari/p/11-therapeutic-art-sessions" target="_blank" rel="noopener noreferrer" class="btn-clay" style="display: inline-block;">Book a Single Session</a>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.7rem;">You'll complete your booking securely via Stan Store. It opens in a new tab.</p>
+        <a href="online-session.html" class="btn-secondary">See This Session</a>
       </div>
-    </div>
-  </section>
 
-  <!-- OFFER 2: Tend To Your Cup | Online Preview Session (image right, sticky, mirrors Offer 1 on purpose — reinforced by the slate/midnight background alternation) -->
-  <section id="online-preview" class="offer-section offer-reverse offer-on-midnight" style="background: var(--midnight);">
-    <div class="offer-layout">
-      <div class="offer-content-col fade-up">
-        <p class="flyer-eyebrow">Tend To Your Cup | Online Preview Session &mdash; CA$65</p>
-        <p class="section-body">This is a ~90-minute therapeutic arts session for women running on fumes, holding up everything around them while unconsciously putting themselves last. I know many such women. I was that woman, and still am on many days.</p>
-        <p class="section-body" style="font-style: italic; font-weight: 600;">You cannot pour from an empty cup.</p>
-        <p class="section-body"><strong>THE EXPERIENCE</strong> An intimate, guided online session for reconnecting with yourself through creating art, in community with other women &mdash; from wherever you are. No experience or skills needed. Come as you are.</p>
-        <p class="section-body"><strong>THE HOST</strong> After years of burning out in tech and a late ADHD diagnosis, I found creating art as my compass back home. Now I work as an artist and certified Therapeutic Arts Practitioner, building the room I needed when I was running on fumes.</p>
-        <p class="section-body"><strong>WHAT HAPPENS IN THE SESSION</strong> You'll make something with your hands, on camera together, in the company of other women who are also, finally, putting something down they've been carrying too long. I'll be there as your guide and companion, holding the space while you explore what your body wants to say and put it on the page.</p>
-        <p class="section-body"><strong>Nothing is required except your presence.</strong> No skills needed. Nothing to get right.</p>
-        <p class="section-body"><strong>All supplies included</strong> &mdash; any paper you have, and something to make marks with: pencil, pen, marker, crayon, paint. Nothing special needed, work with what's already at home.</p>
-
-        <p class="flyer-eyebrow" style="margin-bottom: 1rem;">The Arc</p>
-        <div class="reference-card reference-card-on-midnight" style="margin-top: 0;">
-          <ul>
-            <li>Settling In &mdash; landing, leaving the day at the door</li>
-            <li>A Short Meditation &mdash; shifting from doing to being</li>
-            <li>The Making &mdash; one gentle prompt, your hands and the page</li>
-            <li>Soft Sharing Circle &mdash; say as much or as little as you want about what came up</li>
-            <li>Soft Close</li>
-          </ul>
-        </div>
-
-        <p class="section-body" style="font-style: italic; font-weight: 600; text-align: center;">Everything is always an invitation, never an expectation.</p>
-        <p class="section-body" style="color: var(--slate);">Capped at 8 women. <em>Intimate, not exclusive.</em></p>
-        <p class="section-body offer-signoff">I'll see you online.</p>
-        <a href="https://stan.store/apekshadarbari/p/tend-to-your-cup--preview-session" target="_blank" rel="noopener noreferrer" class="btn-clay" style="display: inline-block;">Book This Session</a>
-        <p style="font-size: 0.85rem; color: var(--slate); margin-top: 0.7rem;">You'll complete your booking securely via Stan Store. It opens in a new tab.</p>
-      </div>
-      <div class="offer-image-col fade-up">
-        <div class="about-image-wrap offer-sticky-image">
-          <img
-            src="../assets/20250921_photoshoot_apeksha_darbari-14.jpeg"
-            alt="Apeksha painting at the easel by the window."
-            loading="lazy"
-          />
-          <div class="about-image-accent" style="left: auto; right: -1.5rem;"></div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -665,43 +297,6 @@
     <div class="loop-embed-placeholder">
       <!-- TEMP: Flodesk "Workshops & Sessions" form embed to be dropped in here once Apeksha provides the code. Functional fallback below in the meantime. -->
       Drop your email <a href="https://apekshadarbari.myflodesk.com/workshop-waitlist" target="_blank" rel="noopener noreferrer">here</a> and I'll keep you posted &mdash; this will be replaced with the dedicated Flodesk form once it's ready.
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section style="background: var(--midnight); padding: 3.5rem 2rem;">
-    <div style="max-width: var(--max-width); margin: 0 auto; text-align: center;">
-      <span class="section-eyebrow">What women say</span>
-      <h2 class="section-title" style="color: var(--slate); font-size: clamp(1.6rem, 3vw, 2.25rem); margin-bottom: 0;">From <em style="color: var(--clay)">the room</em></h2>
-    </div>
-
-    <!-- Featured testimonial: the visual anchor -->
-    <div class="testimonial-featured fade-up">
-      <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
-      <p class="testimonial-featured-quote">Apeksha is a very skilled, calm and empathetic therapeutic arts practitioner. Her workshops provide a safe space for exploring art and looking deeper inside ourselves. In just a short time I felt connected to the other women in the workshop. The art making was fun and insightful and the sharing was authentic. Thank you Apeksha!</p>
-      <button class="testimonial-toggle" type="button">Read more</button>
-      <p class="testimonial-featured-name">Talya M.</p>
-    </div>
-
-    <div class="testimonial-grid">
-      <div class="testimonial-card fade-up" style="background: var(--slate); border-top-color: var(--clay);">
-        <p class="testimonial-quote" style="color: var(--midnight);">"Apeksha has a gift. She can make you think deeply and relax at the same time."</p>
-        <p class="testimonial-name" style="color: var(--teal);">Kim A.</p>
-      </div>
-      <div class="testimonial-card fade-up" style="background: var(--slate); border-top-color: var(--clay);">
-        <p class="testimonial-quote" style="color: var(--midnight);">Apeksha's workshop was an absolute gift in an otherwise very difficult week for me. I came into the workshop feeling emotionally, mentally and physically drained. Apeksha has a very calm and grounding energy which immediately made me feel safe, and supported me in remaining fully present throughout our session (not an easy task after an intense day of work). It was a moment of peace and healing that I am very grateful for!</p>
-        <button class="testimonial-toggle" type="button">Read more</button>
-        <p class="testimonial-name" style="color: var(--teal);">Natalie P.</p>
-      </div>
-      <div class="testimonial-card fade-up" style="background: var(--slate); border-top-color: var(--clay);">
-        <p class="testimonial-quote" style="color: var(--midnight);">"This workshop was incredible. Apeksha has a way with words that really reels you into what the true essence of what the workshop is meant to achieve. I would recommend this to all women that want to explore their creative side in a safe and thought-provoking environment."</p>
-        <button class="testimonial-toggle" type="button">Read more</button>
-        <p class="testimonial-name" style="color: var(--teal);">Anonymous</p>
-      </div>
-      <div class="testimonial-card fade-up" style="background: var(--slate); border-top-color: var(--clay);">
-        <p class="testimonial-quote" style="color: var(--midnight);">"This was a lovely offering and just the type of thing I think many people would find comfort in right now."</p>
-        <p class="testimonial-name" style="color: var(--teal);">Aurelia K.</p>
-      </div>
     </div>
   </section>
 
@@ -878,14 +473,6 @@
 
   <script src="../js/main.js"></script>
   <script>
-    document.querySelectorAll('.testimonial-toggle').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var quote = btn.previousElementSibling;
-        var expanded = quote.classList.toggle('expanded');
-        btn.textContent = expanded ? 'Show less' : 'Read more';
-      });
-    });
-
     // Tell Me More: accordion
     document.querySelectorAll('.accordion-header').forEach(function (header) {
       header.addEventListener('click', function () {
