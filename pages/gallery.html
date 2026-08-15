@@ -331,7 +331,7 @@
     <div class="lightbox-inner">
       <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
       <div class="lightbox-image">
-        <img id="lightboxImg" src="" alt="" />
+        <img id="lightboxImg" alt="" />
       </div>
       <div class="lightbox-info">
         <p class="lightbox-cat" id="lightboxCat"></p>
@@ -624,6 +624,10 @@
     const pricePieceTitle = document.getElementById('pricePieceTitle');
 
     function openPriceForm(item) {
+      // Close the lightbox first if it's open (e.g. "Request price" clicked from inside it) —
+      // otherwise the two overlays stack, which is what was reading as a broken/empty image
+      // behind the price form.
+      if (lb.classList.contains('open')) lb.classList.remove('open');
       const p = pieceOf(item);
       priceModalPiece.textContent = p.title;
       pricePieceTitle.value = p.title; // hidden field so the inquiry names the piece
@@ -632,7 +636,7 @@
     }
     function closePriceForm() {
       priceModal.classList.remove('open');
-      if (!lb.classList.contains('open')) document.body.style.overflow = '';
+      document.body.style.overflow = '';
     }
 
     grid.addEventListener('click', e => {

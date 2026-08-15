@@ -49,6 +49,44 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito+Sans:wght@300;400;600&family=Kalam:wght@400;700&display=swap" />
+  <style>
+    /* Three-path fork: quick self-select doorways directly under the hero, so a visitor can
+       route themselves (art / sessions / about) within seconds of landing. Labels below are
+       placeholders — final copy to follow separately. */
+    .path-fork { background: var(--white); border-bottom: 1px solid var(--slate-dark); }
+    .path-fork-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .path-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 1.85rem 1rem;
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--midnight);
+      border-left: 1px solid var(--slate-dark);
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+    .path-card:first-child { border-left: none; }
+    .path-card:hover { color: var(--clay); background: var(--slate); }
+    .path-card-arrow { transition: transform 0.2s ease; }
+    .path-card:hover .path-card-arrow { transform: translateX(4px); }
+    @media (max-width: 700px) {
+      .path-fork-inner { grid-template-columns: 1fr; }
+      .path-card { border-left: none; border-top: 1px solid var(--slate-dark); }
+      .path-card:first-child { border-top: none; }
+    }
+    .about-text .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LM9XW9N6Y"></script>
   <script>
@@ -119,6 +157,25 @@
     </div>
   </section>
 
+  <!-- THREE PATHS: quick self-select doorways, sits directly under the hero so it's visible
+       within a beat of landing. Labels are placeholders — final copy to follow separately. -->
+  <section class="path-fork">
+    <div class="path-fork-inner">
+      <a href="pages/gallery.html" class="path-card">
+        <span>See the Art</span>
+        <span class="path-card-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a href="pages/workshops.html" class="path-card">
+        <span>Book a Session</span>
+        <span class="path-card-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a href="pages/about.html" class="path-card">
+        <span>About Apeksha</span>
+        <span class="path-card-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </section>
+
   <!-- INTRO STRIP -->
   <div class="intro-strip">
     <p>
@@ -154,7 +211,10 @@
           I'm Apeksha, an abstract artist, a certified Therapeutic Arts Practitioner, and many other things but primarily, the woman building spaces where women stop performing and start being. A safe space for the woman who is the safe space for everyone else but has no one who is hers. I'm building a community where she can tap into her body and out of her mind into the present moment by creating art around others like her. I'm creating what I needed (and still do).
         </p>
         <br>
-        <a href="pages/about.html" class="btn-secondary">Read the full story</a>
+        <div class="btn-row">
+          <a href="pages/about.html" class="btn-secondary">Read the full story</a>
+          <a href="pages/gallery.html" class="btn-secondary">See the gallery</a>
+        </div>
       </div>
     </div>
   </section>
