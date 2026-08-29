@@ -97,11 +97,17 @@
     .g-card-info { padding-top: 1.85rem; text-align: center; }
     .g-card-title {
       font-family: var(--font-display);
-      font-size: 1.5rem; font-weight: 400; font-style: italic;
+      font-size: 1.5rem; font-weight: 400;
       color: var(--midnight);
       letter-spacing: 0.015em;
       line-height: 1.3;
     }
+    .g-card-desc {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 0.92rem; color: var(--text-muted);
+      line-height: 1.6; margin-top: 0.6rem;
+    }
+    .gal-dark .g-card-desc { color: rgba(242, 224, 215, 0.72); }
     .g-card-price {
       font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
       color: var(--text-muted); margin-top: 0.7rem;
@@ -155,11 +161,28 @@
     .lightbox-image { background: var(--slate); display: flex; align-items: center; justify-content: center; padding: 2rem; }
     .lightbox-image img { width: 100%; height: 100%; max-height: 78vh; object-fit: contain; display: block; }
     .lightbox-info { padding: 3.5rem 3rem; display: flex; flex-direction: column; justify-content: center; }
-    .lightbox-cat { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--clay); margin-bottom: 1.1rem; }
-    .lightbox-title { font-family: var(--font-display); font-style: italic; font-size: 2.3rem; color: var(--midnight); margin-bottom: 0.6rem; line-height: 1.2; }
+    .lightbox-cat { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--clay); font-weight: 600; margin-bottom: 1rem; }
+    .lightbox-title { font-family: var(--font-display); font-size: 2.3rem; color: var(--midnight); margin-bottom: 0.6rem; line-height: 1.2; }
+    .lightbox-desc {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 1.08rem; color: var(--midnight);
+      line-height: 1.85; margin: 0 0 2rem;
+      padding-left: 1.15rem; border-left: 2px solid var(--clay);
+    }
     .lightbox-price { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.75rem; }
-    .lightbox-meta { font-size: 0.85rem; color: var(--text-muted); line-height: 2.1; }
-    .lightbox-meta div span { color: var(--midnight); }
+    .lightbox-meta { margin-top: 0.25rem; padding-top: 1.5rem; border-top: 1px solid var(--slate-dark); }
+    .lightbox-meta-row {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem;
+      padding: 0.7rem 0;
+    }
+    .lightbox-meta-row + .lightbox-meta-row { border-top: 1px solid rgba(53,57,76,0.08); }
+    .lightbox-meta-label {
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); white-space: nowrap;
+    }
+    .lightbox-meta-value { font-size: 0.92rem; color: var(--midnight); text-align: right; }
+    .gal-dark .lightbox-meta { border-top-color: rgba(242, 224, 215, 0.18); }
+    .gal-dark .lightbox-meta-row + .lightbox-meta-row { border-top-color: rgba(242, 224, 215, 0.1); }
     .lightbox-close { position: absolute; top: 1rem; right: 1.25rem; background: none; border: none; font-size: 2rem; line-height: 1; color: var(--midnight); cursor: pointer; z-index: 2; padding: 0.25rem 0.5rem; }
     .lightbox-close:hover { color: var(--clay); }
 
@@ -336,6 +359,7 @@
       <div class="lightbox-info">
         <p class="lightbox-cat" id="lightboxCat"></p>
         <h2 class="lightbox-title" id="lightboxTitle"></h2>
+        <p class="lightbox-desc" id="lightboxDesc"></p>
         <div class="lightbox-meta" id="lightboxMeta"></div>
         <div class="lightbox-sizes" id="lightboxSizes" style="display: none;"></div>
         <div class="lightbox-actions" id="lightboxActions">
@@ -490,9 +514,18 @@
       return { title: title, dimensions: '[Dimensions]' };
     }
     function pieceOf(item) {
-      const p = parseName(item.filename);
-      const medium = item.category === 'prints' ? MEDIUM_PRINT : MEDIUM_ORIGINAL;
-      return { title: p.title, dimensions: p.dimensions, medium: medium, status: STATUS_DEFAULT };
+      const parsed = parseName(item.filename);
+      const medium = item.medium || (item.category === 'prints' ? MEDIUM_PRINT : MEDIUM_ORIGINAL);
+      const title = item.title || parsed.title;
+      const dimensions = item.dimensions || parsed.dimensions;
+      return {
+        title: title,
+        dimensions: dimensions,
+        thickness: item.thickness || '',
+        description: item.description || '',
+        medium: medium,
+        status: STATUS_DEFAULT
+      };
     }
 
     function cardHTML(item, index) {
@@ -518,7 +551,8 @@
           </div>
           <div class="g-card-info">
             <h3 class="g-card-title">${title}</h3>
-            <p class="g-card-meta">${esc(p.medium)}</p>
+            ${p.description ? `<p class="g-card-desc">${esc(p.description)}</p>` : ''}
+            <p class="g-card-meta">${esc(isPrint ? p.medium : p.dimensions)}</p>
             ${actionHTML}
           </div>
         </article>`;
@@ -579,14 +613,18 @@
     const lbCat = document.getElementById('lightboxCat');
     const lbTitle = document.getElementById('lightboxTitle');
     const lbMeta = document.getElementById('lightboxMeta');
+    const lbDesc = document.getElementById('lightboxDesc');
     const lbSizes = document.getElementById('lightboxSizes');
     const lbActions = document.getElementById('lightboxActions');
     let currentItem = null;
 
-    function metaRows(p) {
-      // Dimensions parsed from the filename but not shown yet (re-add ['Dimensions', p.dimensions] later)
-      return [['Medium', p.medium], ['Status', p.status]]
-        .map(([k, v]) => `<div>${esc(k)}: <span>${esc(v)}</span></div>`).join('');
+    function metaRows(category, p) {
+      const rows = category === 'originals'
+        ? [['Dimensions', p.dimensions], ['Thickness', p.thickness], ['Medium', p.medium], ['Status', p.status]]
+        : [['Medium', p.medium], ['Status', p.status]];
+      return rows.filter(([, v]) => v)
+        .map(([k, v]) => `<div class="lightbox-meta-row"><span class="lightbox-meta-label">${esc(k)}</span><span class="lightbox-meta-value">${esc(v)}</span></div>`)
+        .join('');
     }
 
     function comingSoonHTML() {
@@ -601,7 +639,9 @@
       lbImg.alt = p.title;
       lbCat.textContent = item.category === 'originals' ? 'Original' : 'Print';
       lbTitle.textContent = p.title;
-      lbMeta.innerHTML = metaRows(p);
+      lbDesc.textContent = p.description;
+      lbDesc.style.display = p.description ? '' : 'none';
+      lbMeta.innerHTML = metaRows(item.category, p);
 
       const isPrint = item.category === 'prints';
       if (isPrint) {
