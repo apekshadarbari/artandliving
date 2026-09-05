@@ -100,7 +100,7 @@ contactForm?.addEventListener('submit', (e) => {
       contactForm.innerHTML = '<p style="font-family: var(--font-display); font-style: italic; color: var(--teal); font-size: 1.2rem; padding: 2rem 0;">Your message landed. I\'ll be in touch.</p>';
     })
     .catch(() => {
-      contactForm.innerHTML = '<p style="font-family: var(--font-display); font-style: italic; color: var(--clay); font-size: 1.2rem; padding: 2rem 0;">Something went wrong sending this. Please email me directly at <a href="mailto:hello@apekshadarbari.com" style="color: var(--clay); text-decoration: underline;">hello@apekshadarbari.com</a> and I\'ll get right back to you.</p>';
+      contactForm.innerHTML = '<p style="font-family: var(--font-display); font-style: italic; color: var(--clay); font-size: 1.2rem; padding: 2rem 0;">Something went wrong sending this. Please email me directly at <a href="mailto:apeksha@apekshadarbari.com" style="color: var(--clay); text-decoration: underline;">apeksha@apekshadarbari.com</a> and I\'ll get right back to you.</p>';
     });
 });
 
