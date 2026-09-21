@@ -37,6 +37,11 @@
     .about-split-grid-reverse {
       grid-template-columns: 1.5fr 1fr;
     }
+    .about-split-grid .sticky-img,
+    .about-split-grid-reverse .sticky-img {
+      position: sticky;
+      top: 4rem;
+    }
     @media (max-width: 960px) {
       .about-split-grid,
       .about-split-grid-reverse {
@@ -124,7 +129,7 @@
   <!-- Section 1 — Poetry intro -->
   <section style="background: var(--slate); padding: var(--section-pad);">
     <div class="about-split-grid">
-      <div class="fade-up sticky-img" style="position: sticky; top: 4rem;">
+      <div class="fade-up sticky-img">
         <img
           src="../assets/meswinghorizontal.jpeg"
           alt="Apeksha Darbari"
@@ -251,7 +256,7 @@
         </div>
       </div>
 
-      <div class="fade-up sticky-img" style="position: sticky; top: 4rem;">
+      <div class="fade-up sticky-img">
         <img
           src="../assets/20250921_photoshoot_apeksha_darbari-14.jpeg"
           alt="Apeksha Darbari at the canvas"
