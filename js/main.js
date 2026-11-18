@@ -12,6 +12,19 @@
   document.head.appendChild(s);
 })();
 
+// ── SHOP SWITCH ──
+// The Squarespace shop is not public yet. Links to it are in the markup but hidden
+// (li.shop-link). At go live, change SHOP_LIVE to true: one edit shows Shop and hides
+// From the Studio in the menu and footer on every page. The address itself is written in each page's
+// Shop link; if the subdomain is not connected, replace https://shop.apekshadarbari.com
+// with the Squarespace address (search the site for "shop.apekshadarbari.com").
+const SHOP_LIVE = true;
+if (SHOP_LIVE) {
+  document.querySelectorAll('li.shop-link').forEach(li => { li.style.display = ''; });
+  // Shop takes the place of From the Studio in the menu and footer.
+  document.querySelectorAll('li.studio-link').forEach(li => { li.style.display = 'none'; });
+}
+
 // Nav scroll behaviour
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {

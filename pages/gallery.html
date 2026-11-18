@@ -212,6 +212,7 @@
       transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
     }
     .g-request:hover { background: var(--clay); color: var(--white); border-color: var(--clay); }
+    .g-buy { margin-top: 1.2rem; }
     .gal-dark .g-card-meta { color: rgba(242, 224, 215, 0.55); }
 
     /* ── PRINT PRICING (cards show a teaser, lightbox shows the full size list) ── */
@@ -314,7 +315,8 @@
       <li><a href="../pages/gallery.html">Gallery</a></li>
       <li><a href="../pages/workshops.html">Workshops</a></li>
       <li><a href="../pages/about.html">The Artist</a></li>
-      <li><a href="../pages/studio.html">From the Studio</a></li>
+      <li class="studio-link"><a href="../pages/studio.html">From the Studio</a></li>
+      <li class="shop-link" style="display:none"><a href="https://shop.apekshadarbari.com">Shop</a></li>
       <li><a href="../pages/poetry.html">Rhymes & Ramblings</a></li>
       <li><a href="../pages/contact.html">Say Hi</a></li>
       <li><a href="../pages/workshops.html" class="nav-cta">Reserve Your Spot</a></li>
@@ -364,6 +366,7 @@
         <div class="lightbox-sizes" id="lightboxSizes" style="display: none;"></div>
         <div class="lightbox-actions" id="lightboxActions">
           <button type="button" id="lightboxRequest" class="btn-clay">Request price</button>
+          <a id="lightboxBuy" class="btn-clay" href="#" style="display: none;">Buy</a>
         </div>
       </div>
     </div>
@@ -427,7 +430,8 @@
         <ul class="footer-links">
           <li><a href="../pages/workshops.html">Workshops</a></li>
           <li><a href="../pages/gallery.html">Gallery</a></li>
-          <li><a href="../pages/studio.html">From the Studio</a></li>
+          <li class="studio-link"><a href="../pages/studio.html">From the Studio</a></li>
+          <li class="shop-link" style="display:none"><a href="https://shop.apekshadarbari.com">Shop</a></li>
           <li><a href="../pages/about.html">The Artist</a></li>
           <li><a href="../pages/poetry.html">Rhymes & Ramblings</a></li>
         </ul>
@@ -537,7 +541,9 @@
       // Size/price data still lives in gallery-data.json, ready to switch back on later.
       const actionHTML = isPrint
         ? `<p class="g-card-sizes">Coming soon</p>`
-        : `<button type="button" class="g-request">Request price</button>`;
+        : (item.shopUrl
+            ? `<a class="btn-clay g-buy" href="${esc(item.shopUrl)}">Buy</a>`
+            : `<button type="button" class="g-request">Request price</button>`);
       return `
         <article class="g-card" tabindex="0" role="button"
                  aria-label="${title}"
@@ -616,6 +622,8 @@
     const lbDesc = document.getElementById('lightboxDesc');
     const lbSizes = document.getElementById('lightboxSizes');
     const lbActions = document.getElementById('lightboxActions');
+    const lbRequestBtn = document.getElementById('lightboxRequest');
+    const lbBuy = document.getElementById('lightboxBuy');
     let currentItem = null;
 
     function metaRows(category, p) {
@@ -651,6 +659,10 @@
       } else {
         lbSizes.style.display = 'none';
         lbActions.style.display = '';
+        // Originals with a shop page show Buy; the rest keep Request price.
+        lbBuy.href = item.shopUrl || '#';
+        lbBuy.style.display = item.shopUrl ? '' : 'none';
+        lbRequestBtn.style.display = item.shopUrl ? 'none' : '';
       }
 
       lb.classList.add('open');
@@ -683,11 +695,13 @@
       const card = e.target.closest('.g-card');
       if (!card) return;
       const item = items[+card.getAttribute('data-index')];
+      if (e.target.closest('.g-buy')) return; // plain link to the shop
       if (e.target.closest('.g-request')) { openPriceForm(item); return; }
       openLightbox(item);
     });
     grid.addEventListener('keydown', e => {
       if (e.key !== 'Enter' && e.key !== ' ') return;
+      if (e.target.closest('.g-buy')) return; // let the link work
       const card = e.target.closest('.g-card');
       if (!card) return;
       e.preventDefault();

@@ -12,7 +12,8 @@
       "height": 4926,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "blackhole",
@@ -26,7 +27,8 @@
       "height": 3765,
       "orientation": "landscape",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "defiance",
@@ -40,7 +42,8 @@
       "height": 858,
       "orientation": "landscape",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "eve",
@@ -54,7 +57,8 @@
       "height": 1100,
       "orientation": "square",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "flow",
@@ -68,7 +72,8 @@
       "height": 5924,
       "orientation": "tall",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "flux",
@@ -82,7 +87,8 @@
       "height": 1100,
       "orientation": "tall",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "homesick",
@@ -96,7 +102,8 @@
       "height": 3095,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "phoenix",
@@ -110,7 +117,8 @@
       "height": 1100,
       "orientation": "tall",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "profane",
@@ -124,7 +132,8 @@
       "height": 1100,
       "orientation": "tall",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "radiant-ferocity",
@@ -138,7 +147,8 @@
       "height": 1100,
       "orientation": "tall",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "ripples",
@@ -152,7 +162,8 @@
       "height": 5202,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "scandal",
@@ -166,7 +177,8 @@
       "height": 850,
       "orientation": "landscape",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "seep",
@@ -180,7 +192,8 @@
       "height": 855,
       "orientation": "landscape",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "smoke-and-stone",
@@ -194,7 +207,8 @@
       "height": 1100,
       "orientation": "square",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "splunk",
@@ -208,7 +222,8 @@
       "height": 1100,
       "orientation": "portrait",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "tender",
@@ -222,7 +237,8 @@
       "height": 1100,
       "orientation": "tall",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     },
     {
       "id": "winter",
@@ -236,7 +252,8 @@
       "height": 872,
       "orientation": "landscape",
       "price": "Price on request",
-      "status": "not_set"
+      "status": "not_set",
+      "shopUrl": ""
     }
   ],
   "prints": [

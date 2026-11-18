@@ -16,3 +16,12 @@
 
 # If you find other broken/old URLs in the Search Console "404" report,
 # send them over and I'll add matching redirect lines here.
+
+# QR landing address for printed postcards, lookbook and desk card.
+# Points to the Alive signup form in Flodesk. 302 (temporary) on purpose:
+# the printed QR never changes, but this destination can be repointed later.
+/hello  https://apekshadarbari.myflodesk.com/vcpbvahwo6  302
+
+# SHOP LIVE (Nov 17 2026): the old shop page now sends visitors to the Squarespace shop.
+/pages/shop        https://shop.apekshadarbari.com  301
+/pages/shop.html   https://shop.apekshadarbari.com  301
