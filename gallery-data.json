@@ -118,7 +118,37 @@
       "orientation": "tall",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/phoenix"
+    },
+    {
+      "id": "pinkurple-1",
+      "filename": "Pinkurple 1.jpg",
+      "title": "Pinkurple 1",
+      "medium": "Acrylic on canvas",
+      "dimensions": "10 x 30 in",
+      "thickness": "0.7 in",
+      "description": "",
+      "width": 1879,
+      "height": 5634,
+      "orientation": "tall",
+      "price": "Price on request",
+      "status": "not_set",
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/pinkurple-1"
+    },
+    {
+      "id": "pinkurple-2",
+      "filename": "Pinkurple 2.jpg",
+      "title": "Pinkurple 2",
+      "medium": "Acrylic on canvas",
+      "dimensions": "10 x 30 in",
+      "thickness": "0.7 in",
+      "description": "",
+      "width": 1888,
+      "height": 5705,
+      "orientation": "tall",
+      "price": "Price on request",
+      "status": "not_set",
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/pinkurple-2"
     },
     {
       "id": "profane",
@@ -178,7 +208,7 @@
       "orientation": "landscape",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/scandal"
     },
     {
       "id": "seep",
@@ -224,6 +254,21 @@
       "price": "Price on request",
       "status": "not_set",
       "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/splunk"
+    },
+    {
+      "id": "surge",
+      "filename": "Surge.jpg",
+      "title": "Surge",
+      "medium": "Acrylic on canvas",
+      "dimensions": "20 x 10 in",
+      "thickness": "0.7 in",
+      "description": "",
+      "width": 735,
+      "height": 1500,
+      "orientation": "tall",
+      "price": "Price on request",
+      "status": "not_set",
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/surge"
     },
     {
       "id": "tender",
