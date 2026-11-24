@@ -13,7 +13,7 @@
       "orientation": "portrait",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/beach"
     },
     {
       "id": "blackhole",
@@ -28,7 +28,7 @@
       "orientation": "landscape",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/blackhole"
     },
     {
       "id": "defiance",
@@ -43,7 +43,7 @@
       "orientation": "landscape",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/defiance"
     },
     {
       "id": "eve",
@@ -58,7 +58,7 @@
       "orientation": "square",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/eve"
     },
     {
       "id": "flow",
@@ -73,7 +73,7 @@
       "orientation": "tall",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/flow"
     },
     {
       "id": "flux",
@@ -88,7 +88,7 @@
       "orientation": "tall",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/flux"
     },
     {
       "id": "homesick",
@@ -103,7 +103,7 @@
       "orientation": "portrait",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/homesick"
     },
     {
       "id": "phoenix",
@@ -133,7 +133,7 @@
       "orientation": "tall",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/profane"
     },
     {
       "id": "radiant-ferocity",
@@ -148,7 +148,7 @@
       "orientation": "tall",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/radiant-ferocity"
     },
     {
       "id": "ripples",
@@ -163,7 +163,7 @@
       "orientation": "portrait",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/ripples"
     },
     {
       "id": "scandal",
@@ -193,7 +193,7 @@
       "orientation": "landscape",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/seep"
     },
     {
       "id": "smoke-and-stone",
@@ -208,7 +208,7 @@
       "orientation": "square",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/smoke-and-stone"
     },
     {
       "id": "splunk",
@@ -223,7 +223,7 @@
       "orientation": "portrait",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/splunk"
     },
     {
       "id": "tender",
@@ -238,7 +238,7 @@
       "orientation": "tall",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/tender"
     },
     {
       "id": "winter",
@@ -253,7 +253,7 @@
       "orientation": "landscape",
       "price": "Price on request",
       "status": "not_set",
-      "shopUrl": ""
+      "shopUrl": "https://www.shop.apekshadarbari.com/shop/p/winter"
     }
   ],
   "prints": [
